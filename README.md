@@ -13,6 +13,21 @@ baseline과 분리된 사용자 실험 시작점은
 모든 자체 구현과 빌드 산출물은 `/home/hoeng/IsaacLab/humanoid_G1` 안에만
 있습니다. 바깥의 Isaac Lab, SeRT 및 기존 RSL-RL 코드는 수정하지 않습니다.
 
+## 학습·평가 산출물
+
+PPO 체크포인트, ONNX 정책, TensorBoard 로그, 평가 보고서와 시뮬레이션 영상은
+소스 코드와 분리해 GitHub의
+[`artifacts` 브랜치](https://github.com/Hoeng317/Humanoid_G1/tree/artifacts)에
+Git LFS로 보관합니다. GitHub 화면이 `main` 브랜치로 되어 있으면 이 산출물은
+보이지 않으므로, 브랜치 선택 메뉴에서 `artifacts`를 선택해야 합니다.
+
+```bash
+git clone --single-branch --branch artifacts \
+  git@github.com:Hoeng317/Humanoid_G1.git Humanoid_G1_Artifacts
+cd Humanoid_G1_Artifacts
+git lfs pull
+```
+
 ## 가장 먼저 실행할 순서
 
 명령은 `/home/hoeng/IsaacLab`에서 실행합니다.
