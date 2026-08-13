@@ -1,0 +1,119 @@
+schema_version: accad-g1-correspondence-v1
+
+# Read-only parent-project contracts. Relative to ACCAD/_g1_pipeline.
+g1:
+  contract: ../../configs/robot/g1_29dof.yaml
+  urdf: ../../third_party/unitree_ros/robots/g1_description/g1_29dof_rev_1_0.urdf
+  coordinate_system: right-handed_x-forward_y-left_z-up
+  foot_sole_offset_m: [0.035, 0.0, -0.03]
+
+# SMPL-X model-local axes are X-left, Y-up, Z-forward. Columns map the G1
+# X-forward/Y-left/Z-up basis into that SMPL-X local basis.
+human_local_from_g1_local:
+  - [0.0, 1.0, 0.0]
+  - [0.0, 0.0, 1.0]
+  - [1.0, 0.0, 0.0]
+
+position_targets:
+  left_knee_link: {human: left_knee, weight: 4.0}
+  right_knee_link: {human: right_knee, weight: 4.0}
+  left_ankle_roll_link: {human: left_ankle, weight: 2.0}
+  right_ankle_roll_link: {human: right_ankle, weight: 2.0}
+  left_elbow_link: {human: left_elbow, weight: 2.0}
+  right_elbow_link: {human: right_elbow, weight: 2.0}
+  left_wrist_yaw_link: {human: left_wrist, weight: 4.0}
+  right_wrist_yaw_link: {human: right_wrist, weight: 4.0}
+
+orientation_targets:
+  torso_link: {human: spine3, weight: 1.5}
+
+tracking_body_names:
+  - pelvis
+  - left_hip_roll_link
+  - left_knee_link
+  - left_ankle_roll_link
+  - right_hip_roll_link
+  - right_knee_link
+  - right_ankle_roll_link
+  - torso_link
+  - left_shoulder_roll_link
+  - left_elbow_link
+  - left_wrist_yaw_link
+  - right_shoulder_roll_link
+  - right_elbow_link
+  - right_wrist_yaw_link
+
+# Exact rigid bodies produced by the current Isaac URDF converter. The replay
+# command verifies these names at runtime and never trusts stored integer IDs.
+isaac_body_names:
+  - pelvis
+  - left_hip_pitch_link
+  - right_hip_pitch_link
+  - waist_yaw_link
+  - left_hip_roll_link
+  - right_hip_roll_link
+  - waist_roll_link
+  - left_hip_yaw_link
+  - right_hip_yaw_link
+  - torso_link
+  - left_knee_link
+  - right_knee_link
+  - left_shoulder_pitch_link
+  - right_shoulder_pitch_link
+  - left_ankle_pitch_link
+  - right_ankle_pitch_link
+  - left_shoulder_roll_link
+  - right_shoulder_roll_link
+  - left_ankle_roll_link
+  - right_ankle_roll_link
+  - left_shoulder_yaw_link
+  - right_shoulder_yaw_link
+  - left_elbow_link
+  - right_elbow_link
+  - left_wrist_roll_link
+  - right_wrist_roll_link
+  - left_wrist_pitch_link
+  - right_wrist_pitch_link
+  - left_wrist_yaw_link
+  - right_wrist_yaw_link
+  - left_rubber_hand
+  - right_rubber_hand
+
+solver:
+  device: cuda:0
+  dtype: float32
+  iterations: 900
+  learning_rate: 0.035
+  limit_margin_rad: 0.02
+  soft_joint_limit_factor: 0.9
+  root_xy_correction_limit_m: 0.05
+  root_z_correction_limit_m: 0.30
+  nonupright_root_z_correction_limit_m: 0.40
+  post_projection_ground_margin_m: 0.0005
+  foot_position_weight: 16.0
+  contact_position_weight: 512.0
+  stance_ground_weight: 400.0
+  stance_lock_weight: 2048.0
+  stance_orientation_weight: 10.0
+  # AMASS near-ground contact is not always a rigid stance (e.g. crawl/toe drag).
+  stance_speed_threshold_mps: 0.18
+  stance_target_drift_limit_m: 0.025
+  stance_minimum_frames: 3
+  stance_maximum_anchor_frames: 50
+  stance_minimum_pelvis_height_ratio: 0.45
+  penetration_weight: 10000.0
+  nominal_pose_weight: 0.012
+  joint_velocity_weight: 2.0
+  joint_acceleration_weight: 20.0
+  joint_velocity_limit_weight: 2.0
+  velocity_limit_factor: 0.9
+  root_correction_weight: 1.0
+  root_velocity_weight: 1.0
+  root_acceleration_weight: 2.0
+  seed: 42
+
+tracking_action:
+  mode: reference_residual
+  residual_scale: 0.25
+  clip: 1.0
+  normalized_delta_limit: 0.15

@@ -1,0 +1,43 @@
+expected_stageii_count: 252
+expected_stagei_count: 20
+
+# All relative paths are resolved from ACCAD/_g1_pipeline, not the current shell.
+paths:
+  work: work
+  models: models
+  vendor: vendor
+
+# The official ACCAD catalog identifies MartialArtsWalksTurns as Male2.  This
+# assignment keeps every actor in one split.  Exact checksum aliases are removed
+# after the assignment, yielding 215/5/29 unique train/validation/test clips.
+# The validation set is necessarily small because ACCAD has only three major
+# actors; the manifest reports that limitation and category imbalance.
+split_subjects:
+  train: [Female1, Male2]
+  validation: [s001, s007, s008, s009, s011]
+  test: [Male1]
+
+quality:
+  min_frames: 2
+  min_duration_sec: 0.5
+  duration_tolerance_frames: 1.0
+  max_translation_step_m: 0.5
+  max_translation_speed_mps: 15.0
+  max_rotation_step_rad: 2.5
+  max_duplicate_fraction: 0.25
+  auto_exclude_flags: []
+  exclude_if_any_quality_flag: false
+
+human:
+  target_fps: 50.0
+  chunk_size: 128
+
+# Reserved for Gate 3. These values document the parent-project contract and
+# are not consumed until Gate 2 has produced and validated a human reference.
+g1:
+  joint_contract: ../../configs/robot/g1_29dof.yaml
+  urdf: ../../third_party/unitree_ros/robots/g1_description/g1_29dof_rev_1_0.urdf
+  control_fps: 50.0
+  action_scale: 0.25
+  action_clip: 1.0
+  normalized_delta_limit: 0.15

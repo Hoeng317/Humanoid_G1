@@ -1,0 +1,52 @@
+schema_version: 1
+robot:
+  manufacturer: Unitree
+  model: G1
+  variant: g1_29dof_rev_1_0
+  body_dof: 29
+  hand_dof: 0
+  hand_policy: separate_optional_subsystem
+  asset: third_party/unitree_ros/robots/g1_description/g1_29dof_rev_1_0.urdf
+  hardware:
+    verified: false
+    serial_number: null
+    firmware: null
+    motor_index_verified: false
+control:
+  mode: joint_position_pd
+  action_scale: 0.25
+  clip_actions: 100.0
+timing:
+  physics_dt: 0.005
+  decimation: 4
+joints:
+  - {policy_index: 0, sdk_index: 0, name: left_hip_pitch_joint, lower: -2.5307, upper: 2.8798, velocity: 32.0, effort: 88.0, default: -0.1, kp: 100.0, kd: 2.0}
+  - {policy_index: 1, sdk_index: 6, name: right_hip_pitch_joint, lower: -2.5307, upper: 2.8798, velocity: 32.0, effort: 88.0, default: -0.1, kp: 100.0, kd: 2.0}
+  - {policy_index: 2, sdk_index: 12, name: waist_yaw_joint, lower: -2.618, upper: 2.618, velocity: 32.0, effort: 88.0, default: 0.0, kp: 200.0, kd: 5.0}
+  - {policy_index: 3, sdk_index: 1, name: left_hip_roll_joint, lower: -0.5236, upper: 2.9671, velocity: 20.0, effort: 139.0, default: 0.0, kp: 100.0, kd: 2.0}
+  - {policy_index: 4, sdk_index: 7, name: right_hip_roll_joint, lower: -2.9671, upper: 0.5236, velocity: 20.0, effort: 139.0, default: 0.0, kp: 100.0, kd: 2.0}
+  - {policy_index: 5, sdk_index: 13, name: waist_roll_joint, lower: -0.52, upper: 0.52, velocity: 30.0, effort: 35.0, default: 0.0, kp: 40.0, kd: 5.0}
+  - {policy_index: 6, sdk_index: 2, name: left_hip_yaw_joint, lower: -2.7576, upper: 2.7576, velocity: 32.0, effort: 88.0, default: 0.0, kp: 100.0, kd: 2.0}
+  - {policy_index: 7, sdk_index: 8, name: right_hip_yaw_joint, lower: -2.7576, upper: 2.7576, velocity: 32.0, effort: 88.0, default: 0.0, kp: 100.0, kd: 2.0}
+  - {policy_index: 8, sdk_index: 14, name: waist_pitch_joint, lower: -0.52, upper: 0.52, velocity: 30.0, effort: 35.0, default: 0.0, kp: 40.0, kd: 5.0}
+  - {policy_index: 9, sdk_index: 3, name: left_knee_joint, lower: -0.087267, upper: 2.8798, velocity: 20.0, effort: 139.0, default: 0.3, kp: 150.0, kd: 4.0}
+  - {policy_index: 10, sdk_index: 9, name: right_knee_joint, lower: -0.087267, upper: 2.8798, velocity: 20.0, effort: 139.0, default: 0.3, kp: 150.0, kd: 4.0}
+  - {policy_index: 11, sdk_index: 15, name: left_shoulder_pitch_joint, lower: -3.0892, upper: 2.6704, velocity: 37.0, effort: 25.0, default: 0.3, kp: 40.0, kd: 1.0}
+  - {policy_index: 12, sdk_index: 22, name: right_shoulder_pitch_joint, lower: -3.0892, upper: 2.6704, velocity: 37.0, effort: 25.0, default: 0.3, kp: 40.0, kd: 1.0}
+  - {policy_index: 13, sdk_index: 4, name: left_ankle_pitch_joint, lower: -0.87267, upper: 0.5236, velocity: 30.0, effort: 35.0, default: -0.2, kp: 40.0, kd: 2.0}
+  - {policy_index: 14, sdk_index: 10, name: right_ankle_pitch_joint, lower: -0.87267, upper: 0.5236, velocity: 30.0, effort: 35.0, default: -0.2, kp: 40.0, kd: 2.0}
+  - {policy_index: 15, sdk_index: 16, name: left_shoulder_roll_joint, lower: -1.5882, upper: 2.2515, velocity: 37.0, effort: 25.0, default: 0.25, kp: 40.0, kd: 1.0}
+  - {policy_index: 16, sdk_index: 23, name: right_shoulder_roll_joint, lower: -2.2515, upper: 1.5882, velocity: 37.0, effort: 25.0, default: -0.25, kp: 40.0, kd: 1.0}
+  - {policy_index: 17, sdk_index: 5, name: left_ankle_roll_joint, lower: -0.2618, upper: 0.2618, velocity: 30.0, effort: 35.0, default: 0.0, kp: 40.0, kd: 2.0}
+  - {policy_index: 18, sdk_index: 11, name: right_ankle_roll_joint, lower: -0.2618, upper: 0.2618, velocity: 30.0, effort: 35.0, default: 0.0, kp: 40.0, kd: 2.0}
+  - {policy_index: 19, sdk_index: 17, name: left_shoulder_yaw_joint, lower: -2.618, upper: 2.618, velocity: 37.0, effort: 25.0, default: 0.0, kp: 40.0, kd: 1.0}
+  - {policy_index: 20, sdk_index: 24, name: right_shoulder_yaw_joint, lower: -2.618, upper: 2.618, velocity: 37.0, effort: 25.0, default: 0.0, kp: 40.0, kd: 1.0}
+  - {policy_index: 21, sdk_index: 18, name: left_elbow_joint, lower: -1.0472, upper: 2.0944, velocity: 37.0, effort: 25.0, default: 0.97, kp: 40.0, kd: 1.0}
+  - {policy_index: 22, sdk_index: 25, name: right_elbow_joint, lower: -1.0472, upper: 2.0944, velocity: 37.0, effort: 25.0, default: 0.97, kp: 40.0, kd: 1.0}
+  - {policy_index: 23, sdk_index: 19, name: left_wrist_roll_joint, lower: -1.972222054, upper: 1.972222054, velocity: 37.0, effort: 25.0, default: 0.15, kp: 40.0, kd: 1.0}
+  - {policy_index: 24, sdk_index: 26, name: right_wrist_roll_joint, lower: -1.972222054, upper: 1.972222054, velocity: 37.0, effort: 25.0, default: -0.15, kp: 40.0, kd: 1.0}
+  - {policy_index: 25, sdk_index: 20, name: left_wrist_pitch_joint, lower: -1.614429558, upper: 1.614429558, velocity: 22.0, effort: 5.0, default: 0.0, kp: 40.0, kd: 1.0}
+  - {policy_index: 26, sdk_index: 27, name: right_wrist_pitch_joint, lower: -1.614429558, upper: 1.614429558, velocity: 22.0, effort: 5.0, default: 0.0, kp: 40.0, kd: 1.0}
+  - {policy_index: 27, sdk_index: 21, name: left_wrist_yaw_joint, lower: -1.614429558, upper: 1.614429558, velocity: 22.0, effort: 5.0, default: 0.0, kp: 40.0, kd: 1.0}
+  - {policy_index: 28, sdk_index: 28, name: right_wrist_yaw_joint, lower: -1.614429558, upper: 1.614429558, velocity: 22.0, effort: 5.0, default: 0.0, kp: 40.0, kd: 1.0}
+

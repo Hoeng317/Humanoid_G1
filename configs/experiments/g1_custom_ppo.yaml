@@ -1,0 +1,33 @@
+# 사용자 실험의 최상위 조합 파일입니다. baseline을 보존하고 이 파일에서 실험하세요.
+experiment:
+  name: g1_custom_ppo
+  seed: 42
+task: Humanoid-G1-29DoF-Velocity-Flat-v0
+robot: ../robot/g1_29dof.yaml
+simulation: ../sim/g1_flat.yaml
+terrain: ../terrain/flat.yaml
+training: ../train/ppo_custom.yaml
+randomization: ../randomization/nominal.yaml
+deployment: ../deploy/controller.yaml
+commands:
+  lin_vel_x: [-0.1, 0.1]
+  lin_vel_y: [-0.1, 0.1]
+  ang_vel_z: [-0.1, 0.1]
+rewards:
+  track_lin_vel_xy: 1.0
+  track_ang_vel_z: 0.5
+  alive: 0.15
+  base_linear_velocity: -2.0
+  base_angular_velocity: -0.05
+  action_rate: -0.05
+  flat_orientation_l2: -5.0
+  base_height: -10.0
+  gait: 0.5
+  feet_slide: -0.2
+  feet_clearance: 1.0
+  undesired_contacts: -1.0
+overrides:
+  num_envs: 1024
+  max_iterations: 1000
+  headless: true
+  device: cuda:0

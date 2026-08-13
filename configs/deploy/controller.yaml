@@ -1,0 +1,30 @@
+schema_version: 1
+control_hz: 50
+policy_dt: 0.02
+action_scale: 0.25
+action_clip: 1.0
+action_delta_limit: 0.15
+target_soft_limit_margin_rad: 0.05
+low_state_timeout_s: 0.1
+policy_timeout_s: 0.01
+loop_overrun_s: 0.03
+max_roll_rad: 0.7
+max_pitch_rad: 0.7
+history_length: 5
+actor_observation_dim_per_step: 96
+actor_observation_dim: 480
+critic_observation_dim_per_step: 99
+critic_observation_dim: 495
+real_dds_domain: 0
+sim_dds_domain: 1
+sim_interface: lo
+real_interface: null
+command_limits:
+  lin_vel_x: [-0.5, 1.0]
+  lin_vel_y: [-0.3, 0.3]
+  ang_vel_z: [-0.2, 0.2]
+safety:
+  auto_enter_policy_running: false
+  damping_kd: 3.0
+  stand_transition_s: 3.0
+

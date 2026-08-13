@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humanoid-g1"
+version = "0.1.0"
+description = "Independent Unitree G1 29-DoF Isaac Lab research environment"
+requires-python = ">=3.11"
+license = {text = "BSD-3-Clause"}
+
+[tool.setuptools.packages.find]
+where = ["source"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "integration: requires Isaac Sim/Isaac Lab",
+  "gpu: requires a CUDA GPU",
+  "sim2sim: requires MuJoCo and Unitree SDK2",
+  "hardware: requires a physical Unitree G1 (never run automatically)",
+]
+

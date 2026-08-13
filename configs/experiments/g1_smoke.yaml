@@ -1,0 +1,24 @@
+experiment:
+  name: g1_smoke
+  seed: 42
+task: Humanoid-G1-29DoF-Velocity-Flat-v0
+robot: ../robot/g1_29dof.yaml
+simulation: ../sim/g1_flat.yaml
+terrain: ../terrain/flat.yaml
+training: ../train/ppo_smoke.yaml
+randomization: ../randomization/off.yaml
+deployment: ../deploy/controller.yaml
+commands:
+  lin_vel_x: [-0.1, 0.1]
+  lin_vel_y: [-0.1, 0.1]
+  ang_vel_z: [-0.1, 0.1]
+rewards:
+  track_lin_vel_xy: 1.0
+  track_ang_vel_z: 0.5
+  alive: 0.15
+overrides:
+  num_envs: 32
+  max_iterations: 2
+  headless: true
+  device: cuda:0
+

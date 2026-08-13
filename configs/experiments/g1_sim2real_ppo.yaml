@@ -1,0 +1,39 @@
+experiment:
+  name: g1_sim2real_ppo
+  seed: 42
+task: Humanoid-G1-29DoF-Velocity-Rough-v0
+robot: ../robot/g1_29dof.yaml
+simulation: ../sim/g1_rough.yaml
+terrain: ../terrain/mixed_curriculum.yaml
+training: ../train/ppo_rough.yaml
+randomization: ../randomization/sim2real.yaml
+deployment: ../deploy/controller.yaml
+commands:
+  lin_vel_x: [-0.5, 1.0]
+  lin_vel_y: [-0.3, 0.3]
+  ang_vel_z: [-0.2, 0.2]
+rewards:
+  track_lin_vel_xy: 1.0
+  track_ang_vel_z: 0.5
+  alive: 0.15
+  base_linear_velocity: -2.0
+  base_angular_velocity: -0.05
+  joint_vel: -0.001
+  joint_acc: -2.5e-7
+  action_rate: -0.05
+  dof_pos_limits: -5.0
+  energy: -2.0e-5
+  joint_deviation_arms: -0.1
+  joint_deviation_waists: -1.0
+  joint_deviation_legs: -1.0
+  flat_orientation_l2: -5.0
+  base_height: -10.0
+  gait: 0.5
+  feet_slide: -0.2
+  feet_clearance: 1.0
+  undesired_contacts: -1.0
+overrides:
+  num_envs: 4096
+  max_iterations: 3000
+  headless: true
+  device: cuda:0

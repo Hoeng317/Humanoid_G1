@@ -1,0 +1,13 @@
+schema_version: 1
+source: configs/robot/g1_29dof.yaml
+joint_position_soft_margin_rad: 0.05
+action_delta_limit: 0.15
+low_state_timeout_s: 0.1
+policy_inference_timeout_s: 0.01
+control_loop_overrun_s: 0.03
+imu_quaternion_norm: [0.8, 1.2]
+body_orientation:
+  max_roll_rad: 0.7
+  max_pitch_rad: 0.7
+remote_emergency_stop: L2+B
+network_disconnect_action: fault_then_damping

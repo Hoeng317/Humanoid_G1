@@ -1,0 +1,25 @@
+schema_version: 1
+mode: implicit_pd_joint_position
+source: unitree_rl_lab_g1_29dof_baseline
+action:
+  normalized_range: [-1.0, 1.0]
+  scale_rad: 0.25
+  use_default_offset: true
+  rate_limit_per_policy_step: 0.15
+groups:
+  legs:
+    joint_regex: ".*_(hip|knee)_.*|.*_(hip|knee)_joint"
+    stiffness_source: configs/robot/g1_29dof.yaml
+    damping_source: configs/robot/g1_29dof.yaml
+  ankles:
+    joint_regex: ".*_ankle_.*"
+    stiffness_source: configs/robot/g1_29dof.yaml
+    damping_source: configs/robot/g1_29dof.yaml
+  waist:
+    joint_regex: "waist_.*"
+    stiffness_source: configs/robot/g1_29dof.yaml
+    damping_source: configs/robot/g1_29dof.yaml
+  arms:
+    joint_regex: ".*_(shoulder|elbow|wrist)_.*|.*_elbow_joint"
+    stiffness_source: configs/robot/g1_29dof.yaml
+    damping_source: configs/robot/g1_29dof.yaml
