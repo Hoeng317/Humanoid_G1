@@ -65,6 +65,8 @@ git fsck --no-dangling >/dev/null
 "${project_root}/scripts/setup/bootstrap.sh" --check-only --skip-tests
 
 export PYTHONDONTWRITEBYTECODE=1
+export HUMANOID_G1_ROOT="${project_root}"
+export PYTHONPATH="${project_root}/source${PYTHONPATH:+:${PYTHONPATH}}"
 "${python_bin}" -m pytest -q -p no:cacheprovider \
   -m "not integration and not hardware and not sim2sim" "${project_root}/tests"
 
