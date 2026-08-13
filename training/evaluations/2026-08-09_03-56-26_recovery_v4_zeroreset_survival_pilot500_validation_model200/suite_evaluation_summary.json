@@ -1,0 +1,742 @@
+{
+  "acceptance": {
+    "checks": {
+      "all_first_episodes_successful": {
+        "comparison": "==",
+        "expected": 5.0,
+        "json_paths": [
+          "aggregate.successful_motion_end_episodes",
+          "aggregate.motion_count"
+        ],
+        "passed": false,
+        "value": 0.0
+      },
+      "checksum_verified_promoted_manifest": {
+        "comparison": "==",
+        "expected": true,
+        "json_path": "motion_input.manifest_promotion_verified",
+        "passed": true,
+        "value": true
+      },
+      "joint_limit_terminations": {
+        "comparison": "<=",
+        "json_path": "aggregate.termination_counts.joint_limits",
+        "passed": true,
+        "threshold": 0.0,
+        "value": 0.0
+      },
+      "macro_completion_ratio": {
+        "comparison": ">=",
+        "json_path": "aggregate.completion_ratio_mean",
+        "passed": false,
+        "threshold": 0.9,
+        "value": 0.19076587241264986
+      },
+      "macro_joint_mae_rad": {
+        "comparison": "<=",
+        "json_path": "aggregate.macro_motion_metrics.mean_absolute_joint_error_rad",
+        "passed": true,
+        "threshold": 0.2,
+        "value": 0.08117640347628281
+      },
+      "macro_root_position_error_m": {
+        "comparison": "<=",
+        "json_path": "aggregate.macro_motion_metrics.mean_root_position_error_m",
+        "passed": true,
+        "threshold": 0.2,
+        "value": 0.128164981518293
+      },
+      "macro_tracking_body_position_error_m": {
+        "comparison": "<=",
+        "json_path": "aggregate.macro_motion_metrics.mean_tracking_body_position_error_m",
+        "passed": true,
+        "threshold": 0.15,
+        "value": 0.145046190261849
+      },
+      "nonfinite_terminations": {
+        "comparison": "<=",
+        "json_path": "aggregate.termination_counts.nonfinite",
+        "passed": true,
+        "threshold": 0.0,
+        "value": 0.0
+      },
+      "pooled_contact_f1": {
+        "comparison": ">=",
+        "json_path": "aggregate.aggregate_foot_contact.overall.f1",
+        "passed": true,
+        "threshold": 0.8,
+        "value": 0.8841761827079935
+      },
+      "weighted_raw_action_clip_fraction": {
+        "comparison": "<=",
+        "json_path": "aggregate.weighted_frame_or_element_metrics.raw_action_clip_fraction",
+        "passed": true,
+        "threshold": 0.05,
+        "value": 0.0
+      }
+    },
+    "passed": false,
+    "schema_version": "accad_g1_suite_acceptance_v1",
+    "thresholds": {
+      "maximum_joint_limit_terminations": 0,
+      "maximum_macro_joint_mae_rad": 0.2,
+      "maximum_macro_root_position_error_m": 0.2,
+      "maximum_macro_tracking_body_position_error_m": 0.15,
+      "maximum_nonfinite_terminations": 0,
+      "maximum_weighted_raw_action_clip_fraction": 0.05,
+      "minimum_macro_completion_ratio": 0.9,
+      "minimum_pooled_contact_f1": 0.8
+    }
+  },
+  "aggregate": {
+    "aggregate_foot_contact": {
+      "left": {
+        "f1": 0.7841726618705036,
+        "false_negative_frames": 7,
+        "false_positive_frames": 53,
+        "precision": 0.6728395061728395,
+        "recall": 0.9396551724137931,
+        "true_positive_frames": 109
+      },
+      "overall": {
+        "f1": 0.8841761827079935,
+        "false_negative_frames": 12,
+        "false_positive_frames": 59,
+        "precision": 0.8212121212121212,
+        "recall": 0.9575971731448764,
+        "true_positive_frames": 271
+      },
+      "right": {
+        "f1": 0.9671641791044776,
+        "false_negative_frames": 5,
+        "false_positive_frames": 6,
+        "precision": 0.9642857142857143,
+        "recall": 0.9700598802395209,
+        "true_positive_frames": 162
+      }
+    },
+    "aggregate_stance_or_actual_contact_slide_speed_p95_mps": 0.5536068260669706,
+    "completion_ratio_mean": 0.19076587241264986,
+    "completion_ratio_min": 0.029447852760736196,
+    "failed_or_incomplete_motion_ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "finished_first_episodes": 5,
+    "global_control_steps_executed": 76,
+    "length_steps_mean": 38.2,
+    "macro_motion_metrics": {
+      "foot_contact_match_fraction": 0.7506752993595099,
+      "joint_position_rmse_rad": 0.127270646571876,
+      "mean_absolute_joint_error_rad": 0.08117640347628281,
+      "mean_absolute_raw_action": 0.1401708780560758,
+      "mean_root_orientation_error_rad": 0.28201842493368806,
+      "mean_root_position_error_m": 0.128164981518293,
+      "mean_tracking_body_position_error_m": 0.145046190261849,
+      "predicted_target_clamp_fraction": 0.0034209085933223867,
+      "raw_action_clip_fraction": 0.0,
+      "root_orientation_rmse_rad": 0.356775301452337,
+      "root_position_rmse_m": 0.1666717651935095,
+      "stance_or_actual_contact_slide_speed_p95_mps": 0.5188033649325366,
+      "tracking_body_position_rmse_m": 0.20710076575304842
+    },
+    "max_steps": 816,
+    "motion_count": 5,
+    "return_max": 10.28229284286499,
+    "return_mean": 4.74666505381465,
+    "return_min": 2.623246595263481,
+    "simulated_environment_seconds": 3.8200000000000003,
+    "simulated_environment_seconds_per_wall_second": 0.5125764416573737,
+    "simulation_app_stopped_early": false,
+    "success_rate": 0.0,
+    "successful_motion_end_episodes": 0,
+    "termination_counts": {
+      "fall": 4,
+      "joint_limits": 0,
+      "motion_end": 0,
+      "nonfinite": 0,
+      "time_out": 0,
+      "tracking_divergence": 2
+    },
+    "total_first_episode_environment_steps": 191,
+    "wall_time_s": 7.452546956017613,
+    "weighted_frame_or_element_metrics": {
+      "foot_contact_match_fraction": 0.8141361256544503,
+      "joint_position_rmse_rad": 0.12015544147641521,
+      "mean_absolute_joint_error_rad": 0.07424392863115392,
+      "mean_absolute_raw_action": 0.13875397152581312,
+      "mean_root_orientation_error_rad": 0.28746033018133094,
+      "mean_root_position_error_m": 0.13035793256816694,
+      "mean_tracking_body_position_error_m": 0.14160873832470092,
+      "normalized_action_rate_limit_fraction": 0.02581693446470482,
+      "predicted_target_clamp_fraction": 0.002527532045495577,
+      "raw_action_clip_fraction": 0.0,
+      "root_orientation_rmse_rad": 0.35877613157850496,
+      "root_position_rmse_m": 0.1755063445570219,
+      "tracking_body_position_rmse_m": 0.20832134529708943
+    }
+  },
+  "argv": [
+    "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/evaluate_tracking_suite.py",
+    "--headless",
+    "--device",
+    "cuda:0",
+    "--seed",
+    "42",
+    "--manifest",
+    "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/manifests/g1_validation.json",
+    "--reference-root",
+    "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1",
+    "--checkpoint",
+    "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-09_03-32-25_recovery_v4_zeroreset_survival_pilot500_seed42/model_200.pt",
+    "--evaluation-name",
+    "recovery_v4_zeroreset_survival_pilot500_validation_model200",
+    "--export",
+    "none"
+  ],
+  "checkpoint": {
+    "bytes": 14090147,
+    "checksum_sha256": "6b7d687211efae4f1b26a181fa05805579084098df8aaa3a246a6ac16ac8578b",
+    "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-09_03-32-25_recovery_v4_zeroreset_survival_pilot500_seed42/model_200.pt"
+  },
+  "correspondence": {
+    "checksum_sha256": "28e5c7999dc00feecf0dbe1821df7562a4f4d0b3f78c8a9c454ca75db55b9c71",
+    "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/correspondence.yaml"
+  },
+  "cwd": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline",
+  "evaluation_contract": {
+    "deterministic_policy_inference": true,
+    "domain_randomization_events": false,
+    "first_episode_only": true,
+    "gate3_promotion_contract": "archive gate3_complete is intentionally generation-time false; finalization requires every selected archive checksum to be covered by a promoted G1 manifest",
+    "one_environment_per_selected_motion": true,
+    "physx_enhanced_determinism": true,
+    "random_start": false,
+    "state_and_observation_noise": false,
+    "success_definition": "motion_end fired and no non-timeout termination term fired on the same step"
+  },
+  "evaluation_dir": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-09_03-56-26_recovery_v4_zeroreset_survival_pilot500_validation_model200",
+  "export_validations": [],
+  "exports": [],
+  "finished_at_utc": "2026-08-08T18:56:34.094294+00:00",
+  "motion_input": {
+    "allow_missing": false,
+    "manifest_checksum_verified_motion_count": 5,
+    "manifest_promotion_verified": true,
+    "manifests": [
+      {
+        "archive_checksum_record_count": 5,
+        "checksum_sha256": "c4d43072b3a4c82f76b17a627e8a156365bebcf446d368ef6b50b63362a6f8b2",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/manifests/g1_validation.json",
+        "resolved_count": 5,
+        "split": "validation"
+      }
+    ],
+    "motion_count": 5,
+    "motions": [
+      {
+        "bytes": 1639886,
+        "checksum_sha256": "d01bf54f3cccc5fba49badd1d2da61a4b2d504c88dac2c51591abcaef8452b53",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s001/EricCamper04_g1_50hz.npz"
+      },
+      {
+        "bytes": 277618,
+        "checksum_sha256": "725c4e20ed3e65bf78f615ef4d6792b82c33dc32ac688c2a79acf5b4c80885f8",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s007/QkWalk1_g1_50hz.npz"
+      },
+      {
+        "bytes": 203587,
+        "checksum_sha256": "78377724bed466d80ce6ca351b8a9244bb1592043f1952e758589e662139e7b1",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s008/Run1_g1_50hz.npz"
+      },
+      {
+        "bytes": 243377,
+        "checksum_sha256": "042db132ddd5b5a2130ddecca5f4a31b49b02313dc8bf4a12e1c396593b86f3e",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s009/Sprint1_g1_50hz.npz"
+      },
+      {
+        "bytes": 1656025,
+        "checksum_sha256": "5154374c90a5a8bd9e2b78d3efc3e1603655ad674eac03a07666c9d81194e73d",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s011/walkdog_g1_50hz.npz"
+      }
+    ],
+    "reference_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1",
+    "split": "validation"
+  },
+  "motions": [
+    {
+      "checksum_sha256": "d01bf54f3cccc5fba49badd1d2da61a4b2d504c88dac2c51591abcaef8452b53",
+      "duration_s": 16.1200008392334,
+      "environment_id": 0,
+      "first_episode": {
+        "completion_ratio_length_over_archive_frames": 0.09417596034696406,
+        "finished": true,
+        "fired_termination_terms": [
+          "tracking_divergence"
+        ],
+        "global_finish_step": 76,
+        "length_steps": 76,
+        "max_steps_contract": 816,
+        "outcome": "non_timeout_termination",
+        "return": 10.28229284286499,
+        "simulated_duration_s": 1.52,
+        "success": false,
+        "termination_flags": {
+          "fall": false,
+          "joint_limits": false,
+          "motion_end": false,
+          "nonfinite": false,
+          "time_out": false,
+          "tracking_divergence": true
+        }
+      },
+      "frame_count": 807,
+      "metrics": {
+        "foot_contact": {
+          "left": {
+            "f1": 0.9933774834437086,
+            "false_negative_frames": 1,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 0.9868421052631579,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.14540284499526024,
+            "true_positive_frames": 75
+          },
+          "right": {
+            "f1": 0.9933774834437086,
+            "false_negative_frames": 1,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 0.9868421052631579,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.14258963987231255,
+            "true_positive_frames": 75
+          }
+        },
+        "foot_contact_match_fraction": 0.9868421052631579,
+        "joint_position_rmse_rad": 0.07286978344512345,
+        "maximum_absolute_raw_action": 0.7025972008705139,
+        "mean_absolute_joint_error_rad": 0.052429457298207846,
+        "mean_absolute_raw_action": 0.134190048150272,
+        "mean_root_orientation_error_rad": 0.3090982674988673,
+        "mean_root_position_error_m": 0.15053552659350986,
+        "mean_tracking_body_position_error_m": 0.13922420322145945,
+        "normalized_action_rate_limit_fraction": 0.006805807622504537,
+        "predicted_target_clamp_fraction": 0.0,
+        "raw_action_clip_fraction": 0.0,
+        "root_orientation_rmse_rad": 0.36200159528818976,
+        "root_position_rmse_m": 0.1984172876262986,
+        "sample_semantics": "pre-step commanded/physical state for each first-episode transition; includes the terminal-reference transition and excludes Isaac's internal post-done reset state",
+        "sampled_state_steps": 76,
+        "stance_or_actual_contact_slide_speed_p95_mps": 0.1465654030442237,
+        "tracking_body_position_rmse_m": 0.2151693425317021
+      },
+      "motion_id": 0,
+      "motion_key": "s001/EricCamper04_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s001/EricCamper04_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "725c4e20ed3e65bf78f615ef4d6792b82c33dc32ac688c2a79acf5b4c80885f8",
+      "duration_s": 2.5399999618530273,
+      "environment_id": 1,
+      "first_episode": {
+        "completion_ratio_length_over_archive_frames": 0.28125,
+        "finished": true,
+        "fired_termination_terms": [
+          "fall"
+        ],
+        "global_finish_step": 36,
+        "length_steps": 36,
+        "max_steps_contract": 816,
+        "outcome": "non_timeout_termination",
+        "return": 4.54604384303093,
+        "simulated_duration_s": 0.72,
+        "success": false,
+        "termination_flags": {
+          "fall": true,
+          "joint_limits": false,
+          "motion_end": false,
+          "nonfinite": false,
+          "time_out": false,
+          "tracking_divergence": false
+        }
+      },
+      "frame_count": 128,
+      "metrics": {
+        "foot_contact": {
+          "left": {
+            "f1": 0.8076923076923077,
+            "false_negative_frames": 1,
+            "false_positive_frames": 9,
+            "precision": 0.7,
+            "recall": 0.9545454545454546,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.5670886337757111,
+            "true_positive_frames": 21
+          },
+          "right": {
+            "f1": 0.9824561403508771,
+            "false_negative_frames": 1,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 0.9655172413793104,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.39862030744552596,
+            "true_positive_frames": 28
+          }
+        },
+        "foot_contact_match_fraction": 0.8472222222222222,
+        "joint_position_rmse_rad": 0.12727157752179763,
+        "maximum_absolute_raw_action": 0.591012179851532,
+        "mean_absolute_joint_error_rad": 0.08318930379047247,
+        "mean_absolute_raw_action": 0.14316860994616687,
+        "mean_root_orientation_error_rad": 0.282679583851455,
+        "mean_root_position_error_m": 0.07199977940439971,
+        "mean_tracking_body_position_error_m": 0.1177452748320284,
+        "normalized_action_rate_limit_fraction": 0.019157088122605363,
+        "predicted_target_clamp_fraction": 0.0009578544061302681,
+        "raw_action_clip_fraction": 0.0,
+        "root_orientation_rmse_rad": 0.3641267717100671,
+        "root_position_rmse_m": 0.10747254354769764,
+        "sample_semantics": "pre-step commanded/physical state for each first-episode transition; includes the terminal-reference transition and excludes Isaac's internal post-done reset state",
+        "sampled_state_steps": 36,
+        "stance_or_actual_contact_slide_speed_p95_mps": 0.4360356301069255,
+        "tracking_body_position_rmse_m": 0.18330438437391539
+      },
+      "motion_id": 1,
+      "motion_key": "s007/QkWalk1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s007/QkWalk1_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "78377724bed466d80ce6ca351b8a9244bb1592043f1952e758589e662139e7b1",
+      "duration_s": 1.7999999523162842,
+      "environment_id": 2,
+      "first_episode": {
+        "completion_ratio_length_over_archive_frames": 0.2967032967032967,
+        "finished": true,
+        "fired_termination_terms": [
+          "fall"
+        ],
+        "global_finish_step": 27,
+        "length_steps": 27,
+        "max_steps_contract": 816,
+        "outcome": "non_timeout_termination",
+        "return": 3.074846427887678,
+        "simulated_duration_s": 0.54,
+        "success": false,
+        "termination_flags": {
+          "fall": true,
+          "joint_limits": false,
+          "motion_end": false,
+          "nonfinite": false,
+          "time_out": false,
+          "tracking_divergence": false
+        }
+      },
+      "frame_count": 91,
+      "metrics": {
+        "foot_contact": {
+          "left": {
+            "f1": 0.25,
+            "false_negative_frames": 1,
+            "false_positive_frames": 17,
+            "precision": 0.15,
+            "recall": 0.75,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.5751119256019592,
+            "true_positive_frames": 3
+          },
+          "right": {
+            "f1": 0.8888888888888888,
+            "false_negative_frames": 1,
+            "false_positive_frames": 4,
+            "precision": 0.8333333333333334,
+            "recall": 0.9523809523809523,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.40710530877113327,
+            "true_positive_frames": 20
+          }
+        },
+        "foot_contact_match_fraction": 0.5740740740740741,
+        "joint_position_rmse_rad": 0.15747310830673794,
+        "maximum_absolute_raw_action": 0.7869282960891724,
+        "mean_absolute_joint_error_rad": 0.09500593114477769,
+        "mean_absolute_raw_action": 0.13026200278660957,
+        "mean_root_orientation_error_rad": 0.2576056407695567,
+        "mean_root_position_error_m": 0.12384875312757988,
+        "mean_tracking_body_position_error_m": 0.14772143533329135,
+        "normalized_action_rate_limit_fraction": 0.05363984674329502,
+        "predicted_target_clamp_fraction": 0.0038314176245210726,
+        "raw_action_clip_fraction": 0.0,
+        "root_orientation_rmse_rad": 0.3446320719093999,
+        "root_position_rmse_m": 0.15851262684516762,
+        "sample_semantics": "pre-step commanded/physical state for each first-episode transition; includes the terminal-reference transition and excludes Isaac's internal post-done reset state",
+        "sampled_state_steps": 27,
+        "stance_or_actual_contact_slide_speed_p95_mps": 0.5750217735767365,
+        "tracking_body_position_rmse_m": 0.20658928400346277
+      },
+      "motion_id": 2,
+      "motion_key": "s008/Run1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s008/Run1_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "042db132ddd5b5a2130ddecca5f4a31b49b02313dc8bf4a12e1c396593b86f3e",
+      "duration_s": 2.200000047683716,
+      "environment_id": 3,
+      "first_episode": {
+        "completion_ratio_length_over_archive_frames": 0.25225225225225223,
+        "finished": true,
+        "fired_termination_terms": [
+          "fall"
+        ],
+        "global_finish_step": 28,
+        "length_steps": 28,
+        "max_steps_contract": 816,
+        "outcome": "non_timeout_termination",
+        "return": 3.206895560026169,
+        "simulated_duration_s": 0.56,
+        "success": false,
+        "termination_flags": {
+          "fall": true,
+          "joint_limits": false,
+          "motion_end": false,
+          "nonfinite": false,
+          "time_out": false,
+          "tracking_divergence": false
+        }
+      },
+      "frame_count": 111,
+      "metrics": {
+        "foot_contact": {
+          "left": {
+            "f1": 0.3125,
+            "false_negative_frames": 1,
+            "false_positive_frames": 21,
+            "precision": 0.19230769230769232,
+            "recall": 0.8333333333333334,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.6181463122367858,
+            "true_positive_frames": 5
+          },
+          "right": {
+            "f1": 0.9142857142857143,
+            "false_negative_frames": 1,
+            "false_positive_frames": 2,
+            "precision": 0.8888888888888888,
+            "recall": 0.9411764705882353,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.48660600781440727,
+            "true_positive_frames": 16
+          }
+        },
+        "foot_contact_match_fraction": 0.5535714285714286,
+        "joint_position_rmse_rad": 0.1718915594739762,
+        "maximum_absolute_raw_action": 0.7111386060714722,
+        "mean_absolute_joint_error_rad": 0.10745018324241262,
+        "mean_absolute_raw_action": 0.14870284079330895,
+        "mean_root_orientation_error_rad": 0.20615755853110126,
+        "mean_root_position_error_m": 0.11379408580666807,
+        "mean_tracking_body_position_error_m": 0.13649000427397295,
+        "normalized_action_rate_limit_fraction": 0.03694581280788178,
+        "predicted_target_clamp_fraction": 0.012315270935960592,
+        "raw_action_clip_fraction": 0.0,
+        "root_orientation_rmse_rad": 0.29132686346104436,
+        "root_position_rmse_m": 0.14333572180324006,
+        "sample_semantics": "pre-step commanded/physical state for each first-episode transition; includes the terminal-reference transition and excludes Isaac's internal post-done reset state",
+        "sampled_state_steps": 28,
+        "stance_or_actual_contact_slide_speed_p95_mps": 0.5966063290834427,
+        "tracking_body_position_rmse_m": 0.18225255002235435
+      },
+      "motion_id": 3,
+      "motion_key": "s009/Sprint1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s009/Sprint1_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "5154374c90a5a8bd9e2b78d3efc3e1603655ad674eac03a07666c9d81194e73d",
+      "duration_s": 16.280000686645508,
+      "environment_id": 4,
+      "first_episode": {
+        "completion_ratio_length_over_archive_frames": 0.029447852760736196,
+        "finished": true,
+        "fired_termination_terms": [
+          "fall",
+          "tracking_divergence"
+        ],
+        "global_finish_step": 24,
+        "length_steps": 24,
+        "max_steps_contract": 816,
+        "outcome": "non_timeout_termination",
+        "return": 2.623246595263481,
+        "simulated_duration_s": 0.48,
+        "success": false,
+        "termination_flags": {
+          "fall": true,
+          "joint_limits": false,
+          "motion_end": false,
+          "nonfinite": false,
+          "time_out": false,
+          "tracking_divergence": true
+        }
+      },
+      "frame_count": 815,
+      "metrics": {
+        "foot_contact": {
+          "left": {
+            "f1": 0.5263157894736842,
+            "false_negative_frames": 3,
+            "false_positive_frames": 6,
+            "precision": 0.45454545454545453,
+            "recall": 0.625,
+            "stance_or_actual_contact_slide_speed_p95_mps": 1.061573269963264,
+            "true_positive_frames": 5
+          },
+          "right": {
+            "f1": 0.9787234042553191,
+            "false_negative_frames": 1,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 0.9583333333333334,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.5814383171498765,
+            "true_positive_frames": 23
+          }
+        },
+        "foot_contact_match_fraction": 0.7916666666666666,
+        "joint_position_rmse_rad": 0.10684720411174482,
+        "maximum_absolute_raw_action": 0.7175006866455078,
+        "mean_absolute_joint_error_rad": 0.06780714190554345,
+        "mean_absolute_raw_action": 0.1445308886040216,
+        "mean_root_orientation_error_rad": 0.35455107401746017,
+        "mean_root_position_error_m": 0.18064676265930757,
+        "mean_tracking_body_position_error_m": 0.18405003364849276,
+        "normalized_action_rate_limit_fraction": 0.05172413793103448,
+        "predicted_target_clamp_fraction": 0.0,
+        "raw_action_clip_fraction": 0.0,
+        "root_orientation_rmse_rad": 0.42178920489298377,
+        "root_position_rmse_m": 0.2256206461451436,
+        "sample_semantics": "pre-step commanded/physical state for each first-episode transition; includes the terminal-reference transition and excludes Isaac's internal post-done reset state",
+        "sampled_state_steps": 24,
+        "stance_or_actual_contact_slide_speed_p95_mps": 0.8397876888513549,
+        "tracking_body_position_rmse_m": 0.24818826783380749
+      },
+      "motion_id": 4,
+      "motion_key": "s011/walkdog_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s011/walkdog_g1_50hz.npz"
+    }
+  ],
+  "passed": false,
+  "pipeline_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline",
+  "runtime_contract": {
+    "action_dim": 29,
+    "actor_observation_dim": 260,
+    "control_dt_s": 0.02,
+    "critic_observation_dim": 472,
+    "device": "cuda:0",
+    "evaluation_isolation": {
+      "active_event_terms": {},
+      "command_random_start": false,
+      "enhanced_determinism_enabled": true,
+      "evaluation_reward_rate_weights": {
+        "alive": 0.1,
+        "failure": -5.0
+      },
+      "fixed_start_time_s": 0.0,
+      "policy_observation_corruption_enabled": false,
+      "resolved_reset_state_noise": {
+        "joint_position_rad": [
+          0.0,
+          0.0
+        ],
+        "joint_velocity_radps": [
+          0.0,
+          0.0
+        ],
+        "root_angular_velocity_radps": [
+          0.0,
+          0.0
+        ],
+        "root_linear_velocity_mps": [
+          0.0,
+          0.0
+        ]
+      },
+      "reward_integration_dt_s": 0.02,
+      "schema_version": "accad_g1_evaluation_isolation_v1",
+      "target_yaw_range_rad": [
+        0.0,
+        0.0
+      ],
+      "xy_offset_range_m": [
+        0.0,
+        0.0
+      ]
+    },
+    "library_checksum_sha256": "654d3ad5f745eb166cec9f825011cf7f4cfb2a0f585fc3cb8e2ed3a074e76e5f",
+    "library_contract_checksum_sha256": "a3e4115f5faef47869b4522fcb1139d2718fae53d5e390ec361219c470874007",
+    "motion_count": 5,
+    "motions": [
+      {
+        "checksum_sha256": "d01bf54f3cccc5fba49badd1d2da61a4b2d504c88dac2c51591abcaef8452b53",
+        "duration_s": 16.1200008392334,
+        "environment_id": 0,
+        "frame_count": 807,
+        "motion_id": 0,
+        "motion_key": "s001/EricCamper04_stageii.npz",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s001/EricCamper04_g1_50hz.npz"
+      },
+      {
+        "checksum_sha256": "725c4e20ed3e65bf78f615ef4d6792b82c33dc32ac688c2a79acf5b4c80885f8",
+        "duration_s": 2.5399999618530273,
+        "environment_id": 1,
+        "frame_count": 128,
+        "motion_id": 1,
+        "motion_key": "s007/QkWalk1_stageii.npz",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s007/QkWalk1_g1_50hz.npz"
+      },
+      {
+        "checksum_sha256": "78377724bed466d80ce6ca351b8a9244bb1592043f1952e758589e662139e7b1",
+        "duration_s": 1.7999999523162842,
+        "environment_id": 2,
+        "frame_count": 91,
+        "motion_id": 2,
+        "motion_key": "s008/Run1_stageii.npz",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s008/Run1_g1_50hz.npz"
+      },
+      {
+        "checksum_sha256": "042db132ddd5b5a2130ddecca5f4a31b49b02313dc8bf4a12e1c396593b86f3e",
+        "duration_s": 2.200000047683716,
+        "environment_id": 3,
+        "frame_count": 111,
+        "motion_id": 3,
+        "motion_key": "s009/Sprint1_stageii.npz",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s009/Sprint1_g1_50hz.npz"
+      },
+      {
+        "checksum_sha256": "5154374c90a5a8bd9e2b78d3efc3e1603655ad674eac03a07666c9d81194e73d",
+        "duration_s": 16.280000686645508,
+        "environment_id": 4,
+        "frame_count": 815,
+        "motion_id": 4,
+        "motion_key": "s011/walkdog_stageii.npz",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/s011/walkdog_g1_50hz.npz"
+      }
+    ],
+    "per_environment_motion_ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "physical_action_clip": 1.0,
+    "physics_dt_s": 0.005,
+    "policy_action_clip": null,
+    "software": {
+      "isaaclab": "0.54.2",
+      "isaaclab_rl": "0.4.7",
+      "python": "3.11.13",
+      "rsl_rl": null,
+      "torch": "2.7.0+cu128",
+      "torch_cuda": "12.8"
+    }
+  },
+  "schema_version": "accad_g1_tracking_suite_evaluation_v2",
+  "started_at_utc": "2026-08-08T18:56:26.222269+00:00",
+  "status": "completed",
+  "training_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training"
+}

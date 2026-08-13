@@ -1,0 +1,991 @@
+{
+  "action_dim": 29,
+  "actor_observation_dim": 293,
+  "contract_checksum_sha256": "a3e4115f5faef47869b4522fcb1139d2718fae53d5e390ec361219c470874007",
+  "control_dt": 0.02,
+  "critic_observation_dim": 505,
+  "domain_randomization_events_enabled": false,
+  "frame_zero_start_probability": 1.0,
+  "library_checksum_sha256": "a3b24cb5fca08db6a155089e75c57ad696099c41aa6da3523e9a2263b87c127a",
+  "live_tensor_contract": {
+    "action": {
+      "dimension": 29,
+      "term_dimensions": [
+        29
+      ],
+      "term_names": [
+        "joint_residual"
+      ]
+    },
+    "future_horizons_s": [
+      0.0,
+      0.03999999910593033,
+      0.07999999821186066,
+      0.1599999964237213
+    ],
+    "observation_groups": {
+      "critic": {
+        "concatenate_terms": true,
+        "dimension": 505,
+        "group_shape": [
+          505
+        ],
+        "term_dimensions": [
+          116,
+          9,
+          18,
+          29,
+          6,
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          29,
+          29,
+          8,
+          29,
+          42,
+          84,
+          42,
+          42,
+          2
+        ],
+        "term_names": [
+          "future_joint_position_error",
+          "future_root_position_error",
+          "future_root_orientation_error",
+          "joint_velocity_error",
+          "root_orientation_error",
+          "root_position_error",
+          "root_linear_velocity_error",
+          "target_root_linear_velocity",
+          "phase",
+          "root_angular_velocity_error",
+          "target_root_angular_velocity",
+          "projected_gravity",
+          "joint_position",
+          "joint_velocity",
+          "predicted_contacts",
+          "last_action",
+          "tracking_body_position_error",
+          "tracking_body_orientation_error",
+          "tracking_body_linear_velocity_error",
+          "tracking_body_angular_velocity_error",
+          "actual_foot_contacts"
+        ],
+        "term_shapes": [
+          [
+            116
+          ],
+          [
+            9
+          ],
+          [
+            18
+          ],
+          [
+            29
+          ],
+          [
+            6
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            29
+          ],
+          [
+            29
+          ],
+          [
+            8
+          ],
+          [
+            29
+          ],
+          [
+            42
+          ],
+          [
+            84
+          ],
+          [
+            42
+          ],
+          [
+            42
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "policy": {
+        "concatenate_terms": true,
+        "dimension": 293,
+        "group_shape": [
+          293
+        ],
+        "term_dimensions": [
+          116,
+          9,
+          18,
+          29,
+          6,
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          29,
+          29,
+          8,
+          29
+        ],
+        "term_names": [
+          "future_joint_position_error",
+          "future_root_position_error",
+          "future_root_orientation_error",
+          "joint_velocity_error",
+          "root_orientation_error",
+          "root_position_error",
+          "root_linear_velocity_error",
+          "target_root_linear_velocity",
+          "phase",
+          "root_angular_velocity_error",
+          "target_root_angular_velocity",
+          "projected_gravity",
+          "joint_position",
+          "joint_velocity",
+          "predicted_contacts",
+          "last_action"
+        ],
+        "term_shapes": [
+          [
+            116
+          ],
+          [
+            9
+          ],
+          [
+            18
+          ],
+          [
+            29
+          ],
+          [
+            6
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            29
+          ],
+          [
+            29
+          ],
+          [
+            8
+          ],
+          [
+            29
+          ]
+        ]
+      }
+    },
+    "policy_contract_version": "accad_g1_tracking_recovery_v5_root_command_preview_fixed_lr_zero_reset_survival",
+    "schema_version": "accad_g1_live_tracking_tensor_contract_v1",
+    "static_observation_contract_schema_version": "accad_g1_tracking_observation_contract_v5"
+  },
+  "motion_count": 1,
+  "motion_keys": [
+    "Female1General_c3d/A1_-_Stand_stageii.npz"
+  ],
+  "observation_contract": {
+    "action": {
+      "dimension": 29,
+      "term_dimensions": [
+        29
+      ],
+      "term_names": [
+        "joint_residual"
+      ]
+    },
+    "future_horizons_s": [
+      0.0,
+      0.04,
+      0.08,
+      0.16
+    ],
+    "num_policy_joints": 29,
+    "num_tracking_bodies": 14,
+    "observation_groups": {
+      "critic": {
+        "concatenate_terms": true,
+        "dimension": 505,
+        "terms": [
+          {
+            "dimension": 116,
+            "formula": "q_ref(t+h)-q_actual(t), h in [0,.04,.08,.16]",
+            "frame": "g1_policy_joint_order",
+            "name": "future_joint_position_error",
+            "range": [
+              0,
+              116
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 9,
+            "formula": "R_actual(t)^T[p_ref(t+h)-p_actual(t)], h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_position_error",
+            "range": [
+              116,
+              125
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 18,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t+h)), h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_orientation_error",
+            "range": [
+              125,
+              143
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_ref(t)-dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity_error",
+            "range": [
+              143,
+              172
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 6,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t))",
+            "frame": "actual_g1_pelvis",
+            "name": "root_orientation_error",
+            "range": [
+              172,
+              178
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[p_ref(t)-p_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_position_error",
+            "range": [
+              178,
+              181
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[v_ref(t)-v_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_linear_velocity_error",
+            "range": [
+              181,
+              184
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T v_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_linear_velocity",
+            "range": [
+              184,
+              187
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 2,
+            "formula": "[sin(2*pi*phase),cos(2*pi*phase)]",
+            "frame": "motion_phase",
+            "name": "phase",
+            "range": [
+              187,
+              189
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[w_ref(t)-w_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_angular_velocity_error",
+            "range": [
+              189,
+              192
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T w_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_angular_velocity",
+            "range": [
+              192,
+              195
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "gravity direction projected into the measured pelvis frame",
+            "frame": "actual_g1_pelvis",
+            "name": "projected_gravity",
+            "range": [
+              195,
+              198
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "q_actual(t)-q_default",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_position",
+            "range": [
+              198,
+              227
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity",
+            "range": [
+              227,
+              256
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 8,
+            "formula": "reference contacts at h in [0,.04,.08,.16]",
+            "frame": "left_right_feet",
+            "name": "predicted_contacts",
+            "range": [
+              256,
+              264
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "last processed normalized joint residual",
+            "frame": "g1_policy_joint_order",
+            "name": "last_action",
+            "range": [
+              264,
+              293
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 42,
+            "formula": "R_actual_root^T[p_ref_body-p_actual_body]",
+            "frame": "actual_g1_pelvis",
+            "name": "tracking_body_position_error",
+            "range": [
+              293,
+              335
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 84,
+            "formula": "rot6d(q_actual_body^* otimes q_ref_body)",
+            "frame": "actual_tracking_body",
+            "name": "tracking_body_orientation_error",
+            "range": [
+              335,
+              419
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 42,
+            "formula": "R_actual_root^T[v_ref_body-v_actual_body]",
+            "frame": "actual_g1_pelvis",
+            "name": "tracking_body_linear_velocity_error",
+            "range": [
+              419,
+              461
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 42,
+            "formula": "R_actual_root^T[w_ref_body-w_actual_body]",
+            "frame": "actual_g1_pelvis",
+            "name": "tracking_body_angular_velocity_error",
+            "range": [
+              461,
+              503
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 2,
+            "formula": "measured binary foot contacts",
+            "frame": "left_right_feet",
+            "name": "actual_foot_contacts",
+            "range": [
+              503,
+              505
+            ],
+            "scale": 1.0
+          }
+        ]
+      },
+      "policy": {
+        "concatenate_terms": true,
+        "dimension": 293,
+        "terms": [
+          {
+            "dimension": 116,
+            "formula": "q_ref(t+h)-q_actual(t), h in [0,.04,.08,.16]",
+            "frame": "g1_policy_joint_order",
+            "name": "future_joint_position_error",
+            "range": [
+              0,
+              116
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 9,
+            "formula": "R_actual(t)^T[p_ref(t+h)-p_actual(t)], h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_position_error",
+            "range": [
+              116,
+              125
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 18,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t+h)), h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_orientation_error",
+            "range": [
+              125,
+              143
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_ref(t)-dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity_error",
+            "range": [
+              143,
+              172
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 6,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t))",
+            "frame": "actual_g1_pelvis",
+            "name": "root_orientation_error",
+            "range": [
+              172,
+              178
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[p_ref(t)-p_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_position_error",
+            "range": [
+              178,
+              181
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[v_ref(t)-v_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_linear_velocity_error",
+            "range": [
+              181,
+              184
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T v_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_linear_velocity",
+            "range": [
+              184,
+              187
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 2,
+            "formula": "[sin(2*pi*phase),cos(2*pi*phase)]",
+            "frame": "motion_phase",
+            "name": "phase",
+            "range": [
+              187,
+              189
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[w_ref(t)-w_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_angular_velocity_error",
+            "range": [
+              189,
+              192
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T w_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_angular_velocity",
+            "range": [
+              192,
+              195
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "gravity direction projected into the measured pelvis frame",
+            "frame": "actual_g1_pelvis",
+            "name": "projected_gravity",
+            "range": [
+              195,
+              198
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "q_actual(t)-q_default",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_position",
+            "range": [
+              198,
+              227
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity",
+            "range": [
+              227,
+              256
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 8,
+            "formula": "reference contacts at h in [0,.04,.08,.16]",
+            "frame": "left_right_feet",
+            "name": "predicted_contacts",
+            "range": [
+              256,
+              264
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "last processed normalized joint residual",
+            "frame": "g1_policy_joint_order",
+            "name": "last_action",
+            "range": [
+              264,
+              293
+            ],
+            "scale": 1.0
+          }
+        ]
+      }
+    },
+    "policy_contract_version": "accad_g1_tracking_recovery_v5_root_command_preview_fixed_lr_zero_reset_survival",
+    "positive_preview_horizons_s": [
+      0.04,
+      0.08,
+      0.16
+    ],
+    "range_semantics": "half_open_[start,end)",
+    "schema_version": "accad_g1_tracking_observation_contract_v5"
+  },
+  "physical_action_clip": 1.0,
+  "physics_dt": 0.005,
+  "policy_wrapper_action_clip": null,
+  "ppo": {
+    "clip_param": 0.05,
+    "clip_param_requested": 0.05,
+    "desired_kl": 0.01,
+    "entropy_coef": 0.0,
+    "init_noise_std": 0.2,
+    "learning_rate": 1e-12,
+    "learning_rate_post_load_witness": {
+      "after": {
+        "algorithm_learning_rate": 1e-12,
+        "optimizer_param_group_learning_rates": [
+          1e-12
+        ]
+      },
+      "before": {
+        "algorithm_learning_rate": 1e-12,
+        "optimizer_param_group_learning_rates": [
+          1e-06
+        ]
+      },
+      "requested_learning_rate": 1e-12,
+      "schema_version": "accad_g1_ppo_learning_rate_override_v1"
+    },
+    "learning_rate_requested": 1e-12,
+    "noise_std_type": "log",
+    "num_learning_epochs": 1,
+    "num_learning_epochs_requested": 1,
+    "optimizer_param_group_learning_rates_live": [
+      1e-12
+    ],
+    "schedule": "fixed"
+  },
+  "random_episode_length_enabled": false,
+  "tracking_policy_contract_version": "accad_g1_tracking_recovery_v5_root_command_preview_fixed_lr_zero_reset_survival",
+  "training_objective": {
+    "action_noise": {
+      "initial_std_requested": 0.2,
+      "initial_std_resolved_in_runner_cfg": 0.2,
+      "live_policy_after_load_or_initialization": {
+        "noise_std_type": "log",
+        "parameter_name": "log_std",
+        "parameter_shape": [
+          29
+        ],
+        "parameter_values": [
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379,
+          -27.63102149963379
+        ],
+        "resolved_std_max": 9.999996707435455e-13,
+        "resolved_std_min": 9.999996707435455e-13,
+        "resolved_std_per_action": [
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13,
+          9.999996707435455e-13
+        ],
+        "schema_version": "accad_g1_policy_action_noise_contract_v1",
+        "state_dependent_std": false
+      },
+      "loaded_override": {
+        "after": {
+          "noise_std_type": "log",
+          "parameter_name": "log_std",
+          "parameter_shape": [
+            29
+          ],
+          "parameter_values": [
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379,
+            -27.63102149963379
+          ],
+          "resolved_std_max": 9.999996707435455e-13,
+          "resolved_std_min": 9.999996707435455e-13,
+          "resolved_std_per_action": [
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13,
+            9.999996707435455e-13
+          ],
+          "schema_version": "accad_g1_policy_action_noise_contract_v1",
+          "state_dependent_std": false
+        },
+        "before": {
+          "noise_std_type": "log",
+          "parameter_name": "log_std",
+          "parameter_shape": [
+            29
+          ],
+          "parameter_values": [
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645,
+            -5.2983174324035645
+          ],
+          "resolved_std_max": 0.004999999888241291,
+          "resolved_std_min": 0.004999999888241291,
+          "resolved_std_per_action": [
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291,
+            0.004999999888241291
+          ],
+          "schema_version": "accad_g1_policy_action_noise_contract_v1",
+          "state_dependent_std": false
+        },
+        "requested_std": 1e-12,
+        "schema_version": "accad_g1_loaded_action_noise_override_v1",
+        "stored_parameter_value": -27.63102149963379
+      },
+      "loaded_override_std_requested": 1e-12
+    },
+    "policy_observation_corruption": {
+      "disable_requested": true,
+      "resolved_enabled": false
+    },
+    "reset_state_noise_scale": 0.0,
+    "resolved_reset_state_noise": {
+      "joint_position_rad": [
+        -0.0,
+        0.0
+      ],
+      "joint_velocity_radps": [
+        -0.0,
+        0.0
+      ],
+      "root_angular_velocity_radps": [
+        -0.0,
+        0.0
+      ],
+      "root_linear_velocity_mps": [
+        -0.0,
+        0.0
+      ]
+    },
+    "reward_weights": {
+      "alive": 0.25,
+      "failure": -100.0
+    },
+    "schema_version": "accad_g1_training_objective_v1"
+  }
+}

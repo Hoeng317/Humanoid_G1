@@ -1,0 +1,140 @@
+{
+  "schema_version": "accad_g1_v7_train_selection_outcome_v1",
+  "generated_at_utc": "2026-08-09T10:35:54+00:00",
+  "status": "completed_train_acceptance_failed",
+  "scope": "train_only_checkpoint_selection",
+  "selection_rule": [
+    "maximize successful_motion_end_episodes",
+    "maximize completion_ratio_mean",
+    "minimize tracking_divergence terminations",
+    "minimize weighted_raw_action_clip_fraction"
+  ],
+  "contracts": {
+    "policy": "accad_g1_tracking_v7_zero_velocity_target_train_selected",
+    "training_objective": "accad_g1_training_objective_v4_strong_dense_divergence_action_margins",
+    "actor_observation_dimension": 293,
+    "critic_observation_dimension": 505,
+    "action_dimension": 29,
+    "physics_frequency_hz": 200,
+    "control_frequency_hz": 50
+  },
+  "training": {
+    "run": "_g1_pipeline/work/training/runs/2026-08-09_18-55-56_v7_zerovel_objv4_framezero100_lr1e5_clip010_ep3_resume_model299_env1024_h32_u700",
+    "run_summary_sha256": "25fc9392c8cf3834b5f97e5b9a9f1959d6a588d68a185b8d45c0a1f404c4c414",
+    "runtime_contract_sha256": "dd93488b82595db20e2ddbdc89dbbb84de2ff7565fb17836516ab46a353abdae",
+    "status": "completed",
+    "additional_learning_updates": 700,
+    "additional_environment_transitions": 22937600,
+    "num_environments": 1024,
+    "rollout_steps_per_environment": 32,
+    "source_checkpoint": "_g1_pipeline/work/training/runs/2026-08-09_18-40-41_v7_zerovel_objv4_framezero100_lr1e5_clip010_ep3_init_v5model4999_env512_h32_u300/model_299.pt",
+    "source_checkpoint_sha256": "b5ec52ac1ba804a7181090d6db5d53c8c876a7dd8757177b98bf1094581f7aad"
+  },
+  "evaluation_contract": {
+    "split": "train",
+    "motion_count": 103,
+    "one_environment_per_motion": true,
+    "first_episode_only": true,
+    "frame_zero_start": true,
+    "physics_warmup_steps": 100,
+    "seed": 42,
+    "random_start": false,
+    "state_and_observation_noise": false,
+    "domain_randomization": false,
+    "manifest": "_g1_pipeline/work/dynamic/g1_train.json",
+    "manifest_sha256": "ba8c59b6edb49c82dfc39c7242857b24fe6260b2c171582ff6ae706f95d3a3de"
+  },
+  "candidates": [
+    {
+      "checkpoint": "_g1_pipeline/work/training/runs/2026-08-09_18-40-41_v7_zerovel_objv4_framezero100_lr1e5_clip010_ep3_init_v5model4999_env512_h32_u300/model_299.pt",
+      "checkpoint_sha256": "b5ec52ac1ba804a7181090d6db5d53c8c876a7dd8757177b98bf1094581f7aad",
+      "evaluation": "_g1_pipeline/work/training/evaluations/2026-08-09_18-51-33_v7_zerovel_objv4_framezero100_lr1e5_model299_train_selection/suite_evaluation_summary.json",
+      "evaluation_sha256": "40cc1dde882052cb15097788435537f5505de470da1bebc12cee215bee1de895",
+      "successful_motion_end_episodes": 47,
+      "completion_ratio_mean": 0.690513846480964,
+      "fall_terminations": 22,
+      "tracking_divergence_terminations": 38,
+      "weighted_raw_action_clip_fraction": 0.09577091417092798
+    },
+    {
+      "checkpoint": "_g1_pipeline/work/training/runs/2026-08-09_18-55-56_v7_zerovel_objv4_framezero100_lr1e5_clip010_ep3_resume_model299_env1024_h32_u700/model_700.pt",
+      "checkpoint_sha256": "0d74a68d853033eb98ee4cff388b93c9a42e29a59f010138f5c1307309cbd383",
+      "evaluation": "_g1_pipeline/work/training/evaluations/2026-08-09_19-29-51_v7_continuation_model700_train_selection/suite_evaluation_summary.json",
+      "evaluation_sha256": "30948ea05c41dadcdb372032bedf47a607b65f8bcd429b91a05dfdd6d25bf51c",
+      "successful_motion_end_episodes": 47,
+      "completion_ratio_mean": 0.6805235633681099,
+      "fall_terminations": 20,
+      "tracking_divergence_terminations": 39,
+      "weighted_raw_action_clip_fraction": 0.09008154535299784
+    },
+    {
+      "checkpoint": "_g1_pipeline/work/training/runs/2026-08-09_18-55-56_v7_zerovel_objv4_framezero100_lr1e5_clip010_ep3_resume_model299_env1024_h32_u700/model_900.pt",
+      "checkpoint_sha256": "fc2321496101109cb6468bd02e83dd81e20fe3235f3af86af19ce6f069d4bd6b",
+      "evaluation": "_g1_pipeline/work/training/evaluations/2026-08-09_19-26-02_v7_continuation_model900_train_selection/suite_evaluation_summary.json",
+      "evaluation_sha256": "1b6de51473644bfd10c1891f5f6e116c49f190abab29e823abda270e8ab42042",
+      "successful_motion_end_episodes": 46,
+      "completion_ratio_mean": 0.685280758034761,
+      "fall_terminations": 27,
+      "tracking_divergence_terminations": 34,
+      "weighted_raw_action_clip_fraction": 0.08843100038094225
+    },
+    {
+      "checkpoint": "_g1_pipeline/work/training/runs/2026-08-09_18-55-56_v7_zerovel_objv4_framezero100_lr1e5_clip010_ep3_resume_model299_env1024_h32_u700/model_998.pt",
+      "checkpoint_sha256": "84be6f1af3e859e74cf7b79b3b5333ff74e830e39c72d8cc0aa0fd17a2ff521f",
+      "evaluation": "_g1_pipeline/work/training/evaluations/2026-08-09_19-22-04_v7_continuation_model998_train_selection/suite_evaluation_summary.json",
+      "evaluation_sha256": "834e233feeedf5db7a40eff9cae45f069ea847259bda762e63bdabd6fdd05704",
+      "successful_motion_end_episodes": 48,
+      "completion_ratio_mean": 0.6896592080135888,
+      "fall_terminations": 22,
+      "tracking_divergence_terminations": 35,
+      "joint_limit_terminations": 0,
+      "nonfinite_terminations": 0,
+      "macro_joint_mae_rad": 0.0879209847522899,
+      "macro_root_position_error_m": 0.10544879556698789,
+      "macro_tracking_body_position_error_m": 0.11144576594871149,
+      "pooled_contact_f1": 0.9615387250837679,
+      "weighted_raw_action_clip_fraction": 0.08670403273220903,
+      "weighted_normalized_action_rate_limit_fraction": 0.5735442285350363
+    }
+  ],
+  "selected_candidate": {
+    "checkpoint_iteration": 998,
+    "checkpoint_sha256": "84be6f1af3e859e74cf7b79b3b5333ff74e830e39c72d8cc0aa0fd17a2ff521f",
+    "reason": "highest clean-success count among the four train-only candidates",
+    "train_acceptance_passed": false,
+    "failed_acceptance_checks": {
+      "all_first_episodes_successful": "48 != 103",
+      "macro_completion_ratio": "0.6896592080135888 < 0.9",
+      "weighted_raw_action_clip_fraction": "0.08670403273220903 > 0.05"
+    }
+  },
+  "isaac_b3_demonstration": {
+    "status": "completed_clean_motion_end",
+    "motion": "Female1Walking_c3d/B3_-_walk1_stageii.npz",
+    "steps": 609,
+    "expected_steps": 609,
+    "evaluation": "_g1_pipeline/work/training/evaluations/2026-08-09_19-33-43_v7_model998_train_b3_success_video_export/evaluation_summary.json",
+    "evaluation_sha256": "067b2130730e082911f976577820cf7bb2d91ba56ea8dbd5a4225b11d15d05d3",
+    "video": "_g1_pipeline/work/training/evaluations/2026-08-09_19-33-43_v7_model998_train_b3_success_video_export/videos/rl-video-step-0.mp4",
+    "video_sha256": "769f3c74d403fe28c444f3c2cb886e44a00d4adafb5cbd82d80ba2285fcb53fb",
+    "torchscript": "_g1_pipeline/work/training/evaluations/2026-08-09_19-33-43_v7_model998_train_b3_success_video_export/exported/policy.pt",
+    "torchscript_sha256": "9ff80be71410dbb79cfeb8f8efa0dfe1221bfc0512996476afb416fab62e920f",
+    "onnx": "_g1_pipeline/work/training/evaluations/2026-08-09_19-33-43_v7_model998_train_b3_success_video_export/exported/policy.onnx",
+    "onnx_sha256": "835f825c7a5d9e65a89d8980eafbb51d773fdbfd503ce83ca1b44573ceacdf9d"
+  },
+  "regression": {
+    "passed": 288,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit": "_g1_pipeline/work/reports/cpu_regression_junit.xml",
+    "junit_sha256": "a83f77cb616bc3d477c61a5b22b91205419b1bdcbbb1b0d0824b2aaaaf8bc7e5"
+  },
+  "held_out_boundary": {
+    "v7_validation": "not_evaluated_because_train_acceptance_failed",
+    "test": "sealed_not_opened",
+    "final_artifact_manifest": "intentionally_absent",
+    "final_completion": "intentionally_absent"
+  },
+  "conclusion": "The ACCAD-to-G1 software path, Isaac ingestion, training, evaluation, video, and export are operational. The selected v7 policy is a train-only research checkpoint and does not satisfy the predefined motion-suite acceptance contract."
+}

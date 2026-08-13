@@ -1,0 +1,309 @@
+{
+  "artifacts": {
+    "g1": {
+      "checksum_sha256": "c91abd453c2ab4be1920b29078a48bc62017f318fa2754ecb0c61ea78fd5b9d3",
+      "exists": true,
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_g1_50hz.npz",
+      "size_bytes": 354780
+    },
+    "human": {
+      "checksum_sha256": "cebb46986e7e073654dbe5c2892a550e9fdbb38a5a2f78e264354b30d0fd6108",
+      "exists": true,
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_human_50hz.npz",
+      "size_bytes": 1132322
+    }
+  },
+  "category": "MartialArtsStances",
+  "durations": {
+    "human": {
+      "generation_seconds": 1.7157787670148537,
+      "validation_seconds": 0.12849409494083375
+    },
+    "source_verification_seconds": 0.0007707490585744381,
+    "total_seconds": 31.422970804036595
+  },
+  "error": {
+    "message": "Gate-3 kinematic validation failed gate3_kinematic_complete: ['contact_geometry.ground_penetration', 'contact_geometry.active_contact_penetration', 'contact_geometry.stance_run_anchor_drift']",
+    "type": "BatchStageError"
+  },
+  "finished_at_utc": "2026-08-08T12:52:04.994407+00:00",
+  "item_id": "train:Male2MartialArtsStances_c3d/D14_-ready_to_crouch_stageii.npz",
+  "motion_name": "D14_-ready_to_crouch",
+  "ordinal": 17,
+  "paths": {
+    "g1": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_g1_50hz.npz",
+    "human": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_human_50hz.npz",
+    "item_report": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/reports/batch/_parallel/a9bca56c341215bd/shard-000-of-008/reports/items/train/Male2MartialArtsStances_c3d/D14_-ready_to_crouch.json",
+    "source": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_stageii.npz"
+  },
+  "schema_version": "accad_g1_batch_v1",
+  "source_actual_checksum_sha256": "d7abb9f32e07b1c13803260ed4de607c92b17b3aa82f595846cc0dff014e0cdb",
+  "source_file": "Male2MartialArtsStances_c3d/D14_-ready_to_crouch_stageii.npz",
+  "source_manifest_checksum_sha256": "d7abb9f32e07b1c13803260ed4de607c92b17b3aa82f595846cc0dff014e0cdb",
+  "split": "train",
+  "stages": {
+    "human": {
+      "action": "generated",
+      "generation": {
+        "contact_labels_present": true,
+        "gate2_complete": false,
+        "gate2_status": "canonical basis generated; automated Gate-2 validation pending",
+        "joint_count": 127,
+        "ok": true,
+        "output_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_human_50hz.npz",
+        "rotation_joint_count": 55,
+        "source_fk_performed": true,
+        "source_fps": 120.0,
+        "source_frames": 400,
+        "source_ground_baseline_drift_m": -0.012506546452641487,
+        "source_ground_confidence_fraction": 1.0,
+        "target_fps": 50.0,
+        "target_frames": 167
+      },
+      "validation": {
+        "archive_checksum_sha256": "cebb46986e7e073654dbe5c2892a550e9fdbb38a5a2f78e264354b30d0fd6108",
+        "archive_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_human_50hz.npz",
+        "checks": {
+          "contact_consistency": [
+            {
+              "maximum_position_error_m": 0.0,
+              "name": "semantic_contact_keypoints",
+              "passed": true
+            },
+            {
+              "mismatched_frames": {},
+              "name": "source_contact_majority_resampling",
+              "passed": true
+            },
+            {
+              "absent_contact_channels": [],
+              "active_clearance_q01_m": -0.0007633256912231445,
+              "all_channels_required": false,
+              "minimum_active_clearance_m": -0.0009323358535766602,
+              "minimum_clearance_m": -0.0009323358535766602,
+              "name": "contact_geometry_and_runs",
+              "passed": true,
+              "per_keypoint": {
+                "left_heel_contact": {
+                  "active_height_p95_m": 0.04373007416725156,
+                  "active_speed_p95_mps": 0.2591133840382096,
+                  "frames": 64,
+                  "minimum_true_run_frames": 64
+                },
+                "left_toe_contact": {
+                  "active_height_p95_m": 0.036400049924850464,
+                  "active_speed_p95_mps": 0.11258501559495926,
+                  "frames": 151,
+                  "minimum_true_run_frames": 66
+                },
+                "right_heel_contact": {
+                  "active_height_p95_m": 0.028470849990844666,
+                  "active_speed_p95_mps": 0.26406995952129364,
+                  "frames": 167,
+                  "minimum_true_run_frames": 167
+                },
+                "right_toe_contact": {
+                  "active_height_p95_m": 0.03709193170070648,
+                  "active_speed_p95_mps": 0.1264393031597137,
+                  "frames": 167,
+                  "minimum_true_run_frames": 167
+                }
+              }
+            }
+          ],
+          "numeric": [
+            {
+              "maximum_errors": {
+                "global": 5.023599791709188e-08,
+                "local": 4.1501235115148916e-08,
+                "root": 3.5897928407635504e-08
+              },
+              "name": "quaternion_norm",
+              "passed": true,
+              "tolerance": 1e-05
+            },
+            {
+              "minimum_adjacent_dot": {
+                "global": 0.9764886163748179,
+                "local": 0.986500942070777,
+                "root": 0.9995507226160907
+              },
+              "name": "quaternion_sign_continuity",
+              "passed": true,
+              "tolerance": -1e-06
+            },
+            {
+              "maximum_error_rad": 1.504943510645939e-07,
+              "name": "global_local_rotation_fk",
+              "passed": true,
+              "tolerance_rad": 1e-05
+            },
+            {
+              "maximum_bone_length_range_m": 3.1667772698584784e-07,
+              "maximum_parent_local_offset_range_m": 3.1557016599848e-07,
+              "name": "rigid_bone_geometry",
+              "passed": true,
+              "tolerance_m": 0.0001
+            },
+            {
+              "maximum_absolute_errors": {
+                "joint_angular": 0.0,
+                "joint_linear": 0.0,
+                "root_angular": 0.0,
+                "root_linear": 0.0
+              },
+              "name": "stored_velocities",
+              "passed": true
+            },
+            {
+              "name": "root_and_joint_aliases",
+              "passed": true
+            }
+          ],
+          "profile": [
+            {
+              "airborne_fraction": 0.0,
+              "double_support_fraction": 0.9041916167664671,
+              "left_contact_fraction": 0.9041916167664671,
+              "maximum_airborne_run_frames": 0,
+              "maximum_fast_moving_airborne_run_frames": 0,
+              "name": "generic_no_motion_class_assumption",
+              "passed": true,
+              "right_contact_fraction": 1.0
+            }
+          ],
+          "provenance_120hz": [
+            {
+              "checksum_matches": true,
+              "confined_to_accad": true,
+              "name": "source_file_checksum_and_metadata",
+              "passed": true,
+              "resolved_source_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_stageii.npz"
+            },
+            {
+              "confined_to_accad": true,
+              "name": "licensed_model_checksum",
+              "passed": true,
+              "resolved_model_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/smplx_lockedhead_20230207/models_lockedhead/smplx/SMPLX_NEUTRAL.npz"
+            },
+            {
+              "baseline_drift_m": -0.012506546452641487,
+              "confidence_fraction": 1.0,
+              "maximum_baseline_speed_mps": 0.0200000312179327,
+              "name": "source_fk_contact_and_ground_baseline",
+              "passed": true
+            }
+          ],
+          "schema": [
+            {
+              "missing": [],
+              "name": "required_keys",
+              "passed": true
+            },
+            {
+              "name": "safe_no_pickle_load",
+              "passed": true,
+              "unreadable": {}
+            },
+            {
+              "fields": [],
+              "name": "no_object_dtype",
+              "passed": true
+            },
+            {
+              "fields": [],
+              "name": "all_numeric_finite",
+              "passed": true
+            },
+            {
+              "fields": {},
+              "name": "metadata_scalars",
+              "passed": true
+            },
+            {
+              "mismatch": {},
+              "name": "fixed_conventions",
+              "passed": true
+            },
+            {
+              "name": "model_configuration",
+              "passed": true
+            },
+            {
+              "failures": {},
+              "name": "canonical_shapes",
+              "passed": true
+            },
+            {
+              "fields": [],
+              "name": "contact_and_confidence_bool_dtype",
+              "passed": true
+            },
+            {
+              "all_joint_count": 127,
+              "joint_count": 55,
+              "name": "canonical_counts",
+              "passed": true,
+              "source_frames": 400,
+              "target_frames": 167
+            },
+            {
+              "expected_target_frames": 167,
+              "maximum_time_error_seconds": 0.0,
+              "name": "time_grid_and_count_policy",
+              "passed": true
+            },
+            {
+              "name": "joint_name_contract",
+              "passed": true
+            },
+            {
+              "name": "validated_semantic_mapping",
+              "passed": true
+            },
+            {
+              "name": "parent_tree",
+              "passed": true
+            }
+          ],
+          "semantic_coordinate": [
+            {
+              "ground_height_w": 0.0,
+              "head_above_pelvis_fraction": 1.0,
+              "median_head_minus_pelvis_w": [
+                -0.20397308468818665,
+                0.2562323808670044,
+                0.4870162010192871
+              ],
+              "median_head_pelvis_distance_m": 0.6276897192001343,
+              "name": "right_handed_z_up_identity_basis_and_fixed_ground",
+              "passed": true,
+              "pose_independent_semantics_ok": true,
+              "profile": "generic",
+              "upright_profile_ok": true,
+              "upright_profile_required": false
+            }
+          ]
+        },
+        "errors": [],
+        "gate2_complete": true,
+        "ok": true,
+        "profile": "generic",
+        "statuses": {
+          "contact_consistency": true,
+          "numeric": true,
+          "profile": true,
+          "provenance_120hz": true,
+          "schema": true,
+          "semantic_coordinate": true
+        },
+        "warnings": [
+          "The archive's serialized gate2_complete flag is informational; this independent report is authoritative."
+        ]
+      }
+    }
+  },
+  "started_at_utc": "2026-08-08T12:51:33.571449+00:00",
+  "status": "failed",
+  "subject": "Male2"
+}

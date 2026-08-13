@@ -1,0 +1,1673 @@
+{
+  "acceptance": {
+    "eligible": false,
+    "evaluated": false,
+    "passed": false,
+    "reason": "zero residual actions diagnose reference-PD feasibility and are not a learned-policy acceptance result",
+    "schema_version": "accad_g1_suite_diagnostic_ineligible_v1"
+  },
+  "aggregate": {
+    "aggregate_foot_contact": {
+      "left": {
+        "f1": 1.0,
+        "false_negative_frames": 0,
+        "false_positive_frames": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive_frames": 87
+      },
+      "overall": {
+        "f1": 1.0,
+        "false_negative_frames": 0,
+        "false_positive_frames": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive_frames": 174
+      },
+      "right": {
+        "f1": 1.0,
+        "false_negative_frames": 0,
+        "false_positive_frames": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive_frames": 87
+      }
+    },
+    "aggregate_stance_or_actual_contact_slide_speed_p95_mps": 0.10090227648615836,
+    "completion_ratio_mean": 0.05539226180488454,
+    "completion_ratio_min": 0.02493765586034913,
+    "failed_or_incomplete_motion_ids": [
+      0,
+      1
+    ],
+    "finished_first_episodes": 2,
+    "global_control_steps_executed": 50,
+    "length_steps_mean": 43.5,
+    "macro_motion_metrics": {
+      "foot_contact_match_fraction": 1.0,
+      "joint_position_rmse_rad": 0.07482769795690081,
+      "mean_absolute_joint_error_rad": 0.03209073399925276,
+      "mean_absolute_raw_action": 0.0,
+      "mean_root_orientation_error_rad": 0.2156400008124576,
+      "mean_root_position_error_m": 0.16256171809339492,
+      "mean_tracking_body_position_error_m": 0.1381419413961879,
+      "predicted_target_clamp_fraction": 0.0,
+      "raw_action_clip_fraction": 0.0,
+      "reference_velocity_target_clamp_fraction": 0.0,
+      "root_orientation_rmse_rad": 0.3158542920160455,
+      "root_position_rmse_m": 0.2259623454397962,
+      "stance_or_actual_contact_slide_speed_p95_mps": 0.09998582173138852,
+      "tracking_body_position_rmse_m": 0.21723412766789493
+    },
+    "max_steps": 2006,
+    "motion_count": 2,
+    "return_max": 6.72838594019413,
+    "return_mean": 5.790220934897661,
+    "return_min": 4.8520559296011925,
+    "simulated_environment_seconds": 1.74,
+    "simulated_environment_seconds_per_wall_second": 0.15264638051800986,
+    "simulation_app_stopped_early": false,
+    "success_rate": 0.0,
+    "successful_motion_end_episodes": 0,
+    "termination_counts": {
+      "fall": 1,
+      "joint_limits": 0,
+      "motion_end": 0,
+      "nonfinite": 0,
+      "time_out": 0,
+      "tracking_divergence": 1
+    },
+    "total_first_episode_environment_steps": 87,
+    "wall_time_s": 11.398894582991488,
+    "weighted_frame_or_element_metrics": {
+      "foot_contact_match_fraction": 1.0,
+      "joint_position_rmse_rad": 0.07463952924935309,
+      "mean_absolute_joint_error_rad": 0.03200910997282074,
+      "mean_absolute_raw_action": 0.0,
+      "mean_root_orientation_error_rad": 0.21495287121947984,
+      "mean_root_position_error_m": 0.16147492440877717,
+      "mean_tracking_body_position_error_m": 0.1377438858838652,
+      "normalized_action_rate_limit_fraction": 0.0,
+      "predicted_target_clamp_fraction": 0.0,
+      "raw_action_clip_fraction": 0.0,
+      "reference_velocity_target_clamp_fraction": 0.0,
+      "root_orientation_rmse_rad": 0.315579632352452,
+      "root_position_rmse_m": 0.22536227482494198,
+      "tracking_body_position_rmse_m": 0.21727101390001977
+    }
+  },
+  "argv": [
+    "humanoid_G1/ACCAD/_g1_pipeline/evaluate_tracking_suite.py",
+    "--headless",
+    "--device",
+    "cuda:0",
+    "--action-source",
+    "zero",
+    "--motion",
+    "humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s001/EricCamper04_g1_50hz.npz",
+    "--motion",
+    "humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s007/QkWalk1_g1_50hz.npz",
+    "--split",
+    "validation",
+    "--reference-root",
+    "humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100",
+    "--skip-correspondence-check",
+    "--max-steps",
+    "0",
+    "--seed",
+    "42",
+    "--export",
+    "none",
+    "--evaluation-name",
+    "v30_preroll_h100_r100_validation_zero_diagnostic"
+  ],
+  "checkpoint": null,
+  "correspondence": null,
+  "cwd": "/home/hoeng/IsaacLab",
+  "evaluation_contract": {
+    "action_source": "zero",
+    "deterministic_policy_inference": false,
+    "deterministic_zero_action_generation": true,
+    "domain_randomization_events": false,
+    "first_episode_only": true,
+    "gate3_promotion_contract": "archive gate3_complete is intentionally generation-time false; finalization requires every selected archive checksum to be covered by a promoted G1 manifest",
+    "legacy_dynamics_ablation": false,
+    "official_acceptance_eligible": false,
+    "one_environment_per_selected_motion": true,
+    "physics_warmup_steps_requested": 100,
+    "physx_enhanced_determinism": true,
+    "random_start": false,
+    "state_and_observation_noise": false,
+    "success_definition": "motion_end fired and no non-timeout termination term fired on the same step"
+  },
+  "evaluation_dir": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-09_17-04-55_v30_preroll_h100_r100_validation_zero_diagnostic",
+  "export_validations": [],
+  "exports": [],
+  "finished_at_utc": "2026-08-09T08:05:07.227270+00:00",
+  "first_episode_diagnostics": {
+    "bytes": 20298,
+    "checksum_sha256": "12e177e7ab448c3bb5619a894b3b1adf54636279de1e3693c9867ec9c5822e5f",
+    "official_acceptance_input": false,
+    "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-09_17-04-55_v30_preroll_h100_r100_validation_zero_diagnostic/first_episode_diagnostics.json",
+    "schema_version": "accad_g1_first_episode_diagnostics_v1"
+  },
+  "motion_input": {
+    "allow_missing": false,
+    "manifest_checksum_verified_motion_count": 0,
+    "manifest_promotion_verified": false,
+    "manifests": [],
+    "motion_count": 2,
+    "motions": [
+      {
+        "bytes": 3814606,
+        "checksum_sha256": "43986e398d245dc84e57a8fd719d6781efa4f9b3b5910b84cc8b107563dc3271",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s001/EricCamper04_g1_50hz.npz"
+      },
+      {
+        "bytes": 689127,
+        "checksum_sha256": "caae255b75e06ab389b29696fb3d536dd5637aa1ce3661d2141c2d2848006fe7",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s007/QkWalk1_g1_50hz.npz"
+      }
+    ],
+    "reference_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100",
+    "split": "validation"
+  },
+  "motions": [
+    {
+      "checksum_sha256": "43986e398d245dc84e57a8fd719d6781efa4f9b3b5910b84cc8b107563dc3271",
+      "duration_s": 40.08000183105469,
+      "environment_id": 0,
+      "first_episode": {
+        "completion_ratio_length_over_archive_frames": 0.02493765586034913,
+        "finished": true,
+        "fired_termination_terms": [
+          "tracking_divergence"
+        ],
+        "global_finish_step": 50,
+        "length_steps": 50,
+        "max_steps_contract": 2006,
+        "outcome": "non_timeout_termination",
+        "return": 6.72838594019413,
+        "simulated_duration_s": 1.0,
+        "success": false,
+        "termination_diagnostics": {
+          "episode_extrema": {
+            "maximum_abs_applied_torque_to_effort_ratio": {
+              "control_step_index_one_based": 44,
+              "value": 0.6090511083602905
+            },
+            "maximum_abs_computed_torque_to_effort_ratio": {
+              "control_step_index_one_based": 44,
+              "value": 0.6090511083602905
+            },
+            "maximum_absolute_raw_action": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_mean_absolute_joint_error_rad": {
+              "control_step_index_one_based": 46,
+              "value": 0.057531800121068954
+            },
+            "maximum_mean_tracking_body_distance_m": {
+              "control_step_index_one_based": 50,
+              "value": 0.5170783400535583
+            },
+            "maximum_normalized_action_rate_limit_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_pelvis_contact_force_n": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_raw_action_clip_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_reference_velocity_target_clamp_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_root_distance_m": {
+              "control_step_index_one_based": 50,
+              "value": 0.5984894633293152
+            },
+            "maximum_root_height_deficit_m": {
+              "control_step_index_one_based": 50,
+              "value": 0.22385293245315552
+            },
+            "maximum_root_orientation_error_rad": {
+              "control_step_index_one_based": 50,
+              "value": 0.8537483811378479
+            },
+            "maximum_target_clamp_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            }
+          },
+          "terminal_transition_witness": {
+            "action_safety": {
+              "action_dimension": 29,
+              "maximum_absolute_raw_action": 0.0,
+              "normalized_rate_limit_count": 0,
+              "normalized_rate_limit_fraction": 0.0,
+              "normalized_rate_limited_joints": [],
+              "raw_action_clip": 1.0,
+              "raw_action_clip_count": 0,
+              "raw_action_clip_fraction": 0.0,
+              "raw_action_clipped_joints": [],
+              "reference_velocity_target_clamp_count": 0,
+              "reference_velocity_target_clamp_fraction": 0.0,
+              "reference_velocity_target_clamped_joints": [],
+              "target_clamp_count": 0,
+              "target_clamp_fraction": 0.0,
+              "target_clamped_joints": []
+            },
+            "control_step_index_one_based": 50,
+            "fall": {
+              "fired": false,
+              "fired_subcauses": [],
+              "height_deficit_exceeded": false,
+              "maximum_orientation_error_rad": 1.0,
+              "maximum_pelvis_contact_reference_tilt_rad": 0.8,
+              "maximum_root_height_deficit_m": 0.25,
+              "orientation_error_exceeded": false,
+              "pelvis_contact_applicable": true,
+              "pelvis_contact_force_n": 0.0,
+              "pelvis_contact_reference_height_m": 0.5,
+              "pelvis_contact_threshold_n": 50.0,
+              "pelvis_force_exceeded": false,
+              "reference_height_eligible": true,
+              "reference_pelvis_height_m": 0.7832026481628418,
+              "reference_pelvis_tilt_rad": 0.15631523728370667,
+              "reference_tilt_eligible": true,
+              "root_height_deficit_m": 0.22385293245315552,
+              "root_orientation_error_rad": 0.8537483811378479,
+              "unexpected_pelvis_contact": false
+            },
+            "joint_effort": {
+              "applied_abs_torque_to_effort_ratio_by_joint": {
+                "left_ankle_pitch_joint": 0.365170955657959,
+                "left_ankle_roll_joint": 0.08448196202516556,
+                "left_elbow_joint": 0.01775812916457653,
+                "left_hip_pitch_joint": 0.02322298102080822,
+                "left_hip_roll_joint": 0.002793546998873353,
+                "left_hip_yaw_joint": 0.003351753344759345,
+                "left_knee_joint": 0.024671731516718864,
+                "left_shoulder_pitch_joint": 0.04468672350049019,
+                "left_shoulder_roll_joint": 0.07749217748641968,
+                "left_shoulder_yaw_joint": 0.03663143888115883,
+                "left_wrist_pitch_joint": 0.02254711464047432,
+                "left_wrist_roll_joint": 0.001013950095511973,
+                "left_wrist_yaw_joint": 0.01880413107573986,
+                "right_ankle_pitch_joint": 0.43872177600860596,
+                "right_ankle_roll_joint": 0.1104276180267334,
+                "right_elbow_joint": 0.009355333633720875,
+                "right_hip_pitch_joint": 0.0010859553003683686,
+                "right_hip_roll_joint": 0.0065208179876208305,
+                "right_hip_yaw_joint": 0.0073151905089616776,
+                "right_knee_joint": 0.028347663581371307,
+                "right_shoulder_pitch_joint": 0.06522008031606674,
+                "right_shoulder_roll_joint": 0.057771652936935425,
+                "right_shoulder_yaw_joint": 0.014137471094727516,
+                "right_wrist_pitch_joint": 0.009815591387450695,
+                "right_wrist_roll_joint": 0.00016770523507148027,
+                "right_wrist_yaw_joint": 0.0058231353759765625,
+                "waist_pitch_joint": 0.10452694445848465,
+                "waist_roll_joint": 0.026884203776717186,
+                "waist_yaw_joint": 0.00994078814983368
+              },
+              "applied_effort_limit_exceeded_count": 0,
+              "applied_effort_limit_exceeded_joints": [],
+              "available": true,
+              "computed_abs_torque_to_effort_ratio_by_joint": {
+                "left_ankle_pitch_joint": 0.365170955657959,
+                "left_ankle_roll_joint": 0.08448196202516556,
+                "left_elbow_joint": 0.01775812916457653,
+                "left_hip_pitch_joint": 0.02322298102080822,
+                "left_hip_roll_joint": 0.002793546998873353,
+                "left_hip_yaw_joint": 0.003351753344759345,
+                "left_knee_joint": 0.024671731516718864,
+                "left_shoulder_pitch_joint": 0.04468672350049019,
+                "left_shoulder_roll_joint": 0.07749217748641968,
+                "left_shoulder_yaw_joint": 0.03663143888115883,
+                "left_wrist_pitch_joint": 0.02254711464047432,
+                "left_wrist_roll_joint": 0.001013950095511973,
+                "left_wrist_yaw_joint": 0.01880413107573986,
+                "right_ankle_pitch_joint": 0.43872177600860596,
+                "right_ankle_roll_joint": 0.1104276180267334,
+                "right_elbow_joint": 0.009355333633720875,
+                "right_hip_pitch_joint": 0.0010859553003683686,
+                "right_hip_roll_joint": 0.0065208179876208305,
+                "right_hip_yaw_joint": 0.0073151905089616776,
+                "right_knee_joint": 0.028347663581371307,
+                "right_shoulder_pitch_joint": 0.06522008031606674,
+                "right_shoulder_roll_joint": 0.057771652936935425,
+                "right_shoulder_yaw_joint": 0.014137471094727516,
+                "right_wrist_pitch_joint": 0.009815591387450695,
+                "right_wrist_roll_joint": 0.00016770523507148027,
+                "right_wrist_yaw_joint": 0.0058231353759765625,
+                "waist_pitch_joint": 0.10452694445848465,
+                "waist_roll_joint": 0.026884203776717186,
+                "waist_yaw_joint": 0.00994078814983368
+              },
+              "computed_effort_limit_exceeded_count": 0,
+              "computed_effort_limit_exceeded_joints": [],
+              "effort_limit_source": "configs/robot/g1_29dof.yaml policy_index order",
+              "maximum_abs_applied_torque_to_effort_ratio": 0.43872177600860596,
+              "maximum_abs_computed_torque_to_effort_ratio": 0.43872177600860596,
+              "sample_semantics": "final physics substep of the terminal control transition"
+            },
+            "reference_time_s": 0.9799996018409729,
+            "schema_version": "accad_g1_terminal_transition_witness_v1",
+            "state_timing": "post_physics_final_decimation_substep_before_Isaac_automatic_reset; reference held during this control transition",
+            "termination_flags": {
+              "fall": false,
+              "joint_limits": false,
+              "motion_end": false,
+              "nonfinite": false,
+              "time_out": false,
+              "tracking_divergence": true
+            },
+            "tracking_divergence": {
+              "fired": true,
+              "fired_subcauses": [
+                "mean_tracking_body_distance"
+              ],
+              "maximum_mean_joint_error_rad": 1.0,
+              "maximum_mean_tracking_body_distance_m": 0.5,
+              "maximum_root_distance_m": 0.8,
+              "mean_absolute_joint_error_rad": 0.05140245705842972,
+              "mean_body_distance_exceeded": true,
+              "mean_joint_error_exceeded": false,
+              "mean_tracking_body_distance_m": 0.5170783400535583,
+              "root_distance_exceeded": false,
+              "root_distance_m": 0.5984894633293152
+            },
+            "transition_index_zero_based": 49
+          },
+          "timing": "post_physics_pre_automatic_reset"
+        },
+        "termination_flags": {
+          "fall": false,
+          "joint_limits": false,
+          "motion_end": false,
+          "nonfinite": false,
+          "time_out": false,
+          "tracking_divergence": true
+        }
+      },
+      "frame_count": 2005,
+      "metrics": {
+        "foot_contact": {
+          "left": {
+            "f1": 1.0,
+            "false_negative_frames": 0,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.09267064034938807,
+            "true_positive_frames": 50
+          },
+          "right": {
+            "f1": 1.0,
+            "false_negative_frames": 0,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.07974803932011118,
+            "true_positive_frames": 50
+          }
+        },
+        "foot_contact_match_fraction": 1.0,
+        "joint_position_rmse_rad": 0.07348997526039534,
+        "maximum_absolute_raw_action": 0.0,
+        "mean_absolute_joint_error_rad": 0.031544480899284626,
+        "mean_absolute_raw_action": 0.0,
+        "mean_root_orientation_error_rad": 0.2110415181517601,
+        "mean_root_position_error_m": 0.1552885603578761,
+        "mean_tracking_body_position_error_m": 0.13547803142910522,
+        "normalized_action_rate_limit_fraction": 0.0,
+        "predicted_target_clamp_fraction": 0.0,
+        "raw_action_clip_fraction": 0.0,
+        "reference_velocity_target_clamp_fraction": 0.0,
+        "root_orientation_rmse_rad": 0.31397975828730473,
+        "root_position_rmse_m": 0.2216802930742301,
+        "sample_semantics": "pre-step commanded/physical state for each first-episode transition; includes the terminal-reference transition and excludes Isaac's internal post-done reset state",
+        "sampled_state_steps": 50,
+        "stance_or_actual_contact_slide_speed_p95_mps": 0.0938771568238735,
+        "tracking_body_position_rmse_m": 0.21748007091591318
+      },
+      "motion_id": 0,
+      "motion_key": "s001/EricCamper04_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s001/EricCamper04_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "caae255b75e06ab389b29696fb3d536dd5637aa1ce3661d2141c2d2848006fe7",
+      "duration_s": 8.600000381469727,
+      "environment_id": 1,
+      "first_episode": {
+        "completion_ratio_length_over_archive_frames": 0.08584686774941995,
+        "finished": true,
+        "fired_termination_terms": [
+          "fall"
+        ],
+        "global_finish_step": 37,
+        "length_steps": 37,
+        "max_steps_contract": 2006,
+        "outcome": "non_timeout_termination",
+        "return": 4.8520559296011925,
+        "simulated_duration_s": 0.74,
+        "success": false,
+        "termination_diagnostics": {
+          "episode_extrema": {
+            "maximum_abs_applied_torque_to_effort_ratio": {
+              "control_step_index_one_based": 32,
+              "value": 0.5538811683654785
+            },
+            "maximum_abs_computed_torque_to_effort_ratio": {
+              "control_step_index_one_based": 32,
+              "value": 0.5538811683654785
+            },
+            "maximum_absolute_raw_action": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_mean_absolute_joint_error_rad": {
+              "control_step_index_one_based": 33,
+              "value": 0.052866626530885696
+            },
+            "maximum_mean_tracking_body_distance_m": {
+              "control_step_index_one_based": 37,
+              "value": 0.4839106500148773
+            },
+            "maximum_normalized_action_rate_limit_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_pelvis_contact_force_n": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_raw_action_clip_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_reference_velocity_target_clamp_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            },
+            "maximum_root_distance_m": {
+              "control_step_index_one_based": 37,
+              "value": 0.569333553314209
+            },
+            "maximum_root_height_deficit_m": {
+              "control_step_index_one_based": 37,
+              "value": 0.261338472366333
+            },
+            "maximum_root_orientation_error_rad": {
+              "control_step_index_one_based": 37,
+              "value": 0.8069708347320557
+            },
+            "maximum_target_clamp_fraction": {
+              "control_step_index_one_based": 1,
+              "value": 0.0
+            }
+          },
+          "terminal_transition_witness": {
+            "action_safety": {
+              "action_dimension": 29,
+              "maximum_absolute_raw_action": 0.0,
+              "normalized_rate_limit_count": 0,
+              "normalized_rate_limit_fraction": 0.0,
+              "normalized_rate_limited_joints": [],
+              "raw_action_clip": 1.0,
+              "raw_action_clip_count": 0,
+              "raw_action_clip_fraction": 0.0,
+              "raw_action_clipped_joints": [],
+              "reference_velocity_target_clamp_count": 0,
+              "reference_velocity_target_clamp_fraction": 0.0,
+              "reference_velocity_target_clamped_joints": [],
+              "target_clamp_count": 0,
+              "target_clamp_fraction": 0.0,
+              "target_clamped_joints": []
+            },
+            "control_step_index_one_based": 37,
+            "fall": {
+              "fired": true,
+              "fired_subcauses": [
+                "height_deficit"
+              ],
+              "height_deficit_exceeded": true,
+              "maximum_orientation_error_rad": 1.0,
+              "maximum_pelvis_contact_reference_tilt_rad": 0.8,
+              "maximum_root_height_deficit_m": 0.25,
+              "orientation_error_exceeded": false,
+              "pelvis_contact_applicable": true,
+              "pelvis_contact_force_n": 0.0,
+              "pelvis_contact_reference_height_m": 0.5,
+              "pelvis_contact_threshold_n": 50.0,
+              "pelvis_force_exceeded": false,
+              "reference_height_eligible": true,
+              "reference_pelvis_height_m": 0.7771264910697937,
+              "reference_pelvis_tilt_rad": 0.11355514079332352,
+              "reference_tilt_eligible": true,
+              "root_height_deficit_m": 0.261338472366333,
+              "root_orientation_error_rad": 0.8069708347320557,
+              "unexpected_pelvis_contact": false
+            },
+            "joint_effort": {
+              "applied_abs_torque_to_effort_ratio_by_joint": {
+                "left_ankle_pitch_joint": 0.3625670373439789,
+                "left_ankle_roll_joint": 0.087946817278862,
+                "left_elbow_joint": 0.01706382818520069,
+                "left_hip_pitch_joint": 0.0009595396113581955,
+                "left_hip_roll_joint": 0.0051258220337331295,
+                "left_hip_yaw_joint": 0.0056764413602650166,
+                "left_knee_joint": 0.010974760167300701,
+                "left_shoulder_pitch_joint": 0.012512491084635258,
+                "left_shoulder_roll_joint": 0.04113001376390457,
+                "left_shoulder_yaw_joint": 0.014638755470514297,
+                "left_wrist_pitch_joint": 0.018155165016651154,
+                "left_wrist_roll_joint": 0.0001107548305299133,
+                "left_wrist_yaw_joint": 0.0062143197283148766,
+                "right_ankle_pitch_joint": 0.41295114159584045,
+                "right_ankle_roll_joint": 0.09567341208457947,
+                "right_elbow_joint": 0.01991645060479641,
+                "right_hip_pitch_joint": 0.008342244662344456,
+                "right_hip_roll_joint": 0.0014707106165587902,
+                "right_hip_yaw_joint": 0.003727816976606846,
+                "right_knee_joint": 0.02782500348985195,
+                "right_shoulder_pitch_joint": 0.03931007534265518,
+                "right_shoulder_roll_joint": 0.031632162630558014,
+                "right_shoulder_yaw_joint": 0.005090190563350916,
+                "right_wrist_pitch_joint": 0.019339196383953094,
+                "right_wrist_roll_joint": 1.4902199836797081e-05,
+                "right_wrist_yaw_joint": 0.002454784233123064,
+                "waist_pitch_joint": 0.01722133904695511,
+                "waist_roll_joint": 0.07940710335969925,
+                "waist_yaw_joint": 0.0025078924372792244
+              },
+              "applied_effort_limit_exceeded_count": 0,
+              "applied_effort_limit_exceeded_joints": [],
+              "available": true,
+              "computed_abs_torque_to_effort_ratio_by_joint": {
+                "left_ankle_pitch_joint": 0.3625670373439789,
+                "left_ankle_roll_joint": 0.087946817278862,
+                "left_elbow_joint": 0.01706382818520069,
+                "left_hip_pitch_joint": 0.0009595396113581955,
+                "left_hip_roll_joint": 0.0051258220337331295,
+                "left_hip_yaw_joint": 0.0056764413602650166,
+                "left_knee_joint": 0.010974760167300701,
+                "left_shoulder_pitch_joint": 0.012512491084635258,
+                "left_shoulder_roll_joint": 0.04113001376390457,
+                "left_shoulder_yaw_joint": 0.014638755470514297,
+                "left_wrist_pitch_joint": 0.018155165016651154,
+                "left_wrist_roll_joint": 0.0001107548305299133,
+                "left_wrist_yaw_joint": 0.0062143197283148766,
+                "right_ankle_pitch_joint": 0.41295114159584045,
+                "right_ankle_roll_joint": 0.09567341208457947,
+                "right_elbow_joint": 0.01991645060479641,
+                "right_hip_pitch_joint": 0.008342244662344456,
+                "right_hip_roll_joint": 0.0014707106165587902,
+                "right_hip_yaw_joint": 0.003727816976606846,
+                "right_knee_joint": 0.02782500348985195,
+                "right_shoulder_pitch_joint": 0.03931007534265518,
+                "right_shoulder_roll_joint": 0.031632162630558014,
+                "right_shoulder_yaw_joint": 0.005090190563350916,
+                "right_wrist_pitch_joint": 0.019339196383953094,
+                "right_wrist_roll_joint": 1.4902199836797081e-05,
+                "right_wrist_yaw_joint": 0.002454784233123064,
+                "waist_pitch_joint": 0.01722133904695511,
+                "waist_roll_joint": 0.07940710335969925,
+                "waist_yaw_joint": 0.0025078924372792244
+              },
+              "computed_effort_limit_exceeded_count": 0,
+              "computed_effort_limit_exceeded_joints": [],
+              "effort_limit_source": "configs/robot/g1_29dof.yaml policy_index order",
+              "maximum_abs_applied_torque_to_effort_ratio": 0.41295114159584045,
+              "maximum_abs_computed_torque_to_effort_ratio": 0.41295114159584045,
+              "sample_semantics": "final physics substep of the terminal control transition"
+            },
+            "reference_time_s": 0.7199998497962952,
+            "schema_version": "accad_g1_terminal_transition_witness_v1",
+            "state_timing": "post_physics_final_decimation_substep_before_Isaac_automatic_reset; reference held during this control transition",
+            "termination_flags": {
+              "fall": true,
+              "joint_limits": false,
+              "motion_end": false,
+              "nonfinite": false,
+              "time_out": false,
+              "tracking_divergence": false
+            },
+            "tracking_divergence": {
+              "fired": false,
+              "fired_subcauses": [],
+              "maximum_mean_joint_error_rad": 1.0,
+              "maximum_mean_tracking_body_distance_m": 0.5,
+              "maximum_root_distance_m": 0.8,
+              "mean_absolute_joint_error_rad": 0.04564383253455162,
+              "mean_body_distance_exceeded": false,
+              "mean_joint_error_exceeded": false,
+              "mean_tracking_body_distance_m": 0.4839106500148773,
+              "root_distance_exceeded": false,
+              "root_distance_m": 0.569333553314209
+            },
+            "transition_index_zero_based": 36
+          },
+          "timing": "post_physics_pre_automatic_reset"
+        },
+        "termination_flags": {
+          "fall": true,
+          "joint_limits": false,
+          "motion_end": false,
+          "nonfinite": false,
+          "time_out": false,
+          "tracking_divergence": false
+        }
+      },
+      "frame_count": 431,
+      "metrics": {
+        "foot_contact": {
+          "left": {
+            "f1": 1.0,
+            "false_negative_frames": 0,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.10730076730251299,
+            "true_positive_frames": 37
+          },
+          "right": {
+            "f1": 1.0,
+            "false_negative_frames": 0,
+            "false_positive_frames": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "stance_or_actual_contact_slide_speed_p95_mps": 0.0949231669306754,
+            "true_positive_frames": 37
+          }
+        },
+        "foot_contact_match_fraction": 1.0,
+        "joint_position_rmse_rad": 0.07616542065340628,
+        "maximum_absolute_raw_action": 0.0,
+        "mean_absolute_joint_error_rad": 0.0326369870992209,
+        "mean_absolute_raw_action": 0.0,
+        "mean_root_orientation_error_rad": 0.22023848347315514,
+        "mean_root_position_error_m": 0.16983487582891374,
+        "mean_tracking_body_position_error_m": 0.1408058513632706,
+        "normalized_action_rate_limit_fraction": 0.0,
+        "predicted_target_clamp_fraction": 0.0,
+        "raw_action_clip_fraction": 0.0,
+        "reference_velocity_target_clamp_fraction": 0.0,
+        "root_orientation_rmse_rad": 0.3177288257447862,
+        "root_position_rmse_m": 0.23024439780536235,
+        "sample_semantics": "pre-step commanded/physical state for each first-episode transition; includes the terminal-reference transition and excludes Isaac's internal post-done reset state",
+        "sampled_state_steps": 37,
+        "stance_or_actual_contact_slide_speed_p95_mps": 0.10609448663890354,
+        "tracking_body_position_rmse_m": 0.2169881844198767
+      },
+      "motion_id": 1,
+      "motion_key": "s007/QkWalk1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s007/QkWalk1_g1_50hz.npz"
+    }
+  ],
+  "passed": false,
+  "pipeline_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline",
+  "runtime_contract": {
+    "action_dim": 29,
+    "action_source": "zero",
+    "actor_observation_dim": 293,
+    "checkpoint_training_contract_provenance": null,
+    "control_dt_s": 0.02,
+    "critic_observation_dim": 505,
+    "device": "cuda:0",
+    "evaluation_isolation": {
+      "active_event_terms": {},
+      "command_random_start": false,
+      "enhanced_determinism_enabled": true,
+      "evaluation_reward_rate_weights": {
+        "alive": 0.1,
+        "failure": -5.0
+      },
+      "fixed_start_time_s": 0.0,
+      "policy_observation_corruption_enabled": false,
+      "resolved_reset_state_noise": {
+        "joint_position_rad": [
+          0.0,
+          0.0
+        ],
+        "joint_velocity_radps": [
+          0.0,
+          0.0
+        ],
+        "root_angular_velocity_radps": [
+          0.0,
+          0.0
+        ],
+        "root_linear_velocity_mps": [
+          0.0,
+          0.0
+        ]
+      },
+      "reward_integration_dt_s": 0.02,
+      "schema_version": "accad_g1_evaluation_isolation_v1",
+      "target_yaw_range_rad": [
+        0.0,
+        0.0
+      ],
+      "xy_offset_range_m": [
+        0.0,
+        0.0
+      ]
+    },
+    "joint_effort_diagnostics": {
+      "effort_limits_nm": [
+        88.0,
+        88.0,
+        88.0,
+        139.0,
+        139.0,
+        35.0,
+        88.0,
+        88.0,
+        35.0,
+        139.0,
+        139.0,
+        25.0,
+        25.0,
+        35.0,
+        35.0,
+        25.0,
+        25.0,
+        35.0,
+        35.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "joint_names": [
+        "left_hip_pitch_joint",
+        "right_hip_pitch_joint",
+        "waist_yaw_joint",
+        "left_hip_roll_joint",
+        "right_hip_roll_joint",
+        "waist_roll_joint",
+        "left_hip_yaw_joint",
+        "right_hip_yaw_joint",
+        "waist_pitch_joint",
+        "left_knee_joint",
+        "right_knee_joint",
+        "left_shoulder_pitch_joint",
+        "right_shoulder_pitch_joint",
+        "left_ankle_pitch_joint",
+        "right_ankle_pitch_joint",
+        "left_shoulder_roll_joint",
+        "right_shoulder_roll_joint",
+        "left_ankle_roll_joint",
+        "right_ankle_roll_joint",
+        "left_shoulder_yaw_joint",
+        "right_shoulder_yaw_joint",
+        "left_elbow_joint",
+        "right_elbow_joint",
+        "left_wrist_roll_joint",
+        "right_wrist_roll_joint",
+        "left_wrist_pitch_joint",
+        "right_wrist_pitch_joint",
+        "left_wrist_yaw_joint",
+        "right_wrist_yaw_joint"
+      ],
+      "sample_semantics": "final physics substep of each control transition; terminal sample captured before Isaac automatic reset"
+    },
+    "legacy_dynamics_ablation": false,
+    "library_checksum_sha256": "246fa4418d1a5317a52c2bc3743d713ce5b9fe52cb89b84b803d2e9e7ed242fc",
+    "library_contract_checksum_sha256": "b45aa23a9b5934fc5b41fb5f69e6b6f973e20f7f2b8f3ea34fdd43e8a206b928",
+    "live_tensor_contract": {
+      "action": {
+        "dimension": 29,
+        "position_target_formula": "clip_limits(q_ref + 0.25 * rate_limit(clip(action,-1,1), 0.15_per_control_step))",
+        "reference_velocity_feedforward_scale": 1.0,
+        "term_dimensions": [
+          29
+        ],
+        "term_names": [
+          "joint_residual"
+        ],
+        "velocity_target_buffer_max_abs_error": 0.0,
+        "velocity_target_buffer_verified": true,
+        "velocity_target_formula": "clip(reference_joint_velocity, +/-articulation_soft_joint_velocity_limit)"
+      },
+      "future_horizons_s": [
+        0.0,
+        0.03999999910593033,
+        0.07999999821186066,
+        0.1599999964237213
+      ],
+      "observation_groups": {
+        "critic": {
+          "concatenate_terms": true,
+          "dimension": 505,
+          "group_shape": [
+            505
+          ],
+          "term_dimensions": [
+            116,
+            9,
+            18,
+            29,
+            6,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            29,
+            29,
+            8,
+            29,
+            42,
+            84,
+            42,
+            42,
+            2
+          ],
+          "term_names": [
+            "future_joint_position_error",
+            "future_root_position_error",
+            "future_root_orientation_error",
+            "joint_velocity_error",
+            "root_orientation_error",
+            "root_position_error",
+            "root_linear_velocity_error",
+            "target_root_linear_velocity",
+            "phase",
+            "root_angular_velocity_error",
+            "target_root_angular_velocity",
+            "projected_gravity",
+            "joint_position",
+            "joint_velocity",
+            "predicted_contacts",
+            "last_action",
+            "tracking_body_position_error",
+            "tracking_body_orientation_error",
+            "tracking_body_linear_velocity_error",
+            "tracking_body_angular_velocity_error",
+            "actual_foot_contacts"
+          ],
+          "term_shapes": [
+            [
+              116
+            ],
+            [
+              9
+            ],
+            [
+              18
+            ],
+            [
+              29
+            ],
+            [
+              6
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              29
+            ],
+            [
+              29
+            ],
+            [
+              8
+            ],
+            [
+              29
+            ],
+            [
+              42
+            ],
+            [
+              84
+            ],
+            [
+              42
+            ],
+            [
+              42
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        "policy": {
+          "concatenate_terms": true,
+          "dimension": 293,
+          "group_shape": [
+            293
+          ],
+          "term_dimensions": [
+            116,
+            9,
+            18,
+            29,
+            6,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            29,
+            29,
+            8,
+            29
+          ],
+          "term_names": [
+            "future_joint_position_error",
+            "future_root_position_error",
+            "future_root_orientation_error",
+            "joint_velocity_error",
+            "root_orientation_error",
+            "root_position_error",
+            "root_linear_velocity_error",
+            "target_root_linear_velocity",
+            "phase",
+            "root_angular_velocity_error",
+            "target_root_angular_velocity",
+            "projected_gravity",
+            "joint_position",
+            "joint_velocity",
+            "predicted_contacts",
+            "last_action"
+          ],
+          "term_shapes": [
+            [
+              116
+            ],
+            [
+              9
+            ],
+            [
+              18
+            ],
+            [
+              29
+            ],
+            [
+              6
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              29
+            ],
+            [
+              29
+            ],
+            [
+              8
+            ],
+            [
+              29
+            ]
+          ]
+        }
+      },
+      "policy_contract_version": "accad_g1_tracking_v6_reference_joint_velocity_feedforward",
+      "schema_version": "accad_g1_live_tracking_tensor_contract_v1",
+      "static_observation_contract_schema_version": "accad_g1_tracking_observation_contract_v6"
+    },
+    "motion_count": 2,
+    "motions": [
+      {
+        "checksum_sha256": "43986e398d245dc84e57a8fd719d6781efa4f9b3b5910b84cc8b107563dc3271",
+        "duration_s": 40.08000183105469,
+        "environment_id": 0,
+        "frame_count": 2005,
+        "motion_id": 0,
+        "motion_key": "s001/EricCamper04_stageii.npz",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s001/EricCamper04_g1_50hz.npz"
+      },
+      {
+        "checksum_sha256": "caae255b75e06ab389b29696fb3d536dd5637aa1ce3661d2141c2d2848006fe7",
+        "duration_s": 8.600000381469727,
+        "environment_id": 1,
+        "frame_count": 431,
+        "motion_id": 1,
+        "motion_key": "s007/QkWalk1_stageii.npz",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/contact_v30/prototypes/hold100_ramp100/s007/QkWalk1_g1_50hz.npz"
+      }
+    ],
+    "observation_contract": {
+      "action": {
+        "dimension": 29,
+        "position_target_formula": "clip_limits(q_ref + 0.25 * rate_limit(clip(action,-1,1), 0.15_per_control_step))",
+        "reference_velocity_feedforward_scale": 1.0,
+        "term_dimensions": [
+          29
+        ],
+        "term_names": [
+          "joint_residual"
+        ],
+        "velocity_target_formula": "clip(reference_joint_velocity, +/-articulation_soft_joint_velocity_limit)"
+      },
+      "future_horizons_s": [
+        0.0,
+        0.04,
+        0.08,
+        0.16
+      ],
+      "num_policy_joints": 29,
+      "num_tracking_bodies": 14,
+      "observation_groups": {
+        "critic": {
+          "concatenate_terms": true,
+          "dimension": 505,
+          "terms": [
+            {
+              "dimension": 116,
+              "formula": "q_ref(t+h)-q_actual(t), h in [0,.04,.08,.16]",
+              "frame": "g1_policy_joint_order",
+              "name": "future_joint_position_error",
+              "range": [
+                0,
+                116
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 9,
+              "formula": "R_actual(t)^T[p_ref(t+h)-p_actual(t)], h in [.04,.08,.16]",
+              "frame": "actual_g1_pelvis",
+              "name": "future_root_position_error",
+              "range": [
+                116,
+                125
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 18,
+              "formula": "rot6d(q_actual(t)^* otimes q_ref(t+h)), h in [.04,.08,.16]",
+              "frame": "actual_g1_pelvis",
+              "name": "future_root_orientation_error",
+              "range": [
+                125,
+                143
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "dq_ref(t)-dq_actual(t)",
+              "frame": "g1_policy_joint_order",
+              "name": "joint_velocity_error",
+              "range": [
+                143,
+                172
+              ],
+              "scale": 0.05
+            },
+            {
+              "dimension": 6,
+              "formula": "rot6d(q_actual(t)^* otimes q_ref(t))",
+              "frame": "actual_g1_pelvis",
+              "name": "root_orientation_error",
+              "range": [
+                172,
+                178
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T[p_ref(t)-p_actual(t)]",
+              "frame": "actual_g1_pelvis",
+              "name": "root_position_error",
+              "range": [
+                178,
+                181
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T[v_ref(t)-v_actual(t)]",
+              "frame": "actual_g1_pelvis",
+              "name": "root_linear_velocity_error",
+              "range": [
+                181,
+                184
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T v_ref(t)",
+              "frame": "actual_g1_pelvis",
+              "name": "target_root_linear_velocity",
+              "range": [
+                184,
+                187
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 2,
+              "formula": "[sin(2*pi*phase),cos(2*pi*phase)]",
+              "frame": "motion_phase",
+              "name": "phase",
+              "range": [
+                187,
+                189
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T[w_ref(t)-w_actual(t)]",
+              "frame": "actual_g1_pelvis",
+              "name": "root_angular_velocity_error",
+              "range": [
+                189,
+                192
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T w_ref(t)",
+              "frame": "actual_g1_pelvis",
+              "name": "target_root_angular_velocity",
+              "range": [
+                192,
+                195
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 3,
+              "formula": "gravity direction projected into the measured pelvis frame",
+              "frame": "actual_g1_pelvis",
+              "name": "projected_gravity",
+              "range": [
+                195,
+                198
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "q_actual(t)-q_default",
+              "frame": "g1_policy_joint_order",
+              "name": "joint_position",
+              "range": [
+                198,
+                227
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "dq_actual(t)",
+              "frame": "g1_policy_joint_order",
+              "name": "joint_velocity",
+              "range": [
+                227,
+                256
+              ],
+              "scale": 0.05
+            },
+            {
+              "dimension": 8,
+              "formula": "reference contacts at h in [0,.04,.08,.16]",
+              "frame": "left_right_feet",
+              "name": "predicted_contacts",
+              "range": [
+                256,
+                264
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "last processed normalized joint residual",
+              "frame": "g1_policy_joint_order",
+              "name": "last_action",
+              "range": [
+                264,
+                293
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 42,
+              "formula": "R_actual_root^T[p_ref_body-p_actual_body]",
+              "frame": "actual_g1_pelvis",
+              "name": "tracking_body_position_error",
+              "range": [
+                293,
+                335
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 84,
+              "formula": "rot6d(q_actual_body^* otimes q_ref_body)",
+              "frame": "actual_tracking_body",
+              "name": "tracking_body_orientation_error",
+              "range": [
+                335,
+                419
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 42,
+              "formula": "R_actual_root^T[v_ref_body-v_actual_body]",
+              "frame": "actual_g1_pelvis",
+              "name": "tracking_body_linear_velocity_error",
+              "range": [
+                419,
+                461
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 42,
+              "formula": "R_actual_root^T[w_ref_body-w_actual_body]",
+              "frame": "actual_g1_pelvis",
+              "name": "tracking_body_angular_velocity_error",
+              "range": [
+                461,
+                503
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 2,
+              "formula": "measured binary foot contacts",
+              "frame": "left_right_feet",
+              "name": "actual_foot_contacts",
+              "range": [
+                503,
+                505
+              ],
+              "scale": 1.0
+            }
+          ]
+        },
+        "policy": {
+          "concatenate_terms": true,
+          "dimension": 293,
+          "terms": [
+            {
+              "dimension": 116,
+              "formula": "q_ref(t+h)-q_actual(t), h in [0,.04,.08,.16]",
+              "frame": "g1_policy_joint_order",
+              "name": "future_joint_position_error",
+              "range": [
+                0,
+                116
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 9,
+              "formula": "R_actual(t)^T[p_ref(t+h)-p_actual(t)], h in [.04,.08,.16]",
+              "frame": "actual_g1_pelvis",
+              "name": "future_root_position_error",
+              "range": [
+                116,
+                125
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 18,
+              "formula": "rot6d(q_actual(t)^* otimes q_ref(t+h)), h in [.04,.08,.16]",
+              "frame": "actual_g1_pelvis",
+              "name": "future_root_orientation_error",
+              "range": [
+                125,
+                143
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "dq_ref(t)-dq_actual(t)",
+              "frame": "g1_policy_joint_order",
+              "name": "joint_velocity_error",
+              "range": [
+                143,
+                172
+              ],
+              "scale": 0.05
+            },
+            {
+              "dimension": 6,
+              "formula": "rot6d(q_actual(t)^* otimes q_ref(t))",
+              "frame": "actual_g1_pelvis",
+              "name": "root_orientation_error",
+              "range": [
+                172,
+                178
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T[p_ref(t)-p_actual(t)]",
+              "frame": "actual_g1_pelvis",
+              "name": "root_position_error",
+              "range": [
+                178,
+                181
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T[v_ref(t)-v_actual(t)]",
+              "frame": "actual_g1_pelvis",
+              "name": "root_linear_velocity_error",
+              "range": [
+                181,
+                184
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T v_ref(t)",
+              "frame": "actual_g1_pelvis",
+              "name": "target_root_linear_velocity",
+              "range": [
+                184,
+                187
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 2,
+              "formula": "[sin(2*pi*phase),cos(2*pi*phase)]",
+              "frame": "motion_phase",
+              "name": "phase",
+              "range": [
+                187,
+                189
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T[w_ref(t)-w_actual(t)]",
+              "frame": "actual_g1_pelvis",
+              "name": "root_angular_velocity_error",
+              "range": [
+                189,
+                192
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 3,
+              "formula": "R_actual(t)^T w_ref(t)",
+              "frame": "actual_g1_pelvis",
+              "name": "target_root_angular_velocity",
+              "range": [
+                192,
+                195
+              ],
+              "scale": 0.2
+            },
+            {
+              "dimension": 3,
+              "formula": "gravity direction projected into the measured pelvis frame",
+              "frame": "actual_g1_pelvis",
+              "name": "projected_gravity",
+              "range": [
+                195,
+                198
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "q_actual(t)-q_default",
+              "frame": "g1_policy_joint_order",
+              "name": "joint_position",
+              "range": [
+                198,
+                227
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "dq_actual(t)",
+              "frame": "g1_policy_joint_order",
+              "name": "joint_velocity",
+              "range": [
+                227,
+                256
+              ],
+              "scale": 0.05
+            },
+            {
+              "dimension": 8,
+              "formula": "reference contacts at h in [0,.04,.08,.16]",
+              "frame": "left_right_feet",
+              "name": "predicted_contacts",
+              "range": [
+                256,
+                264
+              ],
+              "scale": 1.0
+            },
+            {
+              "dimension": 29,
+              "formula": "last processed normalized joint residual",
+              "frame": "g1_policy_joint_order",
+              "name": "last_action",
+              "range": [
+                264,
+                293
+              ],
+              "scale": 1.0
+            }
+          ]
+        }
+      },
+      "policy_contract_version": "accad_g1_tracking_v6_reference_joint_velocity_feedforward",
+      "positive_preview_horizons_s": [
+        0.04,
+        0.08,
+        0.16
+      ],
+      "range_semantics": "half_open_[start,end)",
+      "schema_version": "accad_g1_tracking_observation_contract_v6"
+    },
+    "official_acceptance_eligible": false,
+    "per_environment_motion_ids": [
+      0,
+      1
+    ],
+    "physical_action_clip": 1.0,
+    "physics_cold_start_warmup": {
+      "action_dimension": 29,
+      "enabled": true,
+      "executed_control_steps": 100,
+      "final_reset_forced_motion_time_s": 0.0,
+      "final_reset_zeroed_reference_state_noise": true,
+      "initial_reset_observations": {
+        "all_finite": true,
+        "element_count": 1596,
+        "nonfinite_count": 0,
+        "tensor_count": 2,
+        "tensors": [
+          {
+            "dtype": "torch.float32",
+            "path": "observation.critic",
+            "shape": [
+              2,
+              505
+            ]
+          },
+          {
+            "dtype": "torch.float32",
+            "path": "observation.policy",
+            "shape": [
+              2,
+              293
+            ]
+          }
+        ]
+      },
+      "num_environments": 2,
+      "passed": true,
+      "policy_inference_used": false,
+      "post_reset": {
+        "action_state_zero": true,
+        "authoritative_motion_frame_zero": true,
+        "episode_counters_zero": true,
+        "maximum_absolute_values": {
+          "episode_length_buf": 0.0,
+          "motion_time": 0.0,
+          "normalized_residual": 0.0,
+          "previous_normalized_residual": 0.0,
+          "raw_action": 0.0
+        },
+        "observations": {
+          "all_finite": true,
+          "element_count": 1596,
+          "nonfinite_count": 0,
+          "tensor_count": 2,
+          "tensors": [
+            {
+              "dtype": "torch.float32",
+              "path": "observation.critic",
+              "shape": [
+                2,
+                505
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "path": "observation.policy",
+              "shape": [
+                2,
+                293
+              ]
+            }
+          ]
+        },
+        "passed": true,
+        "reference_state_maximum_errors": {
+          "joint_position_rad": 0.0,
+          "root_orientation_quaternion_l2": 0.0,
+          "root_position_m": 0.0
+        },
+        "reset_buffers": {
+          "reset_buf": {
+            "all_clear": true,
+            "nonzero_count": 0
+          },
+          "reset_terminated": {
+            "all_clear": true,
+            "nonzero_count": 0
+          },
+          "reset_time_outs": {
+            "all_clear": true,
+            "nonzero_count": 0
+          }
+        },
+        "tolerance": 1e-05
+      },
+      "purpose": "prime_physics_and_contact_caches_only",
+      "requested_control_steps": 100,
+      "schema_version": "accad_g1_physics_cold_start_warmup_v1",
+      "warmup_done_signals": 4,
+      "warmup_steps_with_any_done": 4,
+      "warmup_terminated_signals": 4,
+      "warmup_termination_term_counts": {
+        "fall": 2,
+        "joint_limits": 0,
+        "motion_end": 0,
+        "nonfinite": 0,
+        "time_out": 0,
+        "tracking_divergence": 2
+      },
+      "warmup_timeout_signals": 0,
+      "zero_action_shape": [
+        2,
+        29
+      ]
+    },
+    "physics_dt_s": 0.005,
+    "policy_action_clip": null,
+    "software": {
+      "isaaclab": "0.54.2",
+      "isaaclab_rl": "0.4.7",
+      "python": "3.11.13",
+      "rsl_rl": null,
+      "torch": "2.7.0+cu128",
+      "torch_cuda": "12.8"
+    }
+  },
+  "schema_version": "accad_g1_tracking_suite_diagnostic_v1",
+  "started_at_utc": "2026-08-09T08:04:55.394450+00:00",
+  "status": "completed",
+  "training_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training"
+}

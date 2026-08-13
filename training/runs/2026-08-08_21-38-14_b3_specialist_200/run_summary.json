@@ -1,0 +1,141 @@
+{
+  "argv": [
+    "humanoid_G1/ACCAD/_g1_pipeline/train_tracking.py",
+    "--headless",
+    "--device",
+    "cuda:0",
+    "--motion",
+    "humanoid_G1/ACCAD/_g1_pipeline/work/g1/Female1Walking_c3d/B3_-_walk1_g1_50hz.npz",
+    "--num-envs",
+    "512",
+    "--max-iterations",
+    "200",
+    "--save-interval",
+    "50",
+    "--seed",
+    "42",
+    "--run-name",
+    "b3_specialist_200",
+    "--export-after-training",
+    "both"
+  ],
+  "checkpoints": [
+    {
+      "bytes": 14052479,
+      "checksum_sha256": "dc5be5ecc07a1abc0dc7e17bf6738aeb2c0e287a511a5e34ffd88d44591c1eab",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/model_0.pt"
+    },
+    {
+      "bytes": 14053009,
+      "checksum_sha256": "f524a17e350a039f6816f028d1c82516f75644584f878c427a838911021602ca",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/model_50.pt"
+    },
+    {
+      "bytes": 14053091,
+      "checksum_sha256": "34d5137534c4d5176e24b8a0c268aa4eba3de75eee28497f0765e26bf077b18e",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/model_100.pt"
+    },
+    {
+      "bytes": 14053091,
+      "checksum_sha256": "ca8a3ce100b2f617bf21f1d482dcf19e803a6d51e53e91ebfa4769f10877b512",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/model_150.pt"
+    },
+    {
+      "bytes": 14053091,
+      "checksum_sha256": "1fb258fb85f744da6ade94020c4a95538339ff4c2992c72ea9e134b1d16f1a4a",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/model_199.pt"
+    }
+  ],
+  "correspondence": {
+    "checksum_sha256": "28e5c7999dc00feecf0dbe1821df7562a4f4d0b3f78c8a9c454ca75db55b9c71",
+    "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/correspondence.yaml"
+  },
+  "cwd": "/home/hoeng/IsaacLab",
+  "export_validations": [
+    {
+      "finite_output": true,
+      "format": "torchscript",
+      "input_shape": [
+        1,
+        254
+      ],
+      "output_shape": [
+        1,
+        29
+      ],
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/exported/policy.pt"
+    },
+    {
+      "checker_passed": true,
+      "format": "onnx",
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        254
+      ],
+      "opset": 18,
+      "output_name": "actions",
+      "output_shape": [
+        1,
+        29
+      ],
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/exported/policy.onnx"
+    }
+  ],
+  "exports": [
+    {
+      "bytes": 2145362,
+      "checksum_sha256": "38c56e161ff943aebad53985cc97b69618c07818db50e307b1a909855c90ff0b",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/exported/policy.pt"
+    },
+    {
+      "bytes": 2131521,
+      "checksum_sha256": "c4b1ddc50627ac479f75e862a71ed05c4ea4de804d8eb73eac04f6ca939b2115",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/exported/policy.onnx"
+    }
+  ],
+  "finished_at_utc": "2026-08-08T13:01:31.369860+00:00",
+  "motion_input": {
+    "allow_missing": false,
+    "manifests": [],
+    "motion_count": 1,
+    "motions": [
+      {
+        "bytes": 776999,
+        "checksum_sha256": "61b0f4b33c551b1d06af01d7e1ee0ee86c848735b1f954c0262737d00ef4edf8",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/Female1Walking_c3d/B3_-_walk1_g1_50hz.npz"
+      }
+    ],
+    "reference_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1",
+    "split": "train"
+  },
+  "pipeline_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline",
+  "resume_checkpoint": null,
+  "run_dir": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200",
+  "runtime_contract": {
+    "action_dim": 29,
+    "actor_observation_dim": 254,
+    "contract_checksum_sha256": "28f8725ed5809def96d2e0155c9ee56cd54eaaef8fffb15dc578cf6646e07a92",
+    "control_dt": 0.02,
+    "critic_observation_dim": 472,
+    "library_checksum_sha256": "f4e5f36a1278b5d09e664d2a5747ac3cfa8fc677cdca7f7c377c5554da32b68e",
+    "motion_count": 1,
+    "motion_keys": [
+      "Female1Walking_c3d/B3_-_walk1_stageii.npz"
+    ],
+    "physics_dt": 0.005
+  },
+  "schema_version": "accad_g1_tracking_train_v1",
+  "started_at_utc": "2026-08-08T12:38:14.762114+00:00",
+  "status": "completed",
+  "training": {
+    "final_checkpoint_iteration_index": 199,
+    "learning_updates_completed": 200,
+    "learning_updates_requested": 200,
+    "num_envs": 512,
+    "num_steps_per_env": 32,
+    "runner_current_learning_iteration": 199,
+    "total_timesteps": 3276800
+  },
+  "training_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training"
+}

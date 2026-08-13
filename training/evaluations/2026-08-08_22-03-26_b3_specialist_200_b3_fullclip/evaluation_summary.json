@@ -1,0 +1,136 @@
+{
+  "argv": [
+    "humanoid_G1/ACCAD/_g1_pipeline/play_tracking.py",
+    "--headless",
+    "--device",
+    "cuda:0",
+    "--motion",
+    "humanoid_G1/ACCAD/_g1_pipeline/work/g1/Female1Walking_c3d/B3_-_walk1_g1_50hz.npz",
+    "--checkpoint",
+    "humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/model_199.pt",
+    "--num-envs",
+    "1",
+    "--motion-id",
+    "0",
+    "--steps",
+    "381",
+    "--seed",
+    "42",
+    "--video",
+    "--video-length",
+    "381",
+    "--export",
+    "both",
+    "--evaluation-name",
+    "b3_specialist_200_b3_fullclip"
+  ],
+  "checkpoint": {
+    "bytes": 14053091,
+    "checksum_sha256": "1fb258fb85f744da6ade94020c4a95538339ff4c2992c72ea9e134b1d16f1a4a",
+    "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-08_21-38-14_b3_specialist_200/model_199.pt"
+  },
+  "correspondence": {
+    "checksum_sha256": "28e5c7999dc00feecf0dbe1821df7562a4f4d0b3f78c8a9c454ca75db55b9c71",
+    "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/correspondence.yaml"
+  },
+  "cwd": "/home/hoeng/IsaacLab",
+  "evaluation": {
+    "completed_episodes": 5,
+    "completed_length_mean": 68.0,
+    "completed_return_max": 7.404446125030518,
+    "completed_return_mean": 7.0458664894104,
+    "completed_return_min": 6.892237663269043,
+    "failed_episodes": 5,
+    "maximum_absolute_action": 2.2675366401672363,
+    "mean_absolute_action": 0.40611676214312914,
+    "steps_executed": 381,
+    "timeout_episodes": 0
+  },
+  "evaluation_dir": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-08_22-03-26_b3_specialist_200_b3_fullclip",
+  "export_validations": [
+    {
+      "finite_output": true,
+      "format": "torchscript",
+      "input_shape": [
+        1,
+        254
+      ],
+      "output_shape": [
+        1,
+        29
+      ],
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-08_22-03-26_b3_specialist_200_b3_fullclip/exported/policy.pt"
+    },
+    {
+      "checker_passed": true,
+      "format": "onnx",
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        254
+      ],
+      "opset": 18,
+      "output_name": "actions",
+      "output_shape": [
+        1,
+        29
+      ],
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-08_22-03-26_b3_specialist_200_b3_fullclip/exported/policy.onnx"
+    }
+  ],
+  "exports": [
+    {
+      "bytes": 2145362,
+      "checksum_sha256": "4ff791321fed7a7faf05ee7555b05c82b3f960ed9874fa4b5bd845bc09f75266",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-08_22-03-26_b3_specialist_200_b3_fullclip/exported/policy.pt"
+    },
+    {
+      "bytes": 2131521,
+      "checksum_sha256": "c4b1ddc50627ac479f75e862a71ed05c4ea4de804d8eb73eac04f6ca939b2115",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-08_22-03-26_b3_specialist_200_b3_fullclip/exported/policy.onnx"
+    }
+  ],
+  "finished_at_utc": "2026-08-08T13:03:53.465021+00:00",
+  "motion_input": {
+    "allow_missing": false,
+    "manifests": [],
+    "motion_count": 1,
+    "motions": [
+      {
+        "bytes": 776999,
+        "checksum_sha256": "61b0f4b33c551b1d06af01d7e1ee0ee86c848735b1f954c0262737d00ef4edf8",
+        "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/Female1Walking_c3d/B3_-_walk1_g1_50hz.npz"
+      }
+    ],
+    "reference_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1",
+    "split": "train"
+  },
+  "pipeline_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline",
+  "runtime_contract": {
+    "action_dim": 29,
+    "actor_observation_dim": 254,
+    "contract_checksum_sha256": "28f8725ed5809def96d2e0155c9ee56cd54eaaef8fffb15dc578cf6646e07a92",
+    "control_dt": 0.02,
+    "critic_observation_dim": 472,
+    "library_checksum_sha256": "f4e5f36a1278b5d09e664d2a5747ac3cfa8fc677cdca7f7c377c5554da32b68e",
+    "motion_count": 1,
+    "motion_keys": [
+      "Female1Walking_c3d/B3_-_walk1_stageii.npz"
+    ],
+    "physics_dt": 0.005,
+    "selected_motion_id": 0
+  },
+  "schema_version": "accad_g1_tracking_evaluation_v1",
+  "selected_motion_id": 0,
+  "selected_motion_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/Female1Walking_c3d/B3_-_walk1_g1_50hz.npz",
+  "started_at_utc": "2026-08-08T13:03:26.793356+00:00",
+  "status": "completed",
+  "training_root": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training",
+  "videos": [
+    {
+      "bytes": 469042,
+      "checksum_sha256": "a46f566dfefa7ce79cfd001fd5d8988efb40f6dc62c6ac93279bdfe0f40d54b1",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/evaluations/2026-08-08_22-03-26_b3_specialist_200_b3_fullclip/videos/rl-video-step-0.mp4"
+    }
+  ]
+}

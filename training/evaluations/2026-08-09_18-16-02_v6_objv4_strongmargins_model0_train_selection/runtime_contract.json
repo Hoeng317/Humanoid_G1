@@ -1,0 +1,1993 @@
+{
+  "action_dim": 29,
+  "action_source": "checkpoint",
+  "actor_observation_dim": 293,
+  "checkpoint_training_contract_provenance": {
+    "checkpoint_checksum_sha256": "868971dc07e35d1e95c5768ce5e5cd7936b7eba61c92cd953510559633f3a230",
+    "checkpoint_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-09_18-06-22_v6_objv4_strongmargins_init_v5model4999_preservelearnednoise_env512_h32_u150_see/model_0.pt",
+    "compatible": true,
+    "expected_policy_contract_version": "accad_g1_tracking_v6_reference_joint_velocity_feedforward",
+    "expected_training_objective_schema": "accad_g1_training_objective_v4_strong_dense_divergence_action_margins",
+    "reason": null,
+    "run_summary": {
+      "checksum_sha256": "ee30824c8515f36030d4badd9b962efae3975c081ddadca70a4abb77b328c3e2",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-09_18-06-22_v6_objv4_strongmargins_init_v5model4999_preservelearnednoise_env512_h32_u150_see/run_summary.json",
+      "policy_contract_version": "accad_g1_tracking_v6_reference_joint_velocity_feedforward",
+      "status": "completed",
+      "training_objective_schema": "accad_g1_training_objective_v4_strong_dense_divergence_action_margins"
+    },
+    "runtime_contract": {
+      "checksum_sha256": "f2af69258d8b00f1c8d5815f81e038bde5d73ce0604c5d93460e48a213be8063",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/training/runs/2026-08-09_18-06-22_v6_objv4_strongmargins_init_v5model4999_preservelearnednoise_env512_h32_u150_see/runtime_contract.json",
+      "policy_contract_version": "accad_g1_tracking_v6_reference_joint_velocity_feedforward",
+      "training_objective_schema": "accad_g1_training_objective_v4_strong_dense_divergence_action_margins"
+    },
+    "schema_version": "accad_g1_checkpoint_training_contract_provenance_v2",
+    "verified": true
+  },
+  "control_dt_s": 0.02,
+  "critic_observation_dim": 505,
+  "device": "cuda:0",
+  "evaluation_isolation": {
+    "active_event_terms": {},
+    "command_random_start": false,
+    "enhanced_determinism_enabled": true,
+    "evaluation_reward_contract": {
+      "alive": {
+        "kind": "per_second_rate",
+        "weight": 0.1
+      },
+      "failure": {
+        "impulse": -5.0,
+        "kind": "one_shot_non_timeout_impulse",
+        "normalization": "divide_by_live_step_dt",
+        "pure_timeouts_excluded": true,
+        "simultaneous_timeout_failure_penalized": true
+      }
+    },
+    "fixed_start_time_s": 0.0,
+    "policy_observation_corruption_enabled": false,
+    "resolved_reset_state_noise": {
+      "joint_position_rad": [
+        0.0,
+        0.0
+      ],
+      "joint_velocity_radps": [
+        0.0,
+        0.0
+      ],
+      "root_angular_velocity_radps": [
+        0.0,
+        0.0
+      ],
+      "root_linear_velocity_mps": [
+        0.0,
+        0.0
+      ]
+    },
+    "reward_integration_dt_s": 0.02,
+    "schema_version": "accad_g1_evaluation_isolation_v2_terminal_failure_impulse",
+    "target_yaw_range_rad": [
+      0.0,
+      0.0
+    ],
+    "xy_offset_range_m": [
+      0.0,
+      0.0
+    ]
+  },
+  "joint_effort_diagnostics": {
+    "effort_limits_nm": [
+      88.0,
+      88.0,
+      88.0,
+      139.0,
+      139.0,
+      35.0,
+      88.0,
+      88.0,
+      35.0,
+      139.0,
+      139.0,
+      25.0,
+      25.0,
+      35.0,
+      35.0,
+      25.0,
+      25.0,
+      35.0,
+      35.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      5.0,
+      5.0,
+      5.0,
+      5.0
+    ],
+    "joint_names": [
+      "left_hip_pitch_joint",
+      "right_hip_pitch_joint",
+      "waist_yaw_joint",
+      "left_hip_roll_joint",
+      "right_hip_roll_joint",
+      "waist_roll_joint",
+      "left_hip_yaw_joint",
+      "right_hip_yaw_joint",
+      "waist_pitch_joint",
+      "left_knee_joint",
+      "right_knee_joint",
+      "left_shoulder_pitch_joint",
+      "right_shoulder_pitch_joint",
+      "left_ankle_pitch_joint",
+      "right_ankle_pitch_joint",
+      "left_shoulder_roll_joint",
+      "right_shoulder_roll_joint",
+      "left_ankle_roll_joint",
+      "right_ankle_roll_joint",
+      "left_shoulder_yaw_joint",
+      "right_shoulder_yaw_joint",
+      "left_elbow_joint",
+      "right_elbow_joint",
+      "left_wrist_roll_joint",
+      "right_wrist_roll_joint",
+      "left_wrist_pitch_joint",
+      "right_wrist_pitch_joint",
+      "left_wrist_yaw_joint",
+      "right_wrist_yaw_joint"
+    ],
+    "sample_semantics": "final physics substep of each control transition; terminal sample captured before Isaac automatic reset"
+  },
+  "legacy_dynamics_ablation": false,
+  "library_checksum_sha256": "5db54a0c61689f18df6c1df29afe52e46fe9d36f4bcec43884b54fc669b1cea5",
+  "library_contract_checksum_sha256": "de3fe933357024fed257b0fcc70695dcb06162227e0f07cd8b987aa2e00d9ba3",
+  "live_tensor_contract": {
+    "action": {
+      "dimension": 29,
+      "position_target_formula": "clip_limits(q_ref + 0.25 * rate_limit(clip(action,-1,1), 0.15_per_control_step))",
+      "reference_velocity_feedforward_scale": 1.0,
+      "term_dimensions": [
+        29
+      ],
+      "term_names": [
+        "joint_residual"
+      ],
+      "velocity_target_buffer_max_abs_error": 0.0,
+      "velocity_target_buffer_verified": true,
+      "velocity_target_formula": "clip(reference_joint_velocity, +/-articulation_soft_joint_velocity_limit)"
+    },
+    "future_horizons_s": [
+      0.0,
+      0.03999999910593033,
+      0.07999999821186066,
+      0.1599999964237213
+    ],
+    "observation_groups": {
+      "critic": {
+        "concatenate_terms": true,
+        "dimension": 505,
+        "group_shape": [
+          505
+        ],
+        "term_dimensions": [
+          116,
+          9,
+          18,
+          29,
+          6,
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          29,
+          29,
+          8,
+          29,
+          42,
+          84,
+          42,
+          42,
+          2
+        ],
+        "term_names": [
+          "future_joint_position_error",
+          "future_root_position_error",
+          "future_root_orientation_error",
+          "joint_velocity_error",
+          "root_orientation_error",
+          "root_position_error",
+          "root_linear_velocity_error",
+          "target_root_linear_velocity",
+          "phase",
+          "root_angular_velocity_error",
+          "target_root_angular_velocity",
+          "projected_gravity",
+          "joint_position",
+          "joint_velocity",
+          "predicted_contacts",
+          "last_action",
+          "tracking_body_position_error",
+          "tracking_body_orientation_error",
+          "tracking_body_linear_velocity_error",
+          "tracking_body_angular_velocity_error",
+          "actual_foot_contacts"
+        ],
+        "term_shapes": [
+          [
+            116
+          ],
+          [
+            9
+          ],
+          [
+            18
+          ],
+          [
+            29
+          ],
+          [
+            6
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            29
+          ],
+          [
+            29
+          ],
+          [
+            8
+          ],
+          [
+            29
+          ],
+          [
+            42
+          ],
+          [
+            84
+          ],
+          [
+            42
+          ],
+          [
+            42
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "policy": {
+        "concatenate_terms": true,
+        "dimension": 293,
+        "group_shape": [
+          293
+        ],
+        "term_dimensions": [
+          116,
+          9,
+          18,
+          29,
+          6,
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          29,
+          29,
+          8,
+          29
+        ],
+        "term_names": [
+          "future_joint_position_error",
+          "future_root_position_error",
+          "future_root_orientation_error",
+          "joint_velocity_error",
+          "root_orientation_error",
+          "root_position_error",
+          "root_linear_velocity_error",
+          "target_root_linear_velocity",
+          "phase",
+          "root_angular_velocity_error",
+          "target_root_angular_velocity",
+          "projected_gravity",
+          "joint_position",
+          "joint_velocity",
+          "predicted_contacts",
+          "last_action"
+        ],
+        "term_shapes": [
+          [
+            116
+          ],
+          [
+            9
+          ],
+          [
+            18
+          ],
+          [
+            29
+          ],
+          [
+            6
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            29
+          ],
+          [
+            29
+          ],
+          [
+            8
+          ],
+          [
+            29
+          ]
+        ]
+      }
+    },
+    "policy_contract_version": "accad_g1_tracking_v6_reference_joint_velocity_feedforward",
+    "schema_version": "accad_g1_live_tracking_tensor_contract_v1",
+    "static_observation_contract_schema_version": "accad_g1_tracking_observation_contract_v6"
+  },
+  "motion_count": 103,
+  "motions": [
+    {
+      "checksum_sha256": "dba31363cce86e01a8541b6e6a8809c0e489c1fd95d862e73d227ef4cb22ba98",
+      "duration_s": 2.9800000190734863,
+      "environment_id": 0,
+      "frame_count": 150,
+      "motion_id": 0,
+      "motion_key": "Female1General_c3d/A1_-_Stand_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A1_-_Stand_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "9d66e11ec8fb478e6685ee575194db31922144a71619952443b74a143eebc203",
+      "duration_s": 12.0,
+      "environment_id": 1,
+      "frame_count": 601,
+      "motion_id": 1,
+      "motion_key": "Female1General_c3d/A2_-_Sway_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A2_-_Sway_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a4f3e62058740accb4ab2984837221acfc2096d319ace6a1283b4f8a9803101b",
+      "duration_s": 15.9399995803833,
+      "environment_id": 2,
+      "frame_count": 798,
+      "motion_id": 2,
+      "motion_key": "Female1General_c3d/A2_-_Sway_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A2_-_Sway_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a7fbe15f3474f1b4ebc83ed83116eaeae00a5f97b99d3681e19fd305df9b8769",
+      "duration_s": 15.960000038146973,
+      "environment_id": 3,
+      "frame_count": 799,
+      "motion_id": 3,
+      "motion_key": "Female1General_c3d/A3_-_Swing_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A3_-_Swing_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "c074962be91aa8a2c6313bb631de0ecfd9ba4b5d0d618a9a6076275eace2b8a2",
+      "duration_s": 8.119999885559082,
+      "environment_id": 4,
+      "frame_count": 407,
+      "motion_id": 4,
+      "motion_key": "Female1General_c3d/A3_-_Swing_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A3_-_Swing_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "c1b06419a2cd245699a8889776dbdaea7d281bd6ddf0e0871fb8ba2e87d9cefb",
+      "duration_s": 21.260000228881836,
+      "environment_id": 5,
+      "frame_count": 1064,
+      "motion_id": 5,
+      "motion_key": "Female1General_c3d/A4_-_look_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A4_-_look_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "16f8ce3bf33a4ecf9116688c2c980c277b6ecf6961a6e324dfb821968defb40a",
+      "duration_s": 9.079999923706055,
+      "environment_id": 6,
+      "frame_count": 455,
+      "motion_id": 6,
+      "motion_key": "Female1General_c3d/A5_-_pick_up_box_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A5_-_pick_up_box_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "866fca96be1edc5165da47b36eca2a5432b35714ae99c51db8474deab90df5bf",
+      "duration_s": 7.059999942779541,
+      "environment_id": 7,
+      "frame_count": 354,
+      "motion_id": 7,
+      "motion_key": "Female1General_c3d/A6-_lift_box_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A6-_lift_box_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "e16b8c005fce71e160aca1adbc7166387d8aed3cd80e14b2fc4b8125e8dc740c",
+      "duration_s": 12.960000038146973,
+      "environment_id": 8,
+      "frame_count": 649,
+      "motion_id": 8,
+      "motion_key": "Female1General_c3d/A6_-_lift_box_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A6_-_lift_box_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "91923b3cc8f55676a6571590ce163e2c622512a9f8e2007c59f83376e5033326",
+      "duration_s": 16.3799991607666,
+      "environment_id": 9,
+      "frame_count": 820,
+      "motion_id": 9,
+      "motion_key": "Female1General_c3d/A7_-_crouch_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A7_-_crouch_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "38ed8320e6b7655a21e436817f8a9aeabc9c6aae8bce0a9a90b4a10a1ebbffa0",
+      "duration_s": 37.2400016784668,
+      "environment_id": 10,
+      "frame_count": 1863,
+      "motion_id": 10,
+      "motion_key": "Female1General_c3d/A8_-_crouch_to_lie_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A8_-_crouch_to_lie_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "030fe49a448f3d907dbda98180893cbb72a7b655f3838a6e08e341242a7bd415",
+      "duration_s": 8.260000228881836,
+      "environment_id": 11,
+      "frame_count": 414,
+      "motion_id": 11,
+      "motion_key": "Female1General_c3d/A9_-_lie_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1General_c3d/A9_-_lie_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "04448ea9561fbdecf0f06b163a6effac7f433d9398d93666bcd2c36a9ee9c6dd",
+      "duration_s": 21.479999542236328,
+      "environment_id": 12,
+      "frame_count": 1075,
+      "motion_id": 12,
+      "motion_key": "Female1Gestures_c3d/D1_-_Urban_1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Gestures_c3d/D1_-_Urban_1_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "440ec631add78cca3acc630a20c1058f93de6b3456c851f5c7d7b816b0b182aa",
+      "duration_s": 113.63999938964844,
+      "environment_id": 13,
+      "frame_count": 5683,
+      "motion_id": 13,
+      "motion_key": "Female1Gestures_c3d/D2_-_Wait_1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Gestures_c3d/D2_-_Wait_1_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "96dae427ca5754021f8b5eda34e07247ca260b1fa35623ed48d6d500ce7a67a8",
+      "duration_s": 68.45999908447266,
+      "environment_id": 14,
+      "frame_count": 3424,
+      "motion_id": 14,
+      "motion_key": "Female1Gestures_c3d/D3_-_Conversation_Gestures_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Gestures_c3d/D3_-_Conversation_Gestures_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "42e94e6ae2446732276e8b5b7eccb9cc850a76f37b983e68438ef113ecd0b71d",
+      "duration_s": 2.9800000190734863,
+      "environment_id": 15,
+      "frame_count": 150,
+      "motion_id": 15,
+      "motion_key": "Female1Gestures_c3d/Female1_Subj_Calibration_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Gestures_c3d/Female1_Subj_Calibration_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "b6d738a0b25931ccf09ce430f9daa438ca8438400f7607e95e4aae188293a4a2",
+      "duration_s": 14.619999885559082,
+      "environment_id": 16,
+      "frame_count": 732,
+      "motion_id": 16,
+      "motion_key": "Female1Walking_c3d/B10_-_walk_turn_left_(45)_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B10_-_walk_turn_left_(45)_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "521ad1edaba419f947768dda871e33a02224abe92ae6aa3de6fd010f44b1817e",
+      "duration_s": 17.280000686645508,
+      "environment_id": 17,
+      "frame_count": 865,
+      "motion_id": 17,
+      "motion_key": "Female1Walking_c3d/B11_-_walk_turn_left_(135)_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B11_-_walk_turn_left_(135)_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "721f3e3b27313ecae9f782c8a1cc933909863886c21ce468af5bec5883b8c43e",
+      "duration_s": 13.9399995803833,
+      "environment_id": 18,
+      "frame_count": 698,
+      "motion_id": 18,
+      "motion_key": "Female1Walking_c3d/B12_-_walk_turn_right_(90)_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B12_-_walk_turn_right_(90)_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "088b981913d12e21b00577fa8b30d944f6d9e19b8cd5cb3f07bd71594c2c60e9",
+      "duration_s": 15.359999656677246,
+      "environment_id": 19,
+      "frame_count": 769,
+      "motion_id": 19,
+      "motion_key": "Female1Walking_c3d/B13_-_walk_turn_right_(45)_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B13_-_walk_turn_right_(45)_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "427ebbae35beefbed07d06045723117b84bc23d688a9f2849b5b6b5c315eeee4",
+      "duration_s": 16.540000915527344,
+      "environment_id": 20,
+      "frame_count": 828,
+      "motion_id": 20,
+      "motion_key": "Female1Walking_c3d/B14_-_walk_turn_right_(135)_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B14_-_walk_turn_right_(135)_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "ad85da380fb47ed3f47b56fdd93853161dec5e59903705e3819f437f738c20cb",
+      "duration_s": 18.020000457763672,
+      "environment_id": 21,
+      "frame_count": 902,
+      "motion_id": 21,
+      "motion_key": "Female1Walking_c3d/B15_-_walk_turn_around_(same_direction)_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B15_-_walk_turn_around_(same_direction)_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "c786fe17241ca9932cbb5f7e7e48f4c1fc1d8188a800677971110b43f0c9ba96",
+      "duration_s": 19.260000228881836,
+      "environment_id": 22,
+      "frame_count": 964,
+      "motion_id": 22,
+      "motion_key": "Female1Walking_c3d/B16_-_walk_turn_change_direction_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B16_-_walk_turn_change_direction_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "ed80de91f8d64f3e9c09be07f4424fc20c7d3f5979f94757ecf4e03fac48c958",
+      "duration_s": 13.460000038146973,
+      "environment_id": 23,
+      "frame_count": 674,
+      "motion_id": 23,
+      "motion_key": "Female1Walking_c3d/B19_-_walk_to_pick_up_box_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B19_-_walk_to_pick_up_box_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "e663f272e1a930c3ad1293b27a2eea41b4c50cbe48c825295c86b6a23cdc4e83",
+      "duration_s": 10.539999961853027,
+      "environment_id": 24,
+      "frame_count": 528,
+      "motion_id": 24,
+      "motion_key": "Female1Walking_c3d/B1_-_stand_to_walk_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B1_-_stand_to_walk_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "c1cbb80e51953658b531903f06c2a43ca7a157a609fbe0e1a459d3027b4d2169",
+      "duration_s": 7.900000095367432,
+      "environment_id": 25,
+      "frame_count": 396,
+      "motion_id": 25,
+      "motion_key": "Female1Walking_c3d/B20_-_walk_with_box_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B20_-_walk_with_box_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "f5158f2d0e90cbb3a69475323b00bb03b1106ac026f98366e60725a23c37c5e7",
+      "duration_s": 15.520000457763672,
+      "environment_id": 26,
+      "frame_count": 777,
+      "motion_id": 26,
+      "motion_key": "Female1Walking_c3d/B21_-_put_down_box_to_walk_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B21_-_put_down_box_to_walk_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "fa64d28cf488e1c25d6a37d14e99c0c16a44c9ffe6f7c33d67dfb45f20469a01",
+      "duration_s": 20.639999389648438,
+      "environment_id": 27,
+      "frame_count": 1033,
+      "motion_id": 27,
+      "motion_key": "Female1Walking_c3d/B21_s2_-_put_down_box_to_walk_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B21_s2_-_put_down_box_to_walk_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "14a863c6e332cf5bc51e4eec8f591bc36e2830f8c54ee99fdac1f648696a3d6b",
+      "duration_s": 21.979999542236328,
+      "environment_id": 28,
+      "frame_count": 1100,
+      "motion_id": 28,
+      "motion_key": "Female1Walking_c3d/B21_s3_-_put_down_box_to_walk_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B21_s3_-_put_down_box_to_walk_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "2055f5175f4beba58f6257bfa97d709796fee9790399da3c7895315926f99fe9",
+      "duration_s": 17.020000457763672,
+      "environment_id": 29,
+      "frame_count": 852,
+      "motion_id": 29,
+      "motion_key": "Female1Walking_c3d/B23_-_side_step_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B23_-_side_step_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "ca69e89dc3b2122055a4ab70eb7b816d79c844cd592f943053fd8dc12669088f",
+      "duration_s": 17.299999237060547,
+      "environment_id": 30,
+      "frame_count": 866,
+      "motion_id": 30,
+      "motion_key": "Female1Walking_c3d/B24_-_walk_to_crouch_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B24_-_walk_to_crouch_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "0b8345328472c2629a16da0c132aa97688cd3dfef905edd7eda3817f1b398149",
+      "duration_s": 21.239999771118164,
+      "environment_id": 31,
+      "frame_count": 1063,
+      "motion_id": 31,
+      "motion_key": "Female1Walking_c3d/B25_-_crouch_to_walk1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B25_-_crouch_to_walk1_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "57d611100c264dff49e4338c9e069351ef15ce0899e88f739148aa0b86b96d86",
+      "duration_s": 12.460000038146973,
+      "environment_id": 32,
+      "frame_count": 624,
+      "motion_id": 32,
+      "motion_key": "Female1Walking_c3d/B2_-_walk_to_stand_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B2_-_walk_to_stand_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "fa9ef230f84e6eb6edc5781e672fc37db9d1b84752536531269ba52e330dfa9b",
+      "duration_s": 7.320000171661377,
+      "environment_id": 33,
+      "frame_count": 367,
+      "motion_id": 33,
+      "motion_key": "Female1Walking_c3d/B2_-_walk_to_stand_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B2_-_walk_to_stand_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "22e5cf084540ea5c13803ffae73904883c9d1ddb611068e1be636ce3e89901cd",
+      "duration_s": 12.15999984741211,
+      "environment_id": 34,
+      "frame_count": 609,
+      "motion_id": 34,
+      "motion_key": "Female1Walking_c3d/B3_-_walk1_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B3_-_walk1_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "5e520f99022e763ab034dcbd442e0cb07515dc605c7f9de989bc0470d4ab74d1",
+      "duration_s": 8.680000305175781,
+      "environment_id": 35,
+      "frame_count": 435,
+      "motion_id": 35,
+      "motion_key": "Female1Walking_c3d/B4_-_stand_to_walk_back_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B4_-_stand_to_walk_back_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "cdf04ea881744a7646550b3cb9b546ab504bcf03faaa3b36fa22e80e2b0240c5",
+      "duration_s": 14.399999618530273,
+      "environment_id": 36,
+      "frame_count": 721,
+      "motion_id": 36,
+      "motion_key": "Female1Walking_c3d/B5_-_walk_backwards_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B5_-_walk_backwards_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "06e2298f8a5aababd5b54a9ba6cc184414c504c81de070958e4ef59ffe15e63f",
+      "duration_s": 12.65999984741211,
+      "environment_id": 37,
+      "frame_count": 634,
+      "motion_id": 37,
+      "motion_key": "Female1Walking_c3d/B6_-_walk_backwards_to_stand_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B6_-_walk_backwards_to_stand_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "5bc5cacc947285e4b1425ddfd3bd81be52f519d9e8bc6244fff54774584cbc14",
+      "duration_s": 15.5600004196167,
+      "environment_id": 38,
+      "frame_count": 779,
+      "motion_id": 38,
+      "motion_key": "Female1Walking_c3d/B7_-_walk_backwards_turn_forwards_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B7_-_walk_backwards_turn_forwards_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "b2d4c7a6d46834d48c5bb0efc49c10b48d6f467b312349727f9ee4d1b591ff90",
+      "duration_s": 13.100000381469727,
+      "environment_id": 39,
+      "frame_count": 656,
+      "motion_id": 39,
+      "motion_key": "Female1Walking_c3d/B9_-_walk_turn_left_(90)_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Female1Walking_c3d/B9_-_walk_turn_left_(90)_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "add6ba7372b11d62be123d87bad4ed8443ede98de444f578b84b77788b387a01",
+      "duration_s": 3.799999952316284,
+      "environment_id": 40,
+      "frame_count": 191,
+      "motion_id": 40,
+      "motion_key": "Male2General_c3d/A1-_Stand_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A1-_Stand_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "6f800aa86f139b41bbe1f0d6dfb4b23ff732ab868708f19590deaf399c267ba6",
+      "duration_s": 30.920000076293945,
+      "environment_id": 41,
+      "frame_count": 1547,
+      "motion_id": 41,
+      "motion_key": "Male2General_c3d/A10-_Lie_to_crouch_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A10-_Lie_to_crouch_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "546ec6632ba30a653e3b9a9c753676ac68fcebae47046448d49a0c02d755a9d9",
+      "duration_s": 10.640000343322754,
+      "environment_id": 42,
+      "frame_count": 533,
+      "motion_id": 42,
+      "motion_key": "Male2General_c3d/A2-_Sway_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A2-_Sway_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "c7fd7c9fe71486a7f3e632cc25d2faea2873e5a5d2766d0cbabb1a8f855f9bb0",
+      "duration_s": 17.040000915527344,
+      "environment_id": 43,
+      "frame_count": 853,
+      "motion_id": 43,
+      "motion_key": "Male2General_c3d/A3-_Swing_arms_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A3-_Swing_arms_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "ce03705a3ae66288409aa8fe1e86c2cd9c2818bdcab273e31736e5f3568cdf54",
+      "duration_s": 16.040000915527344,
+      "environment_id": 44,
+      "frame_count": 803,
+      "motion_id": 44,
+      "motion_key": "Male2General_c3d/A4-_Look_Around_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A4-_Look_Around_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "fff2c38e947506b9e48882d1809586663cb840ac0d4a5531df8b1faa8b9c1a7e",
+      "duration_s": 10.140000343322754,
+      "environment_id": 45,
+      "frame_count": 508,
+      "motion_id": 45,
+      "motion_key": "Male2General_c3d/A5-_Pick_up_box_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A5-_Pick_up_box_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "839e35ceca2173cff1696ce2b9eedbd5dd2a7d318b5fa600f049a21d5190279f",
+      "duration_s": 11.079999923706055,
+      "environment_id": 46,
+      "frame_count": 555,
+      "motion_id": 46,
+      "motion_key": "Male2General_c3d/A6-_Box_lift_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A6-_Box_lift_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "7349481f373770cd2212840c26295f4deee1f85554c92d75bdd9d927cf2dc5d6",
+      "duration_s": 21.780000686645508,
+      "environment_id": 47,
+      "frame_count": 1090,
+      "motion_id": 47,
+      "motion_key": "Male2General_c3d/A7-_Crouch_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A7-_Crouch_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "1c4a405e3fddea58ebb25c37c0e613e0233ac3c3cf0e2ee75750eff84274e974",
+      "duration_s": 39.7599983215332,
+      "environment_id": 48,
+      "frame_count": 1989,
+      "motion_id": 48,
+      "motion_key": "Male2General_c3d/A8-_Crouch_to_Lie_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A8-_Crouch_to_Lie_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "9bc49e0bd624f8c712c1711ce0ede186fe000f8292dddf899180ccadcaae608c",
+      "duration_s": 3.4200000762939453,
+      "environment_id": 49,
+      "frame_count": 172,
+      "motion_id": 49,
+      "motion_key": "Male2General_c3d/A9-_Lie_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/A9-_Lie_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "e5f6a49f707f584b178ff63ca1a29ad53d9b3a69788db710e184e59019e8a08d",
+      "duration_s": 2.9800000190734863,
+      "environment_id": 50,
+      "frame_count": 150,
+      "motion_id": 50,
+      "motion_key": "Male2General_c3d/male2_Calibration_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2General_c3d/male2_Calibration_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "e3c3fcfc671648ca951411681f96f7e391240863d075dd828cdbbfd4f56a98b3",
+      "duration_s": 5.21999979019165,
+      "environment_id": 51,
+      "frame_count": 262,
+      "motion_id": 51,
+      "motion_key": "Male2MartialArtsKicks_c3d/G12-__cresent_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsKicks_c3d/G12-__cresent_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a14334f188104bd5130f75fee6aa46a5f73a510d563b5c4c1ea40900141f5006",
+      "duration_s": 4.519999980926514,
+      "environment_id": 52,
+      "frame_count": 227,
+      "motion_id": 52,
+      "motion_key": "Male2MartialArtsKicks_c3d/G13-__cresent_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsKicks_c3d/G13-__cresent_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "3395a4c1396c3ee185f793d6e6d3e16c33d542ad07f9b98f3a04ffb9060e56a1",
+      "duration_s": 6.480000019073486,
+      "environment_id": 53,
+      "frame_count": 325,
+      "motion_id": 53,
+      "motion_key": "Male2MartialArtsKicks_c3d/G14-__roundhouse_body_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsKicks_c3d/G14-__roundhouse_body_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "7c0344e7f36c650efd5104af46124a775cfea310d37ffe1685b25d5d337e8265",
+      "duration_s": 6.199999809265137,
+      "environment_id": 54,
+      "frame_count": 311,
+      "motion_id": 54,
+      "motion_key": "Male2MartialArtsKicks_c3d/G6_-__axe_kick_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsKicks_c3d/G6_-__axe_kick_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "0068525ba1c4b97f7e7b9cb759cd7bc5652d32f02d968e64ca0c4f9a0211661f",
+      "duration_s": 6.300000190734863,
+      "environment_id": 55,
+      "frame_count": 316,
+      "motion_id": 55,
+      "motion_key": "Male2MartialArtsKicks_c3d/G9-__roundhouse_right_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsKicks_c3d/G9-__roundhouse_right_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "642b187999de0727c1cfc2d436c846c156355f1e14b3b48bb69d284683cb83c5",
+      "duration_s": 4.019999980926514,
+      "environment_id": 56,
+      "frame_count": 202,
+      "motion_id": 56,
+      "motion_key": "Male2MartialArtsKicks_c3d/G9_-__roundhouse_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsKicks_c3d/G9_-__roundhouse_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a79112bfd49e70e495f1e5d42f21d408b58c15920dc73d043c804af7810bcc74",
+      "duration_s": 2.1600000858306885,
+      "environment_id": 57,
+      "frame_count": 109,
+      "motion_id": 57,
+      "motion_key": "Male2MartialArtsKicks_c3d/male2_Subject_Cal_2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsKicks_c3d/male2_Subject_Cal_2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "5bb67dc6a5446c329850dfbe388b1bbb9c0ddcbe5ac5c0903f6a54f6bdd94585",
+      "duration_s": 3.9200000762939453,
+      "environment_id": 58,
+      "frame_count": 197,
+      "motion_id": 58,
+      "motion_key": "Male2MartialArtsPunches_c3d/E11_-_body_hook_right_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E11_-_body_hook_right_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "0095c7ab6eb12e8fb08e3a4364b8f012d48999a3931b1df1c03162fe36311e5b",
+      "duration_s": 1.899999976158142,
+      "environment_id": 59,
+      "frame_count": 96,
+      "motion_id": 59,
+      "motion_key": "Male2MartialArtsPunches_c3d/E13_-_body_cross_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E13_-_body_cross_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "3f3fd8d1e16b330d460fd6570976f9d2759c4e6e50a642f5a7eb201ad8ea77a4",
+      "duration_s": 2.819999933242798,
+      "environment_id": 60,
+      "frame_count": 142,
+      "motion_id": 60,
+      "motion_key": "Male2MartialArtsPunches_c3d/E14_-_body_cross_left_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E14_-_body_cross_left_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "1bdfe5f85faa5b8d470d7b7f2db7fcc71ffb98b189d1de72dcd5bf94135751d1",
+      "duration_s": 4.159999847412109,
+      "environment_id": 61,
+      "frame_count": 209,
+      "motion_id": 61,
+      "motion_key": "Male2MartialArtsPunches_c3d/E14_-_body_cross_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E14_-_body_cross_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "3e77fa110ff5074c5b1fb3f3ac436c5d03ce2e8530e0cc75cc058a279a372941",
+      "duration_s": 4.619999885559082,
+      "environment_id": 62,
+      "frame_count": 232,
+      "motion_id": 62,
+      "motion_key": "Male2MartialArtsPunches_c3d/E1_-__Jab_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E1_-__Jab_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "e0ffb010c3d110b8ad1709feb95d12cbb62d2f07337b458eb3778312cea8e0f8",
+      "duration_s": 5.679999828338623,
+      "environment_id": 63,
+      "frame_count": 285,
+      "motion_id": 63,
+      "motion_key": "Male2MartialArtsPunches_c3d/E5_-__hook_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E5_-__hook_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "6dfcf7dcbc91323d102b80bdc03a08a49e0f843c2f17c8d757520686cd66de1e",
+      "duration_s": 4.840000152587891,
+      "environment_id": 64,
+      "frame_count": 243,
+      "motion_id": 64,
+      "motion_key": "Male2MartialArtsPunches_c3d/E8_-_uppercut_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E8_-_uppercut_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "00e94a1a44792e8e7275b93a74e9884d8afe14a99decbdc9b05bed3e87b58b33",
+      "duration_s": 5.21999979019165,
+      "environment_id": 65,
+      "frame_count": 262,
+      "motion_id": 65,
+      "motion_key": "Male2MartialArtsPunches_c3d/E9_-_body_hook_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsPunches_c3d/E9_-_body_hook_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "290b9d158d8e37f712f8d4f620639fa0fdf78be9ec6ff55da426f0a675b90d01",
+      "duration_s": 9.119999885559082,
+      "environment_id": 66,
+      "frame_count": 457,
+      "motion_id": 66,
+      "motion_key": "Male2MartialArtsStances_c3d/D11_-_ready_to_taunt_one_to_ready_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D11_-_ready_to_taunt_one_to_ready_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "5085f68cc626fe089ec56c87439a15bf0ab3819d581656f88182460fcb5c19ef",
+      "duration_s": 8.319999694824219,
+      "environment_id": 67,
+      "frame_count": 417,
+      "motion_id": 67,
+      "motion_key": "Male2MartialArtsStances_c3d/D12_-_ready_to_taunt_two_to_ready_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D12_-_ready_to_taunt_two_to_ready_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "e42b652389fed6fa475c41e63aad8b2406b31eb3db490d1469a0da0605a99e14",
+      "duration_s": 10.859999656677246,
+      "environment_id": 68,
+      "frame_count": 544,
+      "motion_id": 68,
+      "motion_key": "Male2MartialArtsStances_c3d/D13_-crouch_to_ready_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D13_-crouch_to_ready_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "9636a7cb5a1a0236e2f2b55873b888ec14046a3ebee8730318da04ed29e80860",
+      "duration_s": 11.140000343322754,
+      "environment_id": 69,
+      "frame_count": 558,
+      "motion_id": 69,
+      "motion_key": "Male2MartialArtsStances_c3d/D14_-ready_to_crouch_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D14_-ready_to_crouch_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "dba1386a9c0ede314bda1f4ef0279f182cb97fa04ec50fc17e0d562214b6cac5",
+      "duration_s": 4.71999979019165,
+      "environment_id": 70,
+      "frame_count": 237,
+      "motion_id": 70,
+      "motion_key": "Male2MartialArtsStances_c3d/D15_-_switch_stance_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D15_-_switch_stance_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "920b76db3163bff3d66a1813a9453029e55d4b8f3f191c9489b37ce5695421a0",
+      "duration_s": 10.020000457763672,
+      "environment_id": 71,
+      "frame_count": 502,
+      "motion_id": 71,
+      "motion_key": "Male2MartialArtsStances_c3d/D16_-_switch_stance_and_bounce_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D16_-_switch_stance_and_bounce_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "47ad33450cc4926a7dc7e9fa6ecfc31a4f840ba01b8002471c3f96f9842b379f",
+      "duration_s": 3.680000066757202,
+      "environment_id": 72,
+      "frame_count": 185,
+      "motion_id": 72,
+      "motion_key": "Male2MartialArtsStances_c3d/D1_-_stand_to_ready_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D1_-_stand_to_ready_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "6fc6b8db489d316637db5033dc8ad84ef73ffe840ee2717f25a832ea8cdbc330",
+      "duration_s": 11.119999885559082,
+      "environment_id": 73,
+      "frame_count": 557,
+      "motion_id": 73,
+      "motion_key": "Male2MartialArtsStances_c3d/D2_-_walk_to_ready_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D2_-_walk_to_ready_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "5e43519d9e99d6a3cdd62fc7c229382ab8ea7332b254a06a62b8321d8274d6f6",
+      "duration_s": 5.519999980926514,
+      "environment_id": 74,
+      "frame_count": 277,
+      "motion_id": 74,
+      "motion_key": "Male2MartialArtsStances_c3d/D4_-_ready_to_relax_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D4_-_ready_to_relax_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "9414ca68fae3ebfa497685fcf07af5be5318ec06458be624c424eb1e8d4638f2",
+      "duration_s": 8.65999984741211,
+      "environment_id": 75,
+      "frame_count": 434,
+      "motion_id": 75,
+      "motion_key": "Male2MartialArtsStances_c3d/D5_-_ready_to_walk_away_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D5_-_ready_to_walk_away_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "1d4e1ae7ec7196d5d37d897d5f744ab39ed12ef87b9c7d8f750af15ce3af59e9",
+      "duration_s": 10.960000038146973,
+      "environment_id": 76,
+      "frame_count": 549,
+      "motion_id": 76,
+      "motion_key": "Male2MartialArtsStances_c3d/D7_-_walk_to_bow_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D7_-_walk_to_bow_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a5a4b5a0d88526a132bcc50f4b58d6798bd1808d716ccdca09815a67e26ed22a",
+      "duration_s": 4.940000057220459,
+      "environment_id": 77,
+      "frame_count": 248,
+      "motion_id": 77,
+      "motion_key": "Male2MartialArtsStances_c3d/D8_-_bow_to_ready_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D8_-_bow_to_ready_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "d2fc1fa6bf6432ca1b6f7dea6eb37edd41f0bd9206d4ac30dc94876ed0750fda",
+      "duration_s": 8.699999809265137,
+      "environment_id": 78,
+      "frame_count": 436,
+      "motion_id": 78,
+      "motion_key": "Male2MartialArtsStances_c3d/D9_-_t2_-_male2_blanks_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D9_-_t2_-_male2_blanks_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "9a2262889530891a7dd9b9a9657e9ad2a165eb8c64e71c0eea5dc66626c9bd18",
+      "duration_s": 16.459999084472656,
+      "environment_id": 79,
+      "frame_count": 824,
+      "motion_id": 79,
+      "motion_key": "Male2MartialArtsStances_c3d/D9_-_warm_up_to_ready_to_warm_up_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2MartialArtsStances_c3d/D9_-_warm_up_to_ready_to_warm_up_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "04c48b56574f86fc7bb0d29d81dd4b6aad9c6b9ade39cd8c671058cc89414cdf",
+      "duration_s": 14.579999923706055,
+      "environment_id": 80,
+      "frame_count": 730,
+      "motion_id": 80,
+      "motion_key": "Male2Walking_c3d/B11_-__Walk_turn_left_135_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B11_-__Walk_turn_left_135_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a7dbb49694c98eabbb0e93eb2d2024282988a5aaa220fd19e281b4fbfd495fbd",
+      "duration_s": 11.479999542236328,
+      "environment_id": 81,
+      "frame_count": 575,
+      "motion_id": 81,
+      "motion_key": "Male2Walking_c3d/B13_-__Walk_turn_right_90_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B13_-__Walk_turn_right_90_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "80e622b008e6edbc828c6fbbfa5a28c4bf60d8d4300fc4b48033ea912262183b",
+      "duration_s": 6.340000152587891,
+      "environment_id": 82,
+      "frame_count": 318,
+      "motion_id": 82,
+      "motion_key": "Male2Walking_c3d/B14_-__Walk_turn_right_45_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B14_-__Walk_turn_right_45_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "65252f35ed9c1fe644f3e0cb5aa4d317fbb3c48c16411d3e86c3b2920a83ce93",
+      "duration_s": 13.300000190734863,
+      "environment_id": 83,
+      "frame_count": 666,
+      "motion_id": 83,
+      "motion_key": "Male2Walking_c3d/B14_-__Walk_turn_right_45_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B14_-__Walk_turn_right_45_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "314cd5b1912eec070bc52fca3326f8469540758a443045a6fdc7a8c081b27f42",
+      "duration_s": 16.139999389648438,
+      "environment_id": 84,
+      "frame_count": 808,
+      "motion_id": 84,
+      "motion_key": "Male2Walking_c3d/B15_-__Walk_turn_around_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B15_-__Walk_turn_around_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "934724d01cb1d4c6000e18d7d7d4df1ecc30326ccb48a30fcc1a883aa5e255ff",
+      "duration_s": 29.639999389648438,
+      "environment_id": 85,
+      "frame_count": 1483,
+      "motion_id": 85,
+      "motion_key": "Male2Walking_c3d/B19_-__Walk_to_pickup_box_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B19_-__Walk_to_pickup_box_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "fb7b3f485fb9dac5e80175e397498ff3430b45ad68beeacbbab4c4e6facb4621",
+      "duration_s": 20.5,
+      "environment_id": 86,
+      "frame_count": 1026,
+      "motion_id": 86,
+      "motion_key": "Male2Walking_c3d/B21_-__put_down_box_to_walk_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B21_-__put_down_box_to_walk_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "755cea033fdbdfaca9c030a0e8829f031da4873d1cd9f1db35865869459a0e37",
+      "duration_s": 3.9200000762939453,
+      "environment_id": 87,
+      "frame_count": 197,
+      "motion_id": 87,
+      "motion_key": "Male2Walking_c3d/B22_-__side_step_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B22_-__side_step_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a9d2b6b8446d0da04f13140081c53b70220b9e1c549f45855ca2d38e013468e9",
+      "duration_s": 4.340000152587891,
+      "environment_id": 88,
+      "frame_count": 218,
+      "motion_id": 88,
+      "motion_key": "Male2Walking_c3d/B23_-__side_step_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B23_-__side_step_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "d1ec0acf5d24ebb1c16ba0aee5b25cc07391b3dd2c76f4cae19cd63f2fa7f8ae",
+      "duration_s": 13.739999771118164,
+      "environment_id": 89,
+      "frame_count": 688,
+      "motion_id": 89,
+      "motion_key": "Male2Walking_c3d/B24_-__walk_to_crouch_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B24_-__walk_to_crouch_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "cdbf7a8ff9194a43e13021733a03bcbb2147e47adfd15c9e6b23a1c36d42baa7",
+      "duration_s": 5.980000019073486,
+      "environment_id": 90,
+      "frame_count": 300,
+      "motion_id": 90,
+      "motion_key": "Male2Walking_c3d/B4_-_Stand_to_Walk_backwards_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B4_-_Stand_to_Walk_backwards_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "1e29eb05b1bb94b79c9c8c1c01bc7fa81eb8c74dbaafa20d0681cf67521b6072",
+      "duration_s": 10.800000190734863,
+      "environment_id": 91,
+      "frame_count": 541,
+      "motion_id": 91,
+      "motion_key": "Male2Walking_c3d/B9_-__Walk_turn_left_90_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/Male2Walking_c3d/B9_-__Walk_turn_left_90_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "1a415dbd8e4522da7d298bf1df1202b5d71969107a30e5e5c29a2d1e84e679aa",
+      "duration_s": 3.140000104904175,
+      "environment_id": 92,
+      "frame_count": 158,
+      "motion_id": 92,
+      "motion_key": "MartialArtsWalksTurns_c3d/E10_-_side_step_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E10_-_side_step_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "1efa61811739e1c49e365de500bb78919d7122b429fbb9b96fb364d6769d40e9",
+      "duration_s": 4.159999847412109,
+      "environment_id": 93,
+      "frame_count": 209,
+      "motion_id": 93,
+      "motion_key": "MartialArtsWalksTurns_c3d/E11_-_block_left_high_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E11_-_block_left_high_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "cbb78c8b61000aa098f0f89226c388398b07588d3bdd89f22a9008b03051a1e7",
+      "duration_s": 4.679999828338623,
+      "environment_id": 94,
+      "frame_count": 235,
+      "motion_id": 94,
+      "motion_key": "MartialArtsWalksTurns_c3d/E14_-_block_right_low_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E14_-_block_right_low_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "f1f366019a9ba7d0cf37d07ab91ab64cc8ec7faa7e5e05f0a01248a3809eee72",
+      "duration_s": 2.880000114440918,
+      "environment_id": 95,
+      "frame_count": 145,
+      "motion_id": 95,
+      "motion_key": "MartialArtsWalksTurns_c3d/E15_-_block_left_middle_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E15_-_block_left_middle_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "a273b4138d70fe5702cc79b37c2be331208efae59df69850485c40613c63029a",
+      "duration_s": 3.9800000190734863,
+      "environment_id": 96,
+      "frame_count": 200,
+      "motion_id": 96,
+      "motion_key": "MartialArtsWalksTurns_c3d/E16_-_block_right_middle_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E16_-_block_right_middle_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "2a57789f0d3c1771ac90f327fd6404eda94259be7ffb9ec65340996ee4ea9180",
+      "duration_s": 2.200000047683716,
+      "environment_id": 97,
+      "frame_count": 111,
+      "motion_id": 97,
+      "motion_key": "MartialArtsWalksTurns_c3d/E19_-_dodge_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E19_-_dodge_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "f785474f1a0ada43794cce6b757c9e0337b45d0ca217a3d5daea0bfd4f78a3c9",
+      "duration_s": 4.079999923706055,
+      "environment_id": 98,
+      "frame_count": 205,
+      "motion_id": 98,
+      "motion_key": "MartialArtsWalksTurns_c3d/E19_-_dodge_left_t2_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E19_-_dodge_left_t2_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "bbcfbf50febf224009d211c45d0746d636e44245324368a90f09cac43d2b930c",
+      "duration_s": 23.68000030517578,
+      "environment_id": 99,
+      "frame_count": 1185,
+      "motion_id": 99,
+      "motion_key": "MartialArtsWalksTurns_c3d/E1_-_Turn_around_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E1_-_Turn_around_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "c1e5c0f177566e05cdba2d749afa3d3d348f34d3357e590d91be0c95dc11dd74",
+      "duration_s": 2.7799999713897705,
+      "environment_id": 100,
+      "frame_count": 140,
+      "motion_id": 100,
+      "motion_key": "MartialArtsWalksTurns_c3d/E20_-_dodge_right_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E20_-_dodge_right_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "ef5f7ae93d7b944be24006750f27c01eb255ec2c961be93336e1cf8e5ecfb97b",
+      "duration_s": 4.639999866485596,
+      "environment_id": 101,
+      "frame_count": 233,
+      "motion_id": 101,
+      "motion_key": "MartialArtsWalksTurns_c3d/E21_-_duck_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E21_-_duck_left_g1_50hz.npz"
+    },
+    {
+      "checksum_sha256": "8f5f4d92561bfaa1c4a5d5172437d1f618603d107d9c5c42cd95d9842fe7aa64",
+      "duration_s": 25.479999542236328,
+      "environment_id": 102,
+      "frame_count": 1275,
+      "motion_id": 102,
+      "motion_key": "MartialArtsWalksTurns_c3d/E2_-_Turn_around_left_stageii.npz",
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/dynamic/g1/MartialArtsWalksTurns_c3d/E2_-_Turn_around_left_g1_50hz.npz"
+    }
+  ],
+  "observation_contract": {
+    "action": {
+      "dimension": 29,
+      "position_target_formula": "clip_limits(q_ref + 0.25 * rate_limit(clip(action,-1,1), 0.15_per_control_step))",
+      "reference_velocity_feedforward_scale": 1.0,
+      "term_dimensions": [
+        29
+      ],
+      "term_names": [
+        "joint_residual"
+      ],
+      "velocity_target_formula": "clip(reference_joint_velocity, +/-articulation_soft_joint_velocity_limit)"
+    },
+    "future_horizons_s": [
+      0.0,
+      0.04,
+      0.08,
+      0.16
+    ],
+    "num_policy_joints": 29,
+    "num_tracking_bodies": 14,
+    "observation_groups": {
+      "critic": {
+        "concatenate_terms": true,
+        "dimension": 505,
+        "terms": [
+          {
+            "dimension": 116,
+            "formula": "q_ref(t+h)-q_actual(t), h in [0,.04,.08,.16]",
+            "frame": "g1_policy_joint_order",
+            "name": "future_joint_position_error",
+            "range": [
+              0,
+              116
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 9,
+            "formula": "R_actual(t)^T[p_ref(t+h)-p_actual(t)], h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_position_error",
+            "range": [
+              116,
+              125
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 18,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t+h)), h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_orientation_error",
+            "range": [
+              125,
+              143
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_ref(t)-dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity_error",
+            "range": [
+              143,
+              172
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 6,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t))",
+            "frame": "actual_g1_pelvis",
+            "name": "root_orientation_error",
+            "range": [
+              172,
+              178
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[p_ref(t)-p_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_position_error",
+            "range": [
+              178,
+              181
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[v_ref(t)-v_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_linear_velocity_error",
+            "range": [
+              181,
+              184
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T v_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_linear_velocity",
+            "range": [
+              184,
+              187
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 2,
+            "formula": "[sin(2*pi*phase),cos(2*pi*phase)]",
+            "frame": "motion_phase",
+            "name": "phase",
+            "range": [
+              187,
+              189
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[w_ref(t)-w_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_angular_velocity_error",
+            "range": [
+              189,
+              192
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T w_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_angular_velocity",
+            "range": [
+              192,
+              195
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "gravity direction projected into the measured pelvis frame",
+            "frame": "actual_g1_pelvis",
+            "name": "projected_gravity",
+            "range": [
+              195,
+              198
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "q_actual(t)-q_default",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_position",
+            "range": [
+              198,
+              227
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity",
+            "range": [
+              227,
+              256
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 8,
+            "formula": "reference contacts at h in [0,.04,.08,.16]",
+            "frame": "left_right_feet",
+            "name": "predicted_contacts",
+            "range": [
+              256,
+              264
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "last processed normalized joint residual",
+            "frame": "g1_policy_joint_order",
+            "name": "last_action",
+            "range": [
+              264,
+              293
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 42,
+            "formula": "R_actual_root^T[p_ref_body-p_actual_body]",
+            "frame": "actual_g1_pelvis",
+            "name": "tracking_body_position_error",
+            "range": [
+              293,
+              335
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 84,
+            "formula": "rot6d(q_actual_body^* otimes q_ref_body)",
+            "frame": "actual_tracking_body",
+            "name": "tracking_body_orientation_error",
+            "range": [
+              335,
+              419
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 42,
+            "formula": "R_actual_root^T[v_ref_body-v_actual_body]",
+            "frame": "actual_g1_pelvis",
+            "name": "tracking_body_linear_velocity_error",
+            "range": [
+              419,
+              461
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 42,
+            "formula": "R_actual_root^T[w_ref_body-w_actual_body]",
+            "frame": "actual_g1_pelvis",
+            "name": "tracking_body_angular_velocity_error",
+            "range": [
+              461,
+              503
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 2,
+            "formula": "measured binary foot contacts",
+            "frame": "left_right_feet",
+            "name": "actual_foot_contacts",
+            "range": [
+              503,
+              505
+            ],
+            "scale": 1.0
+          }
+        ]
+      },
+      "policy": {
+        "concatenate_terms": true,
+        "dimension": 293,
+        "terms": [
+          {
+            "dimension": 116,
+            "formula": "q_ref(t+h)-q_actual(t), h in [0,.04,.08,.16]",
+            "frame": "g1_policy_joint_order",
+            "name": "future_joint_position_error",
+            "range": [
+              0,
+              116
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 9,
+            "formula": "R_actual(t)^T[p_ref(t+h)-p_actual(t)], h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_position_error",
+            "range": [
+              116,
+              125
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 18,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t+h)), h in [.04,.08,.16]",
+            "frame": "actual_g1_pelvis",
+            "name": "future_root_orientation_error",
+            "range": [
+              125,
+              143
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_ref(t)-dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity_error",
+            "range": [
+              143,
+              172
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 6,
+            "formula": "rot6d(q_actual(t)^* otimes q_ref(t))",
+            "frame": "actual_g1_pelvis",
+            "name": "root_orientation_error",
+            "range": [
+              172,
+              178
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[p_ref(t)-p_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_position_error",
+            "range": [
+              178,
+              181
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[v_ref(t)-v_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_linear_velocity_error",
+            "range": [
+              181,
+              184
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T v_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_linear_velocity",
+            "range": [
+              184,
+              187
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 2,
+            "formula": "[sin(2*pi*phase),cos(2*pi*phase)]",
+            "frame": "motion_phase",
+            "name": "phase",
+            "range": [
+              187,
+              189
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T[w_ref(t)-w_actual(t)]",
+            "frame": "actual_g1_pelvis",
+            "name": "root_angular_velocity_error",
+            "range": [
+              189,
+              192
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "R_actual(t)^T w_ref(t)",
+            "frame": "actual_g1_pelvis",
+            "name": "target_root_angular_velocity",
+            "range": [
+              192,
+              195
+            ],
+            "scale": 0.2
+          },
+          {
+            "dimension": 3,
+            "formula": "gravity direction projected into the measured pelvis frame",
+            "frame": "actual_g1_pelvis",
+            "name": "projected_gravity",
+            "range": [
+              195,
+              198
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "q_actual(t)-q_default",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_position",
+            "range": [
+              198,
+              227
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "dq_actual(t)",
+            "frame": "g1_policy_joint_order",
+            "name": "joint_velocity",
+            "range": [
+              227,
+              256
+            ],
+            "scale": 0.05
+          },
+          {
+            "dimension": 8,
+            "formula": "reference contacts at h in [0,.04,.08,.16]",
+            "frame": "left_right_feet",
+            "name": "predicted_contacts",
+            "range": [
+              256,
+              264
+            ],
+            "scale": 1.0
+          },
+          {
+            "dimension": 29,
+            "formula": "last processed normalized joint residual",
+            "frame": "g1_policy_joint_order",
+            "name": "last_action",
+            "range": [
+              264,
+              293
+            ],
+            "scale": 1.0
+          }
+        ]
+      }
+    },
+    "policy_contract_version": "accad_g1_tracking_v6_reference_joint_velocity_feedforward",
+    "positive_preview_horizons_s": [
+      0.04,
+      0.08,
+      0.16
+    ],
+    "range_semantics": "half_open_[start,end)",
+    "schema_version": "accad_g1_tracking_observation_contract_v6"
+  },
+  "official_acceptance_eligible": true,
+  "per_environment_motion_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102
+  ],
+  "physical_action_clip": 1.0,
+  "physics_cold_start_warmup": {
+    "action_dimension": 29,
+    "enabled": true,
+    "executed_control_steps": 100,
+    "final_reset_forced_motion_time_s": 0.0,
+    "final_reset_zeroed_reference_state_noise": true,
+    "initial_reset_observations": {
+      "all_finite": true,
+      "element_count": 82194,
+      "nonfinite_count": 0,
+      "tensor_count": 2,
+      "tensors": [
+        {
+          "dtype": "torch.float32",
+          "path": "observation.critic",
+          "shape": [
+            103,
+            505
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "path": "observation.policy",
+          "shape": [
+            103,
+            293
+          ]
+        }
+      ]
+    },
+    "num_environments": 103,
+    "passed": true,
+    "policy_inference_used": false,
+    "post_reset": {
+      "action_state_zero": true,
+      "authoritative_motion_frame_zero": true,
+      "episode_counters_zero": true,
+      "maximum_absolute_values": {
+        "episode_length_buf": 0.0,
+        "motion_time": 0.0,
+        "normalized_residual": 0.0,
+        "previous_normalized_residual": 0.0,
+        "raw_action": 0.0
+      },
+      "observations": {
+        "all_finite": true,
+        "element_count": 82194,
+        "nonfinite_count": 0,
+        "tensor_count": 2,
+        "tensors": [
+          {
+            "dtype": "torch.float32",
+            "path": "observation.critic",
+            "shape": [
+              103,
+              505
+            ]
+          },
+          {
+            "dtype": "torch.float32",
+            "path": "observation.policy",
+            "shape": [
+              103,
+              293
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "reference_state_maximum_errors": {
+        "joint_position_rad": 0.0,
+        "root_orientation_quaternion_l2": 0.0,
+        "root_position_m": 0.0
+      },
+      "reset_buffers": {
+        "reset_buf": {
+          "all_clear": true,
+          "nonzero_count": 0
+        },
+        "reset_terminated": {
+          "all_clear": true,
+          "nonzero_count": 0
+        },
+        "reset_time_outs": {
+          "all_clear": true,
+          "nonzero_count": 0
+        }
+      },
+      "tolerance": 1e-05
+    },
+    "purpose": "prime_physics_and_contact_caches_only",
+    "requested_control_steps": 100,
+    "schema_version": "accad_g1_physics_cold_start_warmup_v1",
+    "warmup_done_signals": 184,
+    "warmup_steps_with_any_done": 64,
+    "warmup_terminated_signals": 184,
+    "warmup_termination_term_counts": {
+      "fall": 50,
+      "joint_limits": 0,
+      "motion_end": 0,
+      "nonfinite": 0,
+      "time_out": 0,
+      "tracking_divergence": 161
+    },
+    "warmup_timeout_signals": 0,
+    "zero_action_shape": [
+      103,
+      29
+    ]
+  },
+  "physics_dt_s": 0.005,
+  "policy_action_clip": null,
+  "software": {
+    "isaaclab": "0.54.2",
+    "isaaclab_rl": "0.4.7",
+    "python": "3.11.13",
+    "rsl_rl": null,
+    "torch": "2.7.0+cu128",
+    "torch_cuda": "12.8"
+  }
+}

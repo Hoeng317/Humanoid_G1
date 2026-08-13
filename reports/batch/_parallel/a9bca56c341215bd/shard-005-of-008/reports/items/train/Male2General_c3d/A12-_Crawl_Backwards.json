@@ -1,0 +1,311 @@
+{
+  "artifacts": {
+    "g1": {
+      "checksum_sha256": "1eaef530ff210e04d35dba47e15c5054af4917adecb2298b5402df2dc22ff166",
+      "exists": true,
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/Male2General_c3d/A12-_Crawl_Backwards_g1_50hz.npz",
+      "size_bytes": 1727312
+    },
+    "human": {
+      "checksum_sha256": "c1174d384cae3cbb400b8a989a115b4ef409a65390f056b84c7bbd7f39e10f86",
+      "exists": true,
+      "path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2General_c3d/A12-_Crawl_Backwards_human_50hz.npz",
+      "size_bytes": 5640060
+    }
+  },
+  "category": "General",
+  "durations": {
+    "human": {
+      "generation_seconds": 5.586587580037303,
+      "validation_seconds": 0.22589152795262635
+    },
+    "source_verification_seconds": 0.00402596197091043,
+    "total_seconds": 36.84033093799371
+  },
+  "error": {
+    "message": "Gate-3 kinematic validation failed gate3_kinematic_complete: ['contact_geometry.ground_penetration', 'contact_geometry.active_contact_penetration']",
+    "type": "BatchStageError"
+  },
+  "finished_at_utc": "2026-08-08T12:48:32.562949+00:00",
+  "item_id": "train:Male2General_c3d/A12-_Crawl_Backwards_stageii.npz",
+  "motion_name": "A12-_Crawl_Backwards",
+  "ordinal": 9,
+  "paths": {
+    "g1": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/g1/Male2General_c3d/A12-_Crawl_Backwards_g1_50hz.npz",
+    "human": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2General_c3d/A12-_Crawl_Backwards_human_50hz.npz",
+    "item_report": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/reports/batch/_parallel/a9bca56c341215bd/shard-005-of-008/reports/items/train/Male2General_c3d/A12-_Crawl_Backwards.json",
+    "source": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/Male2General_c3d/A12-_Crawl_Backwards_stageii.npz"
+  },
+  "schema_version": "accad_g1_batch_v1",
+  "source_actual_checksum_sha256": "14fd4f9b7560c17d3da9244110b0e4245c80c98a73308df32422b0baf2a98549",
+  "source_file": "Male2General_c3d/A12-_Crawl_Backwards_stageii.npz",
+  "source_manifest_checksum_sha256": "14fd4f9b7560c17d3da9244110b0e4245c80c98a73308df32422b0baf2a98549",
+  "split": "train",
+  "stages": {
+    "human": {
+      "action": "generated",
+      "generation": {
+        "contact_labels_present": true,
+        "gate2_complete": false,
+        "gate2_status": "canonical basis generated; automated Gate-2 validation pending",
+        "joint_count": 127,
+        "ok": true,
+        "output_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2General_c3d/A12-_Crawl_Backwards_human_50hz.npz",
+        "rotation_joint_count": 55,
+        "source_fk_performed": true,
+        "source_fps": 120.0,
+        "source_frames": 2041,
+        "source_ground_baseline_drift_m": -0.02126055769622326,
+        "source_ground_confidence_fraction": 0.9358157765801078,
+        "target_fps": 50.0,
+        "target_frames": 851
+      },
+      "validation": {
+        "archive_checksum_sha256": "c1174d384cae3cbb400b8a989a115b4ef409a65390f056b84c7bbd7f39e10f86",
+        "archive_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/_g1_pipeline/work/human/Male2General_c3d/A12-_Crawl_Backwards_human_50hz.npz",
+        "checks": {
+          "contact_consistency": [
+            {
+              "maximum_position_error_m": 0.0,
+              "name": "semantic_contact_keypoints",
+              "passed": true
+            },
+            {
+              "mismatched_frames": {},
+              "name": "source_contact_majority_resampling",
+              "passed": true
+            },
+            {
+              "absent_contact_channels": [
+                "left_heel_contact"
+              ],
+              "active_clearance_q01_m": -0.0036998140811920167,
+              "all_channels_required": false,
+              "minimum_active_clearance_m": -0.00657983124256134,
+              "minimum_clearance_m": -0.008394775912165642,
+              "name": "contact_geometry_and_runs",
+              "passed": true,
+              "per_keypoint": {
+                "left_heel_contact": {
+                  "active_height_p95_m": Infinity,
+                  "active_speed_p95_mps": Infinity,
+                  "frames": 0,
+                  "minimum_true_run_frames": 0
+                },
+                "left_toe_contact": {
+                  "active_height_p95_m": 0.057847791910171496,
+                  "active_speed_p95_mps": 0.2985580205917353,
+                  "frames": 657,
+                  "minimum_true_run_frames": 4
+                },
+                "right_heel_contact": {
+                  "active_height_p95_m": 0.03424540460109708,
+                  "active_speed_p95_mps": 0.3024196699261664,
+                  "frames": 94,
+                  "minimum_true_run_frames": 19
+                },
+                "right_toe_contact": {
+                  "active_height_p95_m": 0.049142596870660776,
+                  "active_speed_p95_mps": 0.31921076178550717,
+                  "frames": 623,
+                  "minimum_true_run_frames": 60
+                }
+              }
+            }
+          ],
+          "numeric": [
+            {
+              "maximum_errors": {
+                "global": 4.658155206005432e-08,
+                "local": 4.0606174755986046e-08,
+                "root": 3.708472506858129e-08
+              },
+              "name": "quaternion_norm",
+              "passed": true,
+              "tolerance": 1e-05
+            },
+            {
+              "minimum_adjacent_dot": {
+                "global": 0.7155271038786739,
+                "local": 0.8623321168721771,
+                "root": 0.9985393215667417
+              },
+              "name": "quaternion_sign_continuity",
+              "passed": true,
+              "tolerance": -1e-06
+            },
+            {
+              "maximum_error_rad": 1.591008641128439e-07,
+              "name": "global_local_rotation_fk",
+              "passed": true,
+              "tolerance_rad": 1e-05
+            },
+            {
+              "maximum_bone_length_range_m": 5.167545038819998e-07,
+              "maximum_parent_local_offset_range_m": 5.865020559006617e-07,
+              "name": "rigid_bone_geometry",
+              "passed": true,
+              "tolerance_m": 0.0001
+            },
+            {
+              "maximum_absolute_errors": {
+                "joint_angular": 0.0,
+                "joint_linear": 0.0,
+                "root_angular": 0.0,
+                "root_linear": 0.0
+              },
+              "name": "stored_velocities",
+              "passed": true
+            },
+            {
+              "name": "root_and_joint_aliases",
+              "passed": true
+            }
+          ],
+          "profile": [
+            {
+              "airborne_fraction": 0.012925969447708578,
+              "double_support_fraction": 0.5381903642773208,
+              "left_contact_fraction": 0.7720329024676851,
+              "maximum_airborne_run_frames": 8,
+              "maximum_fast_moving_airborne_run_frames": 3,
+              "name": "generic_no_motion_class_assumption",
+              "passed": true,
+              "right_contact_fraction": 0.7532314923619271
+            }
+          ],
+          "provenance_120hz": [
+            {
+              "checksum_matches": true,
+              "confined_to_accad": true,
+              "name": "source_file_checksum_and_metadata",
+              "passed": true,
+              "resolved_source_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/Male2General_c3d/A12-_Crawl_Backwards_stageii.npz"
+            },
+            {
+              "confined_to_accad": true,
+              "name": "licensed_model_checksum",
+              "passed": true,
+              "resolved_model_path": "/home/hoeng/IsaacLab/humanoid_G1/ACCAD/smplx_lockedhead_20230207/models_lockedhead/smplx/SMPLX_NEUTRAL.npz"
+            },
+            {
+              "baseline_drift_m": -0.02126055769622326,
+              "confidence_fraction": 0.9358157765801078,
+              "maximum_baseline_speed_mps": 0.020000115036964417,
+              "name": "source_fk_contact_and_ground_baseline",
+              "passed": true
+            }
+          ],
+          "schema": [
+            {
+              "missing": [],
+              "name": "required_keys",
+              "passed": true
+            },
+            {
+              "name": "safe_no_pickle_load",
+              "passed": true,
+              "unreadable": {}
+            },
+            {
+              "fields": [],
+              "name": "no_object_dtype",
+              "passed": true
+            },
+            {
+              "fields": [],
+              "name": "all_numeric_finite",
+              "passed": true
+            },
+            {
+              "fields": {},
+              "name": "metadata_scalars",
+              "passed": true
+            },
+            {
+              "mismatch": {},
+              "name": "fixed_conventions",
+              "passed": true
+            },
+            {
+              "name": "model_configuration",
+              "passed": true
+            },
+            {
+              "failures": {},
+              "name": "canonical_shapes",
+              "passed": true
+            },
+            {
+              "fields": [],
+              "name": "contact_and_confidence_bool_dtype",
+              "passed": true
+            },
+            {
+              "all_joint_count": 127,
+              "joint_count": 55,
+              "name": "canonical_counts",
+              "passed": true,
+              "source_frames": 2041,
+              "target_frames": 851
+            },
+            {
+              "expected_target_frames": 851,
+              "maximum_time_error_seconds": 0.0,
+              "name": "time_grid_and_count_policy",
+              "passed": true
+            },
+            {
+              "name": "joint_name_contract",
+              "passed": true
+            },
+            {
+              "name": "validated_semantic_mapping",
+              "passed": true
+            },
+            {
+              "name": "parent_tree",
+              "passed": true
+            }
+          ],
+          "semantic_coordinate": [
+            {
+              "ground_height_w": 0.0,
+              "head_above_pelvis_fraction": 0.8660399529964747,
+              "median_head_minus_pelvis_w": [
+                -0.46214520931243896,
+                0.4456741213798523,
+                0.05896248668432236
+              ],
+              "median_head_pelvis_distance_m": 0.6486130952835083,
+              "name": "right_handed_z_up_identity_basis_and_fixed_ground",
+              "passed": true,
+              "pose_independent_semantics_ok": true,
+              "profile": "generic",
+              "upright_profile_ok": false,
+              "upright_profile_required": false
+            }
+          ]
+        },
+        "errors": [],
+        "gate2_complete": true,
+        "ok": true,
+        "profile": "generic",
+        "statuses": {
+          "contact_consistency": true,
+          "numeric": true,
+          "profile": true,
+          "provenance_120hz": true,
+          "schema": true,
+          "semantic_coordinate": true
+        },
+        "warnings": [
+          "The archive's serialized gate2_complete flag is informational; this independent report is authoritative."
+        ]
+      }
+    }
+  },
+  "started_at_utc": "2026-08-08T12:47:55.722638+00:00",
+  "status": "failed",
+  "subject": "Male2"
+}

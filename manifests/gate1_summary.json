@@ -1,0 +1,156 @@
+{
+  "category_imbalance_note": "Subject-disjoint ACCAD splits cannot preserve every category in every split; use these counts when interpreting validation/test metrics.",
+  "category_split_counts": {
+    "General": {
+      "test": 17,
+      "train": 30,
+      "validation": 0
+    },
+    "Gestures": {
+      "test": 0,
+      "train": 6,
+      "validation": 0
+    },
+    "MartialArtsExtended": {
+      "test": 0,
+      "train": 4,
+      "validation": 0
+    },
+    "MartialArtsKicks": {
+      "test": 0,
+      "train": 23,
+      "validation": 0
+    },
+    "MartialArtsPunches": {
+      "test": 0,
+      "train": 18,
+      "validation": 0
+    },
+    "MartialArtsStances": {
+      "test": 0,
+      "train": 17,
+      "validation": 0
+    },
+    "MartialArtsWalksTurns": {
+      "test": 0,
+      "train": 23,
+      "validation": 0
+    },
+    "Running": {
+      "test": 2,
+      "train": 45,
+      "validation": 0
+    },
+    "Uncategorized": {
+      "test": 0,
+      "train": 0,
+      "validation": 5
+    },
+    "Walking": {
+      "test": 10,
+      "train": 49,
+      "validation": 0
+    }
+  },
+  "checks": {
+    "all_stageii_accounted_for": true,
+    "all_stageii_have_sha256": true,
+    "expected_stagei_count_matches": true,
+    "expected_stageii_count_matches": true,
+    "only_structurally_valid_files_in_splits": true,
+    "split_checksums_unique": true,
+    "split_files_disjoint": true,
+    "stageii_found": true,
+    "subject_split_disjoint": true,
+    "subject_split_exhaustive": true
+  },
+  "counts": {
+    "eligible_files": 249,
+    "excluded_files": 3,
+    "stagei_files": 20,
+    "stageii_files": 252,
+    "test_files": 29,
+    "train_files": 215,
+    "validation_files": 5
+  },
+  "dataset": "ACCAD",
+  "directory_subject_overrides": {
+    "MartialArtsWalksTurns_c3d": "Male2"
+  },
+  "duplicate_checksum_groups": [
+    {
+      "canonical_source_file": "Male2Walking_c3d/B21_-__put_down_box_to_walk_stageii.npz",
+      "checksum_sha256": "2e020d6ae6c894b49107a116d9fe99bca16c5b91b213b35db2d39f249cb66a89",
+      "duplicate_source_files": [
+        "Male2Walking_c3d/B21_-__put_down_box_to_walk_a_stageii.npz"
+      ],
+      "group_size": 2
+    },
+    {
+      "canonical_source_file": "Male2Walking_c3d/B17_-__Walk_to_hop_to_walk_stageii.npz",
+      "checksum_sha256": "2f828f3b193ced6ce5438702b97cee1a564a75a497d8995276afe669891d2b02",
+      "duplicate_source_files": [
+        "Male2Walking_c3d/B17_-__Walk_to_hop_to_walk_a_stageii.npz"
+      ],
+      "group_size": 2
+    },
+    {
+      "canonical_source_file": "Male2Running_c3d/C4_-_run_to_walk_stageii.npz",
+      "checksum_sha256": "44a8ba0d36f40230f878ec969eaceffedb06986c0653d2881d2feb71333713bf",
+      "duplicate_source_files": [
+        "Male2Running_c3d/C4_-_run_to_walk_a_stageii.npz"
+      ],
+      "group_size": 2
+    }
+  ],
+  "expected_stagei_count": 20,
+  "expected_stageii_count": 252,
+  "gate": 1,
+  "kind": "gate1_summary",
+  "outputs": [
+    "accad_inventory.json",
+    "accad_quality.json",
+    "accad_train.json",
+    "accad_validation.json",
+    "accad_test.json",
+    "accad_excluded.json",
+    "gate1_summary.json"
+  ],
+  "passed": true,
+  "path_semantics": "source_file is POSIX and relative to source_root_name",
+  "pickle_loading_enabled": false,
+  "quality_flag_counts": {
+    "duplicate_file_checksum": 3,
+    "rotation_geodesic_jump": 1
+  },
+  "schema_version": "accad-gate1-v1",
+  "source_pattern": "*_stageii.npz",
+  "source_root_name": "ACCAD",
+  "split_limitation_note": "ACCAD has only three major named actors; the five sNNN subjects have one clip each, so a subject-disjoint validation split is necessarily small. Treat test(Male1) as the primary held-out-subject evaluation and consider major-actor cross-validation for final reporting.",
+  "split_subjects": {
+    "test": [
+      "Male1"
+    ],
+    "train": [
+      "Female1",
+      "Male2"
+    ],
+    "validation": [
+      "s001",
+      "s007",
+      "s008",
+      "s009",
+      "s011"
+    ]
+  },
+  "subject_to_split": {
+    "Female1": "train",
+    "Male1": "test",
+    "Male2": "train",
+    "s001": "validation",
+    "s007": "validation",
+    "s008": "validation",
+    "s009": "validation",
+    "s011": "validation"
+  }
+}
