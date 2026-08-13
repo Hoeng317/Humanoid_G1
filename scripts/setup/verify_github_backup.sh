@@ -48,7 +48,7 @@ required_files=(
   ACCAD/_g1_pipeline/accad_g1/retarget.py
   ACCAD/_g1_pipeline/accad_g1/tracking_task.py
   configs/robot/g1_29dof.yaml
-  source/humanoid_g1/tasks/locomotion/g1_env_cfg.py
+  source/humanoid_g1/tasks/locomotion/env_cfg.py
 )
 for path in "${required_files[@]}"; do
   git ls-files --error-unmatch "${path}" >/dev/null
