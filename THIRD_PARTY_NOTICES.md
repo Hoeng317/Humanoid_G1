@@ -1,6 +1,8 @@
 # Third-party notices
 
-이 프로젝트는 `third_party/` 아래에 원본 repository와 license를 함께 보존합니다.
+이 프로젝트는 `scripts/setup/fetch_third_party.sh`로 `third_party/` 아래에 원본
+repository와 license를 함께 복원합니다. 외부 repository 자체는 중복 저장하지 않고
+GitHub URL과 정확한 commit을 `scripts/setup/dependency_lock.env`에 보존합니다.
 Unitree ROS/MuJoCo/SDK2/SDK2 Python은 각각의 BSD-3-Clause license를, Unitree RL
 Lab은 Apache-2.0 및 포함 dependency notices를 따릅니다. MuJoCo binary는 MuJoCo
 repository release에서 받은 3.3.6 공식 archive입니다.

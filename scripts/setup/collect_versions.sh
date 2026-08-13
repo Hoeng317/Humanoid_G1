@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-output="${project_root}/workspace/artifacts/reports/VERSIONS.txt"
+output="${project_root}/workspace/logs/setup/VERSIONS.txt"
 mkdir -p "$(dirname "${output}")"
 {
   date -Iseconds

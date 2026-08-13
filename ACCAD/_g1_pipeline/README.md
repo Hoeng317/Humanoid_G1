@@ -4,7 +4,25 @@
 Isaac Lab에서 PPO tracking·평가·영상·export까지 실행하는 독립 작업 공간이다.
 신규 코드와 산출물은 모두 `ACCAD/` 내부에만 둔다.
 
-교수 제출용 상세 결과는 [`../FINAL_REPORT_KO.md`](../FINAL_REPORT_KO.md)를 본다.
+이론과 구현에 대한 상세 학습 자료는
+[`../ACCAD_SMPLX_G1_IMPLEMENTATION_STUDY_GUIDE_KO.md`](../ACCAD_SMPLX_G1_IMPLEMENTATION_STUDY_GUIDE_KO.md)를 본다.
+로컬 삭제 후 재설치는
+[`../../docs/REINSTALL_FROM_GITHUB_KO.md`](../../docs/REINSTALL_FROM_GITHUB_KO.md)를 따른다.
+
+## 새 clone에서 시작
+
+AMASS ACCAD와 SMPL-X 모델은 GitHub에 포함되지 않는다. 공식 파일을 `ACCAD/`에
+배치한 후 저장소 루트에서 다음을 실행하면 package 설치, 파일 수, 모델 checksum,
+Gate 1/2가 검증된다.
+
+```bash
+./scripts/setup/prepare_motion_data.sh \
+  --smplx-model /path/to/models_lockedhead/smplx/SMPLX_NEUTRAL.npz
+```
+
+이후 전체 재생성 명령은 복원 가이드 6~8절을 사용한다. 아래의 날짜가 포함된 경로와
+수치는 과거 실행 기록이며, 결과 파일을 제외한 fresh clone에는 처음부터 존재하지
+않는 것이 정상이다.
 
 ## 현재 최종 상태
 
@@ -40,7 +58,7 @@ Isaac Lab에서 PPO tracking·평가·영상·export까지 실행하는 독립 �
 TEST 수치 NPZ와 TEST 정책 branch를 열지 않는다.
 
 ```bash
-cd /home/hoeng/IsaacLab
+cd /path/to/IsaacLab
 
 PYTHONDONTWRITEBYTECODE=1 ./_isaac_sim/python.sh \
   humanoid_G1/ACCAD/_g1_pipeline/run.py tensorboard --force
@@ -60,10 +78,11 @@ validation/TEST 일반화 결과가 아니다.
 
 ## 빠른 확인
 
-모든 명령은 저장소 루트에서 실행한다.
+아래 과거 결과 확인 명령은 Isaac Lab 루트에서 실행한다. 다른 계정에서는 clone이
+있는 경로로 바꾼다.
 
 ```bash
-cd /home/hoeng/IsaacLab
+cd /path/to/IsaacLab
 ```
 
 ### 기존 Gate 스냅샷

@@ -1,5 +1,9 @@
 # Unitree G1 29-DoF 연구 환경
 
+> 로컬 폴더를 삭제한 뒤 다시 설치하려면
+> [GitHub 완전 복원 가이드](docs/REINSTALL_FROM_GITHUB_KO.md)를 먼저 보십시오.
+> 자체 구현은 `main`에, 선택적인 과거 실행 결과는 `artifacts` 브랜치에 있습니다.
+
 이 프로젝트의 로봇은 **공식 Unitree G1 29-DoF rev_1_0**입니다. 모델은
 `unitree_ros`의 공식 URDF, Sim2Sim은 `unitree_mujoco`의 공식
 `g1_29dof.xml/scene_29dof.xml`을 사용합니다. 손은 구매 옵션에 따라 구성이 달라
@@ -10,8 +14,36 @@
 baseline과 분리된 사용자 실험 시작점은
 `configs/experiments/g1_custom_ppo.yaml`입니다.
 
-모든 자체 구현과 빌드 산출물은 `/home/hoeng/IsaacLab/humanoid_G1` 안에만
-있습니다. 바깥의 Isaac Lab, SeRT 및 기존 RSL-RL 코드는 수정하지 않습니다.
+모든 자체 구현과 빌드 산출물은 이 저장소 안에만 있습니다. 바깥의 Isaac Lab,
+SeRT 및 기존 RSL-RL 코드는 수정하지 않습니다. 경로는 실행 시 저장소 위치에서
+계산하므로 `/home/hoeng` 계정에 종속되지 않습니다.
+
+## 새 clone 최소 복원
+
+Isaac Sim 5.1.0과 정확한 Isaac Lab 2.3.2 commit을 설치한 뒤:
+
+```bash
+cd /path/to/IsaacLab
+git clone https://github.com/Hoeng317/Humanoid_G1.git humanoid_G1
+cd humanoid_G1
+./scripts/setup/bootstrap.sh
+```
+
+이 명령은 GitHub에 포함하지 않은 Unitree 공식 저장소를 고정 commit으로 복원하고,
+import·joint contract·unit test를 검사합니다. ACCAD/SMPL-X는 각 사이트의 라이선스에
+동의해 별도로 받아야 하며 다음 명령으로 배치와 checksum을 확인합니다.
+
+```bash
+./scripts/setup/prepare_motion_data.sh \
+  --smplx-model /path/to/models_lockedhead/smplx/SMPLX_NEUTRAL.npz
+```
+
+전체 전처리, 리타게팅, Isaac 검증, PPO 재학습 순서는
+[복원 가이드](docs/REINSTALL_FROM_GITHUB_KO.md)에 명령 단위로 고정되어 있습니다.
+
+로컬 폴더를 삭제하기 직전에는 `./scripts/setup/verify_github_backup.sh --with-motion`을
+실행하십시오. GitHub `main`과 local HEAD가 같고 테스트가 모두 통과해야
+`BACKUP VERIFIED`를 출력합니다.
 
 ## 학습·평가 산출물
 
@@ -30,7 +62,7 @@ git lfs pull
 
 ## 가장 먼저 실행할 순서
 
-명령은 `/home/hoeng/IsaacLab`에서 실행합니다.
+아래 명령은 clone을 둔 Isaac Lab 루트(예: `/path/to/IsaacLab`)에서 실행합니다.
 
 ```bash
 # 1. 설치·asset·GPU·joint contract 확인
@@ -91,10 +123,11 @@ git lfs pull
   --run-id <RUN_ID>
 ```
 
-현재 검증된 smoke checkpoint는
+과거에 검증했던 smoke checkpoint는
 `workspace/logs/rsl_rl/g1_smoke/2026-07-30_14-22-00_acceptance_smoke2/model_1.pt`,
-export bundle은 `workspace/artifacts/policies/acceptance_smoke2/`입니다. 이것은 실행 경로
-검증용 2-iteration 정책이지, 보행 성능이 확보된 배포 정책이 아닙니다.
+export bundle은 `workspace/artifacts/policies/acceptance_smoke2/`였습니다. 해당 실행
+산출물은 `main` 복원의 필수 항목이 아닙니다. 이것은 실행 경로 검증용 2-iteration
+정책이지, 보행 성능이 확보된 배포 정책이 아닙니다.
 
 ## MuJoCo Sim2Sim
 

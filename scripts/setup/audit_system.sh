@@ -17,7 +17,7 @@ mkdir -p "$(dirname "${output}")"
   gcc --version | head -n 1
   g++ --version | head -n 1
   free -h
-  df -h /home/hoeng
+  df -h "${project_root}"
   git -C "${project_root}/.." status --short
   git -C "${project_root}/.." branch --show-current
   git -C "${project_root}/.." rev-parse HEAD
